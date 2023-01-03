@@ -17,7 +17,7 @@ export default function Home() {
             <div className="h-full w-full bg-purple-900 rounded-[20px]"></div>
         </div>
         <div className="flex-[1]">
-            <div className="w-[85%] mt-[100px] md:mt-[60px]">
+            <div className="w-[85%] mt-[150px] md:mt-[60px]">
                 <h1 className='text-[50px] leading-[55px]'>Manage All Of Your Fonts In One Place Efficently</h1>
             </div>
             <div className="w-full md:w-[50%] my-[30px]">
@@ -36,7 +36,7 @@ export default function Home() {
                 <div className="flex-[2]">
                     {projectsData.map((project, index) => {
                         return (
-                            <button className='py-[6px] md:py-[11px] px-[16px] mb-[10px] mx-[6px] font-semibold text-[12px] border-black border-solid border-[1px] rounded-[40px] text-center duration-[0.5s] text-black hover:text-white hover:bg-black' key={index}>{project}</button>
+                            <button className='py-[6px] md:py-[11px] px-[16px] mb-[10px] mx-[6px] font-medium text-[12px] border-black border-solid border-[1px] rounded-[40px] text-center duration-[0.5s] text-black hover:text-white hover:bg-black' key={index}>{project}</button>
                         )
                     })
                     }
