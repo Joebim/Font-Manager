@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Font-Manager/static/css/main.bcce08f5.css",
-    "main.js": "/Font-Manager/static/js/main.783d32ac.js",
+    "main.js": "/Font-Manager/static/js/main.6c75cfef.js",
     "static/js/787.28e3f887.chunk.js": "/Font-Manager/static/js/787.28e3f887.chunk.js",
     "static/media/logo.svg": "/Font-Manager/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/Font-Manager/index.html",
     "main.bcce08f5.css.map": "/Font-Manager/static/css/main.bcce08f5.css.map",
-    "main.783d32ac.js.map": "/Font-Manager/static/js/main.783d32ac.js.map",
+    "main.6c75cfef.js.map": "/Font-Manager/static/js/main.6c75cfef.js.map",
     "787.28e3f887.chunk.js.map": "/Font-Manager/static/js/787.28e3f887.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bcce08f5.css",
-    "static/js/main.783d32ac.js"
+    "static/js/main.6c75cfef.js"
   ]
 }
