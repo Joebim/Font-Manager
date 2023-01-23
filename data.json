@@ -1,0 +1,43 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Belotta",
+      "type": "sans"
+    },
+    {
+      "id": 1,
+      "title": "Honey Cake",
+      "type": "sans"
+    },
+    {
+      "id": 1,
+      "title": "Balsamiq",
+      "type": "sans"
+    },
+    {
+      "id": 1,
+      "title": "Ubuntu",
+      "type": "sans"
+    },
+    {
+      "id": 1,
+      "title": "Georgia",
+      "type": "sans"
+    }
+    
+    
+    
+    
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

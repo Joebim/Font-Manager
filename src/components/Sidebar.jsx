@@ -9,7 +9,7 @@ export default function Sidebar(props) {
     <div className="absolute flex flex-row">
         <div className={`h-[100vh] relative overflow-hidden duration-[0.5s] ${sidebarToggle ? "w-[200px]" : "w-0"}  bg-white`}>
             <div className='w-full flex flex-col px-[10px] text-center items-center'>
-                <div className="h-[60px] w-[60px] my-[12px] text-white bg-black rounded-[90px] font-bold justify-center flex items-center">Fontu</div>
+                <div className="h-[40px] w-[80px] my-[12px] text-white bg-purple-900 rounded-[90px] font-bold justify-center flex items-center">Fontu</div>
                 <div className="flex flex-col my-[25px] w-full justify-center">
                     <div className=' text-[#575757] font-medium hover:text-black mb-[10px] cursor-pointer'>Home</div>
                     <div className=' text-[#575757] font-medium hover:text-black mb-[10px] cursor-pointer'>App</div>

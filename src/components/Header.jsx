@@ -3,7 +3,7 @@ import React from 'react'
 export default function Header() {
   return (
     <div className='w-full hidden md:flex justify-between h-[100px] items-center px-[80px]'>
-        <div className="h-[60px] w-[60px] my-[12px] text-white bg-black rounded-[90px] font-bold justify-center flex items-center">Fontu</div>
+        <div className="h-[40px] w-[80px] my-[12px] text-white bg-purple-900 rounded-[90px] font-bold justify-center flex items-center">Fontu</div>
         <div className="flex w-[30%] justify-between">
         <div className=' text-[#575757]  hover:text-black mb-[10px] cursor-pointer'>Home</div>
         <div className=' text-[#575757]  hover:text-black mb-[10px] cursor-pointer'>App</div>
