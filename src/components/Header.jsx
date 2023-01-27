@@ -9,10 +9,11 @@ export default function Header() {
       </Link>
         <div className="flex w-[300px] justify-between">
           <Link to="/"><div className=' text-[#575757]  hover:text-black mb-[10px] cursor-pointer'>Home</div></Link>
-          <Link to="/app"><div className=' text-[#575757]  hover:text-black mb-[10px] cursor-pointer'>App</div></Link>
-          <Link to="/pricing"><div className=' text-[#575757]  hover:text-black mb-[10px] cursor-pointer'>Pricing</div></Link>
-          <Link to="/partner"><div className=' text-[#575757]  hover:text-black mb-[10px] cursor-pointer'>Partner</div></Link>
-          <Link to="/about"><div className=' text-[#575757]  hover:text-black mb-[10px] cursor-pointer'>AboutUs</div></Link>
+          <Link to="/fontstore"><div className=' text-[#575757]  hover:text-black mb-[10px] cursor-pointer'>Fonts Tray</div></Link>
+          <Link to="/fonttemplatestore"><div className=' text-[#575757]  hover:text-black mb-[10px] cursor-pointer'>Templates</div></Link>
+          {/* <Link to="/pricing"><div className=' text-[#575757]  hover:text-black mb-[10px] cursor-pointer'>Pricing</div></Link> */}
+          {/* <Link to="/partner"><div className=' text-[#575757]  hover:text-black mb-[10px] cursor-pointer'>Partner</div></Link> */}
+          <Link to="/about"><div className=' text-[#575757]  hover:text-black mb-[10px] cursor-pointer'>About</div></Link>
           
         </div>
         <button className='h-[40px] w-[150px] border-black border-solid border-[1px] rounded-[40px] text-center duration-[0.5s] text-black hover:text-white hover:bg-black'>Sign In</button>

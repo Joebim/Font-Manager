@@ -12,7 +12,7 @@
 
 .glass-card {
   background: linear-gradient(135deg, #ffffff1a, #ffffff00);
-  box-shadow: 0 8px 32px 0 #0000000a;
+  box-shadow: 0 8px 20px 0 #0000000a;
   transform: 1500ms;
   transform-style: preserve-3d;
   -webkit-transition: 0.6s;
@@ -22,7 +22,7 @@
 }
 
 .glass-card:hover {
-  box-shadow: 0 8px 32px 0 #8505da21;
+  box-shadow: 0 8px 20px 0 #8505da21;
 }
 
 .glass-card.flip {

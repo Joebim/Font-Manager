@@ -34,6 +34,7 @@ export default function Home() {
     // console.log('projectData', projectsData)
 
   return (
+    <>
     <div className='w-full'>
         <section className='w-full flex px-[40px] md:px-[80px] flex-col-reverse md:flex-row'>
             <div className="flex-[1] py-[55px] pr-[50px]">
@@ -41,14 +42,14 @@ export default function Home() {
             </div>
             <div className="flex-[1]">
                 <div className="w-[85%] mt-[150px] md:mt-[60px]">
-                    <h1 className='text-[50px] leading-[55px]'>Manage All Of Your Fonts In One Place Efficently</h1>
+                    <h1 className='text-[50px] leading-[55px]'>Free Beautiful text Animations From A Wide Range Of Templates</h1>
                 </div>
                 <div className="w-full md:w-[50%] my-[30px]">
-                <p className=''>Manage your font style, weight and size all at once. Set color to see the look, save and keep your fonts in check</p>
+                <p className=''>Create stunning text animations with desired fonts, customize your style and feel the visuals</p>
 
                 </div>
                 <div className="">
-                <Link to="/fontstore">
+                <Link to="/fontlab">
                     <button className='h-[40px] md:h-[60px] w-[170px] md:w-[200px] bg-black rounded-[40px] text-[14px] text-center duration-[0.5s] text-white mr-[15px]'>Try Fontu</button>
                 </Link>
                     <button className='h-[40px] md:h-[60px] w-[100px] md:w-[150px] bg-purple-900 rounded-[40px] text-[14px] text-center duration-[0.5s] text-white'>Sign Up</button>
@@ -95,5 +96,7 @@ export default function Home() {
         </section> */}
         
     </div>
+    </>
+    
   )
 }

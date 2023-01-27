@@ -156,8 +156,8 @@ export default function Modal(props) {
                                     
                                 </div>
 
-                                {tab == 1 ? <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-6 max-h-[500px] min-h-[auto]">
-                                    <div className="w-full flex justify-center items-center flex-col">
+                                {tab == 1 ? <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-6 h-[370px] max-h-[500px] min-h-[auto]">
+                                    <div className="w-full flex justify-center h-full items-center flex-col">
                                         {visibility == "visible" ? <div className="w-[80%] h-full min-h-[130px] border-solid border-[3px] border-[#e2cdff] cursor-pointer rounded-[20px] flex flex-col justify-center items-center">
                                             <div className="h-full w-full p-[20px] flex flex-col justify-center items-center" {...getRootProps()}>
                                                 {/* <FileUploader handleChange={handleChange} name="file" types={fileTypes} /> */}

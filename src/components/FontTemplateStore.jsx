@@ -4,7 +4,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Modal from './Modal'
 
-export default function FontStore() {
+export default function FontTemplateStore() {
 
     const [clicked, setClicked] = useState() 
     const [open, setOpen] = useState(false)

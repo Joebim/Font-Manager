@@ -8,6 +8,9 @@ import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
 import FontAdd from './components/FontAdd';
 import FontStore from './components/FontStore';
+import FontTemplateStore from './components/FontTemplateStore';
+import FontLab from './components/FontLab';
+import AboutPage from './components/About';
 
 function App() {
   return (
@@ -18,6 +21,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/fontadd" element={<FontAdd />} />
         <Route path="/fontstore" element={<FontStore />} />
+        <Route path="/fontlab" element={<FontLab />} />
+        <Route path="/fonttemplatestore" element={<FontTemplateStore />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
       <Footer/>
     </> 
