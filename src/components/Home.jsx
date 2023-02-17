@@ -49,9 +49,7 @@ export default function Home() {
 
                 </div>
                 <div className="">
-                <Link to="/fontlab">
-                    <button className='h-[40px] md:h-[60px] w-[170px] md:w-[200px] bg-black rounded-[40px] text-[14px] text-center duration-[0.5s] text-white mr-[15px]'>Try Fontu</button>
-                </Link>
+                
                     <button className='h-[40px] md:h-[60px] w-[100px] md:w-[150px] bg-purple-900 rounded-[40px] text-[14px] text-center duration-[0.5s] text-white'>Sign Up</button>
                 </div>
 

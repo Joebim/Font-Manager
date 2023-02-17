@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <div className='w-full hidden md:flex justify-between h-[100px] items-center px-[80px]'>
       <Link to="/">
-        <div className="h-[40px] w-[80px] my-[12px] text-white bg-purple-900 rounded-[90px] font-bold justify-center flex items-center">Fontu</div>
+        <div className="px-[17px] py-[5px] my-[12px] text-white bg-purple-900 rounded-[90px] font-bold justify-center flex items-center">Fontasie</div>
       </Link>
         <div className="flex w-[300px] justify-between">
           <Link to="/"><div className=' text-[#575757]  hover:text-black mb-[10px] cursor-pointer'>Home</div></Link>

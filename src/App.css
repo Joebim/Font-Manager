@@ -64,3 +64,47 @@ body {
     background: #aa00ff;
     transition: 3s ease;
   }
+
+/* Code playground */
+
+/* html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+} */
+
+.playground {
+  background-color: #1E1E2C;
+}
+
+.code-editor {
+ 
+}
+
+.editor-header {
+  height: 30px;
+  content: attr(title);
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  font-size: 18px;
+  color: #fafafa;
+}
+
+.react-codemirror2 {
+  max-height: calc(100% - 30px);
+  overflow: auto;
+}
+
+.result {
+  overflow: hidden;
+}
+
+.iframe {
+  width: 100%;
+  height: 100%;
+}

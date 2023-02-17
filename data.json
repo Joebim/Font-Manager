@@ -715,6 +715,535 @@
         "kind": "webfonts#webfont"
       },
       "id": 28
+    },
+    {
+      "font": {
+        "family": "Asap Condensed",
+        "variants": [
+          "200",
+          "200italic",
+          "300",
+          "300italic",
+          "regular",
+          "italic",
+          "500",
+          "500italic",
+          "600",
+          "600italic",
+          "700",
+          "700italic",
+          "800",
+          "800italic",
+          "900",
+          "900italic"
+        ],
+        "subsets": [
+          "latin",
+          "latin-ext",
+          "vietnamese"
+        ],
+        "version": "v16",
+        "lastModified": "2022-11-18",
+        "files": {
+          "200": "http://fonts.gstatic.com/s/asapcondensed/v16/pxieypY1o9NHyXh3WvSbGSggdO9DSWlEgGqgp-pO.ttf",
+          "300": "http://fonts.gstatic.com/s/asapcondensed/v16/pxieypY1o9NHyXh3WvSbGSggdO8nSmlEgGqgp-pO.ttf",
+          "500": "http://fonts.gstatic.com/s/asapcondensed/v16/pxieypY1o9NHyXh3WvSbGSggdO9_S2lEgGqgp-pO.ttf",
+          "600": "http://fonts.gstatic.com/s/asapcondensed/v16/pxieypY1o9NHyXh3WvSbGSggdO9TTGlEgGqgp-pO.ttf",
+          "700": "http://fonts.gstatic.com/s/asapcondensed/v16/pxieypY1o9NHyXh3WvSbGSggdO83TWlEgGqgp-pO.ttf",
+          "800": "http://fonts.gstatic.com/s/asapcondensed/v16/pxieypY1o9NHyXh3WvSbGSggdO8rTmlEgGqgp-pO.ttf",
+          "900": "http://fonts.gstatic.com/s/asapcondensed/v16/pxieypY1o9NHyXh3WvSbGSggdO8PT2lEgGqgp-pO.ttf",
+          "200italic": "http://fonts.gstatic.com/s/asapcondensed/v16/pxiYypY1o9NHyXh3WvSbGSggdOeJUIFFim6CovpOkXA.ttf",
+          "300italic": "http://fonts.gstatic.com/s/asapcondensed/v16/pxiYypY1o9NHyXh3WvSbGSggdOeJUOVGim6CovpOkXA.ttf",
+          "regular": "http://fonts.gstatic.com/s/asapcondensed/v16/pxidypY1o9NHyXh3WvSbGSggdNeLYk1Mq3ap.ttf",
+          "italic": "http://fonts.gstatic.com/s/asapcondensed/v16/pxifypY1o9NHyXh3WvSbGSggdOeJaElurmapvvM.ttf",
+          "500italic": "http://fonts.gstatic.com/s/asapcondensed/v16/pxiYypY1o9NHyXh3WvSbGSggdOeJUL1Him6CovpOkXA.ttf",
+          "600italic": "http://fonts.gstatic.com/s/asapcondensed/v16/pxiYypY1o9NHyXh3WvSbGSggdOeJUJFAim6CovpOkXA.ttf",
+          "700italic": "http://fonts.gstatic.com/s/asapcondensed/v16/pxiYypY1o9NHyXh3WvSbGSggdOeJUPVBim6CovpOkXA.ttf",
+          "800italic": "http://fonts.gstatic.com/s/asapcondensed/v16/pxiYypY1o9NHyXh3WvSbGSggdOeJUOlCim6CovpOkXA.ttf",
+          "900italic": "http://fonts.gstatic.com/s/asapcondensed/v16/pxiYypY1o9NHyXh3WvSbGSggdOeJUM1Dim6CovpOkXA.ttf"
+        },
+        "category": "sans-serif",
+        "kind": "webfonts#webfont"
+      },
+      "id": 29
+    },
+    {
+      "font": {
+        "family": "Asar",
+        "variants": [
+          "regular"
+        ],
+        "subsets": [
+          "devanagari",
+          "latin",
+          "latin-ext"
+        ],
+        "version": "v22",
+        "lastModified": "2022-09-22",
+        "files": {
+          "regular": "http://fonts.gstatic.com/s/asar/v22/sZlLdRyI6TBIXkYQDLlTW6E.ttf"
+        },
+        "category": "serif",
+        "kind": "webfonts#webfont"
+      },
+      "id": 30
+    },
+    {
+      "font": {
+        "family": "Asset",
+        "variants": [
+          "regular"
+        ],
+        "subsets": [
+          "latin"
+        ],
+        "version": "v24",
+        "lastModified": "2022-09-22",
+        "files": {
+          "regular": "http://fonts.gstatic.com/s/asset/v24/SLXGc1na-mM4cWImRJqExst1.ttf"
+        },
+        "category": "display",
+        "kind": "webfonts#webfont"
+      },
+      "id": 31
+    },
+    {
+      "font": {
+        "family": "Assistant",
+        "variants": [
+          "200",
+          "300",
+          "regular",
+          "500",
+          "600",
+          "700",
+          "800"
+        ],
+        "subsets": [
+          "hebrew",
+          "latin",
+          "latin-ext"
+        ],
+        "version": "v18",
+        "lastModified": "2022-09-22",
+        "files": {
+          "200": "http://fonts.gstatic.com/s/assistant/v18/2sDPZGJYnIjSi6H75xkZZE1I0yCmYzzQtmZnEGGf3qGuvM4.ttf",
+          "300": "http://fonts.gstatic.com/s/assistant/v18/2sDPZGJYnIjSi6H75xkZZE1I0yCmYzzQtrhnEGGf3qGuvM4.ttf",
+          "500": "http://fonts.gstatic.com/s/assistant/v18/2sDPZGJYnIjSi6H75xkZZE1I0yCmYzzQttRnEGGf3qGuvM4.ttf",
+          "600": "http://fonts.gstatic.com/s/assistant/v18/2sDPZGJYnIjSi6H75xkZZE1I0yCmYzzQtjhgEGGf3qGuvM4.ttf",
+          "700": "http://fonts.gstatic.com/s/assistant/v18/2sDPZGJYnIjSi6H75xkZZE1I0yCmYzzQtgFgEGGf3qGuvM4.ttf",
+          "800": "http://fonts.gstatic.com/s/assistant/v18/2sDPZGJYnIjSi6H75xkZZE1I0yCmYzzQtmZgEGGf3qGuvM4.ttf",
+          "regular": "http://fonts.gstatic.com/s/assistant/v18/2sDPZGJYnIjSi6H75xkZZE1I0yCmYzzQtuZnEGGf3qGuvM4.ttf"
+        },
+        "category": "sans-serif",
+        "kind": "webfonts#webfont"
+      },
+      "id": 32
+    },
+    {
+      "font": {
+        "family": "Aclonica",
+        "variants": [
+          "regular"
+        ],
+        "subsets": [
+          "latin"
+        ],
+        "version": "v18",
+        "lastModified": "2022-09-22",
+        "files": {
+          "regular": "http://fonts.gstatic.com/s/aclonica/v18/K2FyfZJVlfNNSEBXGb7TCI6oBjLz.ttf"
+        },
+        "category": "sans-serif",
+        "kind": "webfonts#webfont"
+      },
+      "id": 33
+    },
+    {
+      "font": {
+        "family": "Baloo Bhaijaan 2",
+        "variants": [
+          "regular",
+          "500",
+          "600",
+          "700",
+          "800"
+        ],
+        "subsets": [
+          "arabic",
+          "latin",
+          "latin-ext",
+          "vietnamese"
+        ],
+        "version": "v14",
+        "lastModified": "2022-11-09",
+        "files": {
+          "500": "http://fonts.gstatic.com/s/baloobhaijaan2/v14/zYXwKUwuEqdVGqM8tPDdAA_Y-_bMKo1EhQd2tWxo8TyjSqP4L4ppfcyC.ttf",
+          "600": "http://fonts.gstatic.com/s/baloobhaijaan2/v14/zYXwKUwuEqdVGqM8tPDdAA_Y-_bMKo1EhQd2tWxo8TxPTaP4L4ppfcyC.ttf",
+          "700": "http://fonts.gstatic.com/s/baloobhaijaan2/v14/zYXwKUwuEqdVGqM8tPDdAA_Y-_bMKo1EhQd2tWxo8Tx2TaP4L4ppfcyC.ttf",
+          "800": "http://fonts.gstatic.com/s/baloobhaijaan2/v14/zYXwKUwuEqdVGqM8tPDdAA_Y-_bMKo1EhQd2tWxo8TwRTaP4L4ppfcyC.ttf",
+          "regular": "http://fonts.gstatic.com/s/baloobhaijaan2/v14/zYXwKUwuEqdVGqM8tPDdAA_Y-_bMKo1EhQd2tWxo8TyRSqP4L4ppfcyC.ttf"
+        },
+        "category": "display",
+        "kind": "webfonts#webfont"
+      },
+      "id": 34
+    },
+    {
+      "font": {
+        "family": "Big Shoulders Stencil Text",
+        "variants": [
+          "100",
+          "200",
+          "300",
+          "regular",
+          "500",
+          "600",
+          "700",
+          "800",
+          "900"
+        ],
+        "subsets": [
+          "latin",
+          "latin-ext",
+          "vietnamese"
+        ],
+        "version": "v21",
+        "lastModified": "2022-09-22",
+        "files": {
+          "100": "http://fonts.gstatic.com/s/bigshouldersstenciltext/v21/5aUV9-i2oxDMNwY3dHfW7UAt3Q453SM15wNj53bCcab2SJYLLUtk1OGR04XIGS_Py_AWbQ.ttf",
+          "200": "http://fonts.gstatic.com/s/bigshouldersstenciltext/v21/5aUV9-i2oxDMNwY3dHfW7UAt3Q453SM15wNj53bCcab2SJYLLUtk1OGRU4TIGS_Py_AWbQ.ttf",
+          "300": "http://fonts.gstatic.com/s/bigshouldersstenciltext/v21/5aUV9-i2oxDMNwY3dHfW7UAt3Q453SM15wNj53bCcab2SJYLLUtk1OGRjYTIGS_Py_AWbQ.ttf",
+          "500": "http://fonts.gstatic.com/s/bigshouldersstenciltext/v21/5aUV9-i2oxDMNwY3dHfW7UAt3Q453SM15wNj53bCcab2SJYLLUtk1OGR4YTIGS_Py_AWbQ.ttf",
+          "600": "http://fonts.gstatic.com/s/bigshouldersstenciltext/v21/5aUV9-i2oxDMNwY3dHfW7UAt3Q453SM15wNj53bCcab2SJYLLUtk1OGRDYPIGS_Py_AWbQ.ttf",
+          "700": "http://fonts.gstatic.com/s/bigshouldersstenciltext/v21/5aUV9-i2oxDMNwY3dHfW7UAt3Q453SM15wNj53bCcab2SJYLLUtk1OGRNIPIGS_Py_AWbQ.ttf",
+          "800": "http://fonts.gstatic.com/s/bigshouldersstenciltext/v21/5aUV9-i2oxDMNwY3dHfW7UAt3Q453SM15wNj53bCcab2SJYLLUtk1OGRU4PIGS_Py_AWbQ.ttf",
+          "900": "http://fonts.gstatic.com/s/bigshouldersstenciltext/v21/5aUV9-i2oxDMNwY3dHfW7UAt3Q453SM15wNj53bCcab2SJYLLUtk1OGReoPIGS_Py_AWbQ.ttf",
+          "regular": "http://fonts.gstatic.com/s/bigshouldersstenciltext/v21/5aUV9-i2oxDMNwY3dHfW7UAt3Q453SM15wNj53bCcab2SJYLLUtk1OGR04TIGS_Py_AWbQ.ttf"
+        },
+        "category": "display",
+        "kind": "webfonts#webfont"
+      },
+      "id": 35
+    },
+    {
+      "font": {
+        "family": "Baloo Chettan 2",
+        "variants": [
+          "regular",
+          "500",
+          "600",
+          "700",
+          "800"
+        ],
+        "subsets": [
+          "latin",
+          "latin-ext",
+          "malayalam",
+          "vietnamese"
+        ],
+        "version": "v16",
+        "lastModified": "2022-11-09",
+        "files": {
+          "500": "http://fonts.gstatic.com/s/baloochettan2/v16/vm8hdRbmXEva26PK-NtuX4ynWEzF69-L4gqgkIL5CdCTO1oeH9xI2gc.ttf",
+          "600": "http://fonts.gstatic.com/s/baloochettan2/v16/vm8hdRbmXEva26PK-NtuX4ynWEzF69-L4gqgkIL5CTyUO1oeH9xI2gc.ttf",
+          "700": "http://fonts.gstatic.com/s/baloochettan2/v16/vm8hdRbmXEva26PK-NtuX4ynWEzF69-L4gqgkIL5CQWUO1oeH9xI2gc.ttf",
+          "800": "http://fonts.gstatic.com/s/baloochettan2/v16/vm8hdRbmXEva26PK-NtuX4ynWEzF69-L4gqgkIL5CWKUO1oeH9xI2gc.ttf",
+          "regular": "http://fonts.gstatic.com/s/baloochettan2/v16/vm8hdRbmXEva26PK-NtuX4ynWEzF69-L4gqgkIL5CeKTO1oeH9xI2gc.ttf"
+        },
+        "category": "display",
+        "kind": "webfonts#webfont"
+      },
+      "id": 36
+    },
+    {
+      "font": {
+        "family": "Big Shoulders Stencil Display",
+        "variants": [
+          "100",
+          "200",
+          "300",
+          "regular",
+          "500",
+          "600",
+          "700",
+          "800",
+          "900"
+        ],
+        "subsets": [
+          "latin",
+          "latin-ext",
+          "vietnamese"
+        ],
+        "version": "v21",
+        "lastModified": "2022-09-22",
+        "files": {
+          "100": "http://fonts.gstatic.com/s/bigshouldersstencildisplay/v21/6aeZ4LS6U6pR_bp5b_t2ugOhHWFcxSGP9ttD96KCb8xPytKb-oPRU-vkuLm_O0nPKHznJucP9w.ttf",
+          "200": "http://fonts.gstatic.com/s/bigshouldersstencildisplay/v21/6aeZ4LS6U6pR_bp5b_t2ugOhHWFcxSGP9ttD96KCb8xPytKb-oPRU-vkuLm_u0jPKHznJucP9w.ttf",
+          "300": "http://fonts.gstatic.com/s/bigshouldersstencildisplay/v21/6aeZ4LS6U6pR_bp5b_t2ugOhHWFcxSGP9ttD96KCb8xPytKb-oPRU-vkuLm_ZUjPKHznJucP9w.ttf",
+          "500": "http://fonts.gstatic.com/s/bigshouldersstencildisplay/v21/6aeZ4LS6U6pR_bp5b_t2ugOhHWFcxSGP9ttD96KCb8xPytKb-oPRU-vkuLm_CUjPKHznJucP9w.ttf",
+          "600": "http://fonts.gstatic.com/s/bigshouldersstencildisplay/v21/6aeZ4LS6U6pR_bp5b_t2ugOhHWFcxSGP9ttD96KCb8xPytKb-oPRU-vkuLm_5U_PKHznJucP9w.ttf",
+          "700": "http://fonts.gstatic.com/s/bigshouldersstencildisplay/v21/6aeZ4LS6U6pR_bp5b_t2ugOhHWFcxSGP9ttD96KCb8xPytKb-oPRU-vkuLm_3E_PKHznJucP9w.ttf",
+          "800": "http://fonts.gstatic.com/s/bigshouldersstencildisplay/v21/6aeZ4LS6U6pR_bp5b_t2ugOhHWFcxSGP9ttD96KCb8xPytKb-oPRU-vkuLm_u0_PKHznJucP9w.ttf",
+          "900": "http://fonts.gstatic.com/s/bigshouldersstencildisplay/v21/6aeZ4LS6U6pR_bp5b_t2ugOhHWFcxSGP9ttD96KCb8xPytKb-oPRU-vkuLm_kk_PKHznJucP9w.ttf",
+          "regular": "http://fonts.gstatic.com/s/bigshouldersstencildisplay/v21/6aeZ4LS6U6pR_bp5b_t2ugOhHWFcxSGP9ttD96KCb8xPytKb-oPRU-vkuLm_O0jPKHznJucP9w.ttf"
+        },
+        "category": "display",
+        "kind": "webfonts#webfont"
+      },
+      "id": 37
+    },
+    {
+      "font": {
+        "family": "Big Shoulders Text",
+        "variants": [
+          "100",
+          "200",
+          "300",
+          "regular",
+          "500",
+          "600",
+          "700",
+          "800",
+          "900"
+        ],
+        "subsets": [
+          "latin",
+          "latin-ext",
+          "vietnamese"
+        ],
+        "version": "v17",
+        "lastModified": "2022-09-22",
+        "files": {
+          "100": "http://fonts.gstatic.com/s/bigshoulderstext/v17/55xEezRtP9G3CGPIf49hxc8P0eytUxB2l66LmF6xc3kA3Y-r3TIPNl6P2pc.ttf",
+          "200": "http://fonts.gstatic.com/s/bigshoulderstext/v17/55xEezRtP9G3CGPIf49hxc8P0eytUxB2l66LmF6xc3kA3Q-q3TIPNl6P2pc.ttf",
+          "300": "http://fonts.gstatic.com/s/bigshoulderstext/v17/55xEezRtP9G3CGPIf49hxc8P0eytUxB2l66LmF6xc3kA3dGq3TIPNl6P2pc.ttf",
+          "500": "http://fonts.gstatic.com/s/bigshoulderstext/v17/55xEezRtP9G3CGPIf49hxc8P0eytUxB2l66LmF6xc3kA3b2q3TIPNl6P2pc.ttf",
+          "600": "http://fonts.gstatic.com/s/bigshoulderstext/v17/55xEezRtP9G3CGPIf49hxc8P0eytUxB2l66LmF6xc3kA3VGt3TIPNl6P2pc.ttf",
+          "700": "http://fonts.gstatic.com/s/bigshoulderstext/v17/55xEezRtP9G3CGPIf49hxc8P0eytUxB2l66LmF6xc3kA3Wit3TIPNl6P2pc.ttf",
+          "800": "http://fonts.gstatic.com/s/bigshoulderstext/v17/55xEezRtP9G3CGPIf49hxc8P0eytUxB2l66LmF6xc3kA3Q-t3TIPNl6P2pc.ttf",
+          "900": "http://fonts.gstatic.com/s/bigshoulderstext/v17/55xEezRtP9G3CGPIf49hxc8P0eytUxB2l66LmF6xc3kA3Sat3TIPNl6P2pc.ttf",
+          "regular": "http://fonts.gstatic.com/s/bigshoulderstext/v17/55xEezRtP9G3CGPIf49hxc8P0eytUxB2l66LmF6xc3kA3Y-q3TIPNl6P2pc.ttf"
+        },
+        "category": "display",
+        "kind": "webfonts#webfont"
+      },
+      "id": 38
+    },
+    {
+      "font": {
+        "family": "Bigshot One",
+        "variants": [
+          "regular"
+        ],
+        "subsets": [
+          "latin"
+        ],
+        "version": "v25",
+        "lastModified": "2022-09-22",
+        "files": {
+          "regular": "http://fonts.gstatic.com/s/bigshotone/v25/u-470qukhRkkO6BD_7cM_gxuUQJBXv_-.ttf"
+        },
+        "category": "display",
+        "kind": "webfonts#webfont"
+      },
+      "id": 39
+    },
+    {
+      "font": {
+        "family": "Bilbo",
+        "variants": [
+          "regular"
+        ],
+        "subsets": [
+          "latin",
+          "latin-ext",
+          "vietnamese"
+        ],
+        "version": "v20",
+        "lastModified": "2022-09-22",
+        "files": {
+          "regular": "http://fonts.gstatic.com/s/bilbo/v20/o-0EIpgpwWwZ210hpIRz4wxE.ttf"
+        },
+        "category": "handwriting",
+        "kind": "webfonts#webfont"
+      },
+      "id": 40
+    },
+    {
+      "font": {
+        "family": "Big Shoulders Inline Text",
+        "variants": [
+          "100",
+          "200",
+          "300",
+          "regular",
+          "500",
+          "600",
+          "700",
+          "800",
+          "900"
+        ],
+        "subsets": [
+          "latin",
+          "latin-ext",
+          "vietnamese"
+        ],
+        "version": "v21",
+        "lastModified": "2022-09-22",
+        "files": {
+          "100": "http://fonts.gstatic.com/s/bigshouldersinlinetext/v21/vm8XdQDmVECV5-vm5dJ-Tp-6WDeRjL4RV7dP8u-NMyHY74qpoNNcwga0yqGN7Y6Jsc8c.ttf",
+          "200": "http://fonts.gstatic.com/s/bigshouldersinlinetext/v21/vm8XdQDmVECV5-vm5dJ-Tp-6WDeRjL4RV7dP8u-NMyHY74qpoNNcwgY0y6GN7Y6Jsc8c.ttf",
+          "300": "http://fonts.gstatic.com/s/bigshouldersinlinetext/v21/vm8XdQDmVECV5-vm5dJ-Tp-6WDeRjL4RV7dP8u-NMyHY74qpoNNcwgbqy6GN7Y6Jsc8c.ttf",
+          "500": "http://fonts.gstatic.com/s/bigshouldersinlinetext/v21/vm8XdQDmVECV5-vm5dJ-Tp-6WDeRjL4RV7dP8u-NMyHY74qpoNNcwgaGy6GN7Y6Jsc8c.ttf",
+          "600": "http://fonts.gstatic.com/s/bigshouldersinlinetext/v21/vm8XdQDmVECV5-vm5dJ-Tp-6WDeRjL4RV7dP8u-NMyHY74qpoNNcwgZqzKGN7Y6Jsc8c.ttf",
+          "700": "http://fonts.gstatic.com/s/bigshouldersinlinetext/v21/vm8XdQDmVECV5-vm5dJ-Tp-6WDeRjL4RV7dP8u-NMyHY74qpoNNcwgZTzKGN7Y6Jsc8c.ttf",
+          "800": "http://fonts.gstatic.com/s/bigshouldersinlinetext/v21/vm8XdQDmVECV5-vm5dJ-Tp-6WDeRjL4RV7dP8u-NMyHY74qpoNNcwgY0zKGN7Y6Jsc8c.ttf",
+          "900": "http://fonts.gstatic.com/s/bigshouldersinlinetext/v21/vm8XdQDmVECV5-vm5dJ-Tp-6WDeRjL4RV7dP8u-NMyHY74qpoNNcwgYdzKGN7Y6Jsc8c.ttf",
+          "regular": "http://fonts.gstatic.com/s/bigshouldersinlinetext/v21/vm8XdQDmVECV5-vm5dJ-Tp-6WDeRjL4RV7dP8u-NMyHY74qpoNNcwga0y6GN7Y6Jsc8c.ttf"
+        },
+        "category": "display",
+        "kind": "webfonts#webfont"
+      },
+      "id": 41
+    },
+    {
+      "font": {
+        "family": "Bilbo",
+        "variants": [
+          "regular"
+        ],
+        "subsets": [
+          "latin",
+          "latin-ext",
+          "vietnamese"
+        ],
+        "version": "v20",
+        "lastModified": "2022-09-22",
+        "files": {
+          "regular": "http://fonts.gstatic.com/s/bilbo/v20/o-0EIpgpwWwZ210hpIRz4wxE.ttf"
+        },
+        "category": "handwriting",
+        "kind": "webfonts#webfont"
+      },
+      "id": 42
+    },
+    {
+      "font": {
+        "family": "Big Shoulders Inline Text",
+        "variants": [
+          "100",
+          "200",
+          "300",
+          "regular",
+          "500",
+          "600",
+          "700",
+          "800",
+          "900"
+        ],
+        "subsets": [
+          "latin",
+          "latin-ext",
+          "vietnamese"
+        ],
+        "version": "v21",
+        "lastModified": "2022-09-22",
+        "files": {
+          "100": "http://fonts.gstatic.com/s/bigshouldersinlinetext/v21/vm8XdQDmVECV5-vm5dJ-Tp-6WDeRjL4RV7dP8u-NMyHY74qpoNNcwga0yqGN7Y6Jsc8c.ttf",
+          "200": "http://fonts.gstatic.com/s/bigshouldersinlinetext/v21/vm8XdQDmVECV5-vm5dJ-Tp-6WDeRjL4RV7dP8u-NMyHY74qpoNNcwgY0y6GN7Y6Jsc8c.ttf",
+          "300": "http://fonts.gstatic.com/s/bigshouldersinlinetext/v21/vm8XdQDmVECV5-vm5dJ-Tp-6WDeRjL4RV7dP8u-NMyHY74qpoNNcwgbqy6GN7Y6Jsc8c.ttf",
+          "500": "http://fonts.gstatic.com/s/bigshouldersinlinetext/v21/vm8XdQDmVECV5-vm5dJ-Tp-6WDeRjL4RV7dP8u-NMyHY74qpoNNcwgaGy6GN7Y6Jsc8c.ttf",
+          "600": "http://fonts.gstatic.com/s/bigshouldersinlinetext/v21/vm8XdQDmVECV5-vm5dJ-Tp-6WDeRjL4RV7dP8u-NMyHY74qpoNNcwgZqzKGN7Y6Jsc8c.ttf",
+          "700": "http://fonts.gstatic.com/s/bigshouldersinlinetext/v21/vm8XdQDmVECV5-vm5dJ-Tp-6WDeRjL4RV7dP8u-NMyHY74qpoNNcwgZTzKGN7Y6Jsc8c.ttf",
+          "800": "http://fonts.gstatic.com/s/bigshouldersinlinetext/v21/vm8XdQDmVECV5-vm5dJ-Tp-6WDeRjL4RV7dP8u-NMyHY74qpoNNcwgY0zKGN7Y6Jsc8c.ttf",
+          "900": "http://fonts.gstatic.com/s/bigshouldersinlinetext/v21/vm8XdQDmVECV5-vm5dJ-Tp-6WDeRjL4RV7dP8u-NMyHY74qpoNNcwgYdzKGN7Y6Jsc8c.ttf",
+          "regular": "http://fonts.gstatic.com/s/bigshouldersinlinetext/v21/vm8XdQDmVECV5-vm5dJ-Tp-6WDeRjL4RV7dP8u-NMyHY74qpoNNcwga0y6GN7Y6Jsc8c.ttf"
+        },
+        "category": "display",
+        "kind": "webfonts#webfont"
+      },
+      "id": 43
+    }
+  ],
+  "templates": [
+    {
+      "template": {
+        "name": "SCHITT'S CREEK",
+        "Author": "Rob",
+        "date": "2022-11-01T23:00:00.000Z",
+        "compactiibleBrowsers": [
+          {
+            "name": "Chrome"
+          },
+          {
+            "name": "Edge"
+          },
+          {
+            "name": "Firefox"
+          },
+          {
+            "name": "Opera"
+          },
+          {
+            "name": "Safari"
+          }
+        ],
+        "madeWith": [
+          {
+            "name": "HTML"
+          },
+          {
+            "name": "CSS"
+          }
+        ],
+        "responsive": false,
+        "code": {
+          "html": "<h1>\n  <span class=\"word\">Schitt<span class=\"superscript\">s</span> </span>\n  <span class=\"word\">Creek</span>\n</h1><h1>\n  <span class=\"word\">Schitt<span class=\"superscript\">s</span> </span>\n  <span class=\"word\">Creek</span>\n</h1>",
+          "css": "/*\n\nTutorial:\nhttps://www.roboleary.net/animation/2022/10/31/how-to-make-a-slick-animation-schitts-creek-title-sequence.html\n\nPart of Title Sequences collection:\nhttps://codepen.io/collection/nNmwgP\n\nSource code:\nhttps://github.com/robole/title-sequences\n\n*/\n\n@import url(\"https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600\");\n\n:root {\n  --bar-scale-y: 0;\n  --sparkle-color: rgb(253 244 215 / 40%);\n}\n\n@keyframes pop-word {\n  to {\n    transform: rotateX(0);\n  }\n}\n\n@keyframes show {\n  to {\n    opacity: 1;\n  }\n}\n\n@keyframes bar-scale {\n  to {\n    transform: scaleY(1);\n  }\n}\n\n@keyframes sparkle {\n  0% {\n    transform: scale(0);\n  }\n\n  60% {\n    transform: scale(1) translate(4px, 1px) rotate(8deg);\n  }\n\n  100% {\n    transform: scale(0) translate(4px, 1px) rotate(8deg);\n  }\n}\n\n@keyframes shimmer {\n  to {\n    text-shadow: 0 0 8px red;\n  }\n}\n\nbody {\n  display: grid;\n  height: 100vh;\n\n  background-color: black;\n  place-items: center;\n}\n\nh1 {\n  color: white;\n  font-family: \"Playfair Display\", Vidaloka, serif;\n  font-size: 8rem;\n\n  line-height: 0.85;\n  perspective: 500px;\n}\n\n.word {\n  display: block;\n\n  animation: show 0.01s forwards, pop-word 1.5s forwards;\n  animation-timing-function: cubic-bezier(0.14, 1.23, 0.33, 1.16);\n  opacity: 0;\n\n  transform: rotateX(120deg);\n  transform-origin: 50% 100%;\n}\n\n.word:nth-of-type(2) {\n  padding: 0 2rem;\n\n  animation-delay: 1.5s;\n\n  color: gold;\n}\n\n.superscript {\n  position: relative;\n  animation-delay: 3.6s;\n\n  animation-duration: 0.25s;\n  animation-name: shimmer;\n\n  vertical-align: text-top;\n}\n\n/* bars */\n.superscript::before {\n  --bar-width: 25%;\n\n  position: absolute;\n\n  top: 37%;\n  left: 47%;\n  width: 14%;\n  height: 48%;\n\n  animation: bar-scale 0.25s linear 3s 1 forwards;\n\n  background: linear-gradient(\n    to right,\n    white var(--bar-width),\n    transparent var(--bar-width) calc(100% - var(--bar-width)),\n    white calc(100% - var(--bar-width))\n  );\n\n  content: \"\";\n\n  transform: scaleY(var(--bar-scale-y));\n}\n\n/* sparkle */\n.superscript::after {\n  --size: 10rem;\n\n  position: absolute;\n\n  top: -5%;\n  left: -85%;\n\n  width: var(--size);\n  height: var(--size);\n\n  animation: sparkle 0.4s linear 3.5s 1 forwards;\n\n  background: radial-gradient(\n      circle at center,\n      rgb(252 249 241 / 94%) 0% 7%,\n      transparent 7% 100%\n    ),\n    conic-gradient(\n      transparent 0deg 18deg,\n      var(--sparkle-color) 18deg,\n      transparent 20deg 40deg,\n      var(--sparkle-color) 40deg,\n      transparent 43deg 87deg,\n      var(--sparkle-color) 87deg,\n      transparent 95deg 175deg,\n      var(--sparkle-color) 175deg,\n      transparent 178deg 220deg,\n      var(--sparkle-color) 220deg,\n      transparent 222deg 270deg,\n      var(--sparkle-color) 270deg,\n      transparent 275deg 300deg,\n      var(--sparkle-color) 300deg,\n      transparent 303deg 360deg\n    );\n\n  border-radius: 50%;\n  clip-path: polygon(\n    50% 0,\n    59.13% 26.64%,\n    85.13% -2.35%,\n    100% 50%,\n    50% 100%,\n    0 50%,\n    31.39% 34.86%\n  );\n\n  content: \"\";\n\n  filter: blur(1px);\n\n  transform: scale(0);\n}\n\n@media screen and (max-width: 600px) {\n  h1 {\n    font-size: 5rem;\n  }\n\n  /* sparkle */\n  .superscript::after {\n    --size: 6rem;\n  }\n}\n",
+          "js": ""
+        }
+      },
+      "id": 1
+    },
+    {
+      "template": {
+        "name": "GHOSTS AND GHOULS",
+        "Author": "Sicontis",
+        "date": "2022-10-20T23:00:00.000Z",
+        "compactiibleBrowsers": [
+          {
+            "name": "Chrome"
+          },
+          {
+            "name": "Edge"
+          },
+          {
+            "name": "Firefox"
+          },
+          {
+            "name": "Opera Mini"
+          },
+          {
+            "name": "Safari"
+          }
+        ],
+        "madeWith": [
+          {
+            "name": "HTML"
+          },
+          {
+            "name": "CSS"
+          }
+        ],
+        "responsive": true,
+        "code": {
+          "html": "<div class=\"container\">\n\t<div class=\"title\">\n\t\t<h1>GHOST</h1>\n\t</div>\n\t<div class=\"ghost\">\n\t\t<div></div>\n\t\t<div></div>\n\t\t<div></div>\n\t\t<div></div>\n\t\t<div></div>\n\t</div>\n</div>",
+          "css": "@import url(\"https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap\");\n\n* {\n\tpadding: 0;\n\tmargin: 0;\n\tbox-sizing: border-box;\n}\n\nbody {\n\tmin-height: 100vh;\n\tdisplay: grid;\n\tplace-items: center;\n\n\t--bkg: #5eb3fd;\n\t--white: #e7e6e6;\n\n\tbackground-color: var(--white);\n\tbackground-image: url(\"https://www.transparenttextures.com/patterns/concrete-wall.png\");\n}\n\n.container {\n\twidth: 100%;\n\theight: 100%;\n\tdisplay: grid;\n\tplace-items: center;\n\toverflow: hidden;\n}\n\n.title {\n\tposition: absolute;\n\ttop: 50%;\n\tleft: 50%;\n\ttransform: translate(-50%, -50%);\n}\n.title h1 {\n\tfont-size: 25vmin;\n\tfont-weight: 900;\n\tfont-family: \"Montserrat\", sans-serif;\n\tcolor: black;\n}\n\n.ghost {\n\twidth: 8vmin;\n\theight: 12vmin;\n\tbackground-color: var(--white);\n\tbackground-image: url(\"https://www.transparenttextures.com/patterns/concrete-wall.png\");\n\tbackground-image: radial-gradient(ellipse at 35% 40%, #000 8%, transparent 0%),\n\t\tradial-gradient(ellipse at 65% 40%, #000 8%, transparent 0%),\n\t\tradial-gradient(ellipse at 50% 60%, #000 8%, transparent 0%);\n\tborder-radius: 100% / 70% 70% 0% 0%;\n\ttransform: translateX(100em) rotateZ(-90deg);\n\tposition: relative;\n\topacity: 0.9;\n\tmix-blend-mode: exclusion;\n\tanimation: ghostMove 4s ease-out infinite;\n}\n@keyframes ghostMove {\n\t0% {\n\t\ttransform: translateX(30em) rotateZ(-90deg);\n\t}\n\t100% {\n\t\ttransform: translateX(-35em) rotateZ(-90deg);\n\t}\n}\n.ghost div {\n\tposition: absolute;\n\twidth: 20%;\n\tbackground-color: var(--white);\n\tbackground-image: url(\"https://www.transparenttextures.com/patterns/concrete-wall.png\");\n}\n.ghost div:nth-of-type(1) {\n\theight: 7vmin;\n\tleft: 0;\n\tbottom: -6vmin;\n\tborder-radius: 100% / 0% 0% 50% 50%;\n}\n.ghost div:nth-of-type(2),\n.ghost div:nth-of-type(4) {\n\theight: 4vmin;\n\tleft: 20%;\n\tbottom: -3vmin;\n\tborder-radius: 100% / 50% 50% 0% 0%;\n\tbackground-color: transparent;\n}\n.ghost div:nth-of-type(3) {\n\theight: 4vmin;\n\tleft: 40%;\n\tbottom: -3.95vmin;\n\tborder-radius: 100% / 0% 0% 60% 60%;\n\tbackground-color: var(--white);\n}\n.ghost div:nth-of-type(4) {\n\tleft: 60%;\n}\n.ghost div:nth-of-type(5) {\n\theight: 3vmin;\n\tleft: 80%;\n\tbottom: -2.9vmin;\n\tborder-radius: 100% / 0% 0% 70% 70%;\n\tbackground-color: var(--white);\n}\n",
+          "js": ""
+        }
+      },
+      "id": 2
     }
   ]
 }

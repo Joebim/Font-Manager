@@ -12,7 +12,7 @@ import axios from 'axios'
 
 // const fileTypes = ["ttf", "otf", "woff", "woff2"];
 
-export default function Modal(props) {
+export default function FontModal(props) {
     // const [open, setOpen] = useState(true) 
     const [files, setFiles] = useState([]);
     const [tab, setTab] = useState(1)
@@ -83,7 +83,7 @@ export default function Modal(props) {
             })
             setSelectedFonts(selectFonts)
         } else {
-            selectFonts.splice(fontIndex, 1)
+            selectFonts.splice(index, 1)
             setSelectedFonts(selectFonts)
         }
 

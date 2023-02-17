@@ -1,8 +1,16 @@
 import React, {useState, useEffect} from 'react'
-import { Viewbutton } from './Viewbutton'
+import { Viewbutton } from '../global_components/Viewbutton'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import Modal from './Modal'
+import FontModal from '../global_components/FontModal'
+import { HiHeart } from "react-icons/hi";
+import { IconContext } from "react-icons";
+
+
+
+// import opentype from 'opentype.js'
+// const opentype = require('opentype.js');
+// import { load } from 'opentype.js'
 
 export default function FontStore() {
 
@@ -10,7 +18,6 @@ export default function FontStore() {
     const [open, setOpen] = useState(false)
     const [fonts, setFonts] = useState([])
     const [allGoogleFonts, setAllGoogleFonts] = useState([])
-
 
     const url = "http://localhost:8500"
 
@@ -35,69 +42,51 @@ export default function FontStore() {
     }, [])
 
     // console.log('fonts', fonts)
-
-
-    const firstNItems = (n, numbers) =>{
-        if (n >= 0) {
-            return numbers.slice(0, n);
-        }
-        return []
-    }
+       
+  
+    // const firstNItems = (n, numbers) =>{
+    //     if (n >= 0) {
+    //         return numbers.slice(0, n);
+    //     }
+    //     return []
+    // }
     
 
   return (
     <>
     <div className="w-full p-[30px] bg-[url('./assets/images/fontBgThree.png')] bg-cover">
-            <button type="button" className="px-[20px] py-[5px] text-purple-900 bg-white rounded-[20px] flex flex-row text-center text-[12px] justify-center items-center" 
-            onClick={() => setOpen(true)}>Add Fonts</button>
+        <button type="button" className="px-[20px] py-[5px] text-purple-900 bg-white rounded-[20px] flex flex-row text-center text-[12px] justify-center items-center" 
+        onClick={() => setOpen(true)}>Add Font</button>
     </div>
     <div className="w-full p-[40px] bg-[#f8f3ff] min-h-[400px] max-h-auto grid grid-cols-5 gap-[50px]">
         {fonts.map((font, index)=> {
             return(
-                <div className="card-container h-[170px] w-[170px] p-[10px]" key={index+font.font.family}>
-                    {/* {console.log('fonts', fonts)} */}
-                <div className={`glass-card flex h-full w-full bg-white border-solid border-[1px] justify-center items-end border-[#ffffff2e] rounded-[15px] absolute transition-all duration-[0.4s] ease-linear ${clicked == index ? "flip" : ""}`}>
-          
-                <div className={`front absolute w-[170px] p-[20px] flex flex-row justify-between items-center  ${clicked == index ? "flip" : ""}`}
-                >
-                    <p className=' font-normal text-purple-600 text-[10px]'>{font.font.family}</p>
-                    <Viewbutton setClicked={setClicked} clicked= {clicked} index={index}/>
-                </div>
-                <div className={`back absolute h-[170px] w-full flex flex-col justify-between items-center p-[20px] ${clicked == index ? "flip" : ""}`}>
-                    <div className="w-full flex flex-row justify-between items-center">
-                        <p className=' font-normal text-purple-600 text-[10px]'>{font.font.family}</p>
-                        <div className="px-[10px] py-[1px] text-white bg-purple-900 rounded-[20px] flex flex-row text-center text-[12px] justify-center items-center">
-                            {font.font.category}
+                <Link to={`/fontstore/${index}`} state={font} key={index+font.font.family}>
+                <div className="h-[200px] w-[190px] p-[10px]" >
+                    <div className="h-full w-full bg-purple-200 flex flex-col rounded-[10px]">
+                        <div className="flex-[2] flex justify-end w-full">
+                            <div className="h-full w-[20%] bg-purple-900 rounded-tr-[10px] rounded-bl-[20px] flex justify-center items-center">
+                            <IconContext.Provider value={{ color: "white", className: "global-class-name" }}>
+                                <HiHeart/>
+                            </IconContext.Provider>
+                            </div>
+                        </div>
+                        <div className="flex-[6] flex justify-center items-start text-[70px]">
+                            <h1 id={`text${index}`} className='text-[50px]'>Aa</h1>
+                        </div>
+                        <div className="flex-[2] bg-purple-400 rounded-b-[10px] flex justify-center items-center">
+                            <h1 className='text-white text-[12px]'>{font.font.family}</h1>
                         </div>
                     </div>
-                    <div className="w-full">
-                        <div className="w-full border-solid border-t-[1px] border-[#deadff] my-[5px]"></div>
-                        <div className="">
-                            {font.font.variants.map((weight , index)=> {
-                                return(
-                                    <button className="px-[10px] py-[1px] text-white bg-black rounded-[20px] mb-[5px] mx-[2px] text-center text-[10px]" key={index+weight}>{weight}</button>
-                                )
-                            })}
-                        </div>
-                        <div className="w-full border-solid border-b-[1px] border-[#deadff] my-[5px]"></div>
-                    </div>
-                    
-                    
-                    <div className="w-full flex justify-end">
-                        <Viewbutton setClicked={setClicked} clicked= {clicked}/>
-                    </div>
-                    
                 </div>
-        
+                </Link>
                 
-            </div>
-        </div>
             )
         })}
     </div>
 
 
-<Modal open={open} setOpen={setOpen} allGoogleFonts= {allGoogleFonts} fonts={fonts}/>
+<FontModal open={open} setOpen={setOpen} allGoogleFonts= {allGoogleFonts} fonts={fonts}/>
     </>
     
   )
