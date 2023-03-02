@@ -30,7 +30,7 @@ export default function FontLoad() {
         fontss.load().then(function(loaded_face) {
             // apply the font (which may re-render text and cause a page reflow)
             // after the font has finished downloading 
-            var content = document.getElementById(`text${index}`);
+          
             document.fonts.add(loaded_face);
             document.body.style.fontFamily = `${font.font.family}, serif`;
 
@@ -38,9 +38,11 @@ export default function FontLoad() {
         
             // OR... by default the content is hidden,
             // and it's rendered after the font is available
-        
-            content.style.visibility = "visible";
-            content.style.fontFamily = `${font.font.family}`
+
+            // var content = document.getElementById(`text${index}`);
+            // content.style.visibility = "visible";
+            // content.style.fontFamily = `${font.font.family}`
+            
      
             // OR... apply your own render strategy here...
         }).catch(function(err) {

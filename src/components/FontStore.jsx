@@ -66,13 +66,13 @@ export default function FontStore() {
                     <div className="h-full w-full bg-purple-200 flex flex-col rounded-[10px]">
                         <div className="flex-[2] flex justify-end w-full">
                             <div className="h-full w-[20%] bg-purple-900 rounded-tr-[10px] rounded-bl-[20px] flex justify-center items-center">
-                            <IconContext.Provider value={{ color: "white", className: "global-class-name" }}>
-                                <HiHeart/>
-                            </IconContext.Provider>
+                                <IconContext.Provider value={{ color: "white", className: "global-class-name" }}>
+                                    <HiHeart/>
+                                </IconContext.Provider>
                             </div>
                         </div>
                         <div className="flex-[6] flex justify-center items-start text-[70px]">
-                            <h1 id={`text${index}`} className='text-[50px]'>Aa</h1>
+                            <h1 id={`text${index}`} className='text-[50px]' style={{fontFamily:`${font.font.family}`,}}>Aa</h1>
                         </div>
                         <div className="flex-[2] bg-purple-400 rounded-b-[10px] flex justify-center items-center">
                             <h1 className='text-white text-[12px]'>{font.font.family}</h1>
