@@ -2,10 +2,10 @@ import { Fragment, useCallback, useRef, useState, useEffect } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid'
-import { ReactComponent as AddIcon } from "../assets/images/Add-Icon.svg"
+import { ReactComponent as AddIcon } from "../../assets/images/Add-Icon.svg"
 import { FileUploader } from "react-drag-drop-files";
 import { useDropzone } from 'react-dropzone';
-import fileImg from '../assets/images/fileImg.png'
+import fileImg from '../../assets/images/fileImg.png'
 import axios from 'axios'
 
 
@@ -91,7 +91,7 @@ export default function FontModal(props) {
 
     }
 
-    console.log('selectedFonts', selectedFonts)
+    // console.log('selectedFonts', selectedFonts)
 
 
     // console.log('fonts', fonts)

@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { allFonts, getFontStatus, getFontError, fetchFonts } from '../features/fonts/fontSlice'
 import { Viewbutton } from '../global_components/Viewbutton'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import FontModal from '../global_components/FontModal'
-import { HiHeart } from "react-icons/hi";
-import { IconContext } from "react-icons";
+import FontModal from '../features/fonts/FontModal'
 
+import FontList from '../features/fonts/FontList'
 
 
 // import opentype from 'opentype.js'
@@ -14,20 +15,23 @@ import { IconContext } from "react-icons";
 
 export default function FontStore() {
 
+    const dispatch = useDispatch()
+    const fonts = useSelector(allFonts)
+    const fontsStatus = useSelector(getFontStatus)
+    const error = useSelector(getFontError)
+
     const [clicked, setClicked] = useState() 
     const [open, setOpen] = useState(false)
-    const [fonts, setFonts] = useState([])
+    // const [fonts, setFonts] = useState([])
     const [allGoogleFonts, setAllGoogleFonts] = useState([])
 
-    const url = "http://localhost:8500"
+
+ 
 
     useEffect(() => {
-        axios.get(`${url}/fonts`)
-        .then((res)=> {
-            setFonts(res.data)
-        }).catch((err)=>{
-            console.log('err', err)
-        })
+        if(fontsStatus === 'idle') {
+            dispatch(fetchFonts())
+        }
 
 
         axios.get(`${process.env.REACT_APP_GOOGLEAPI_URL}key=${process.env.REACT_APP_GOOGLEAPI_KEY}`, {
@@ -39,9 +43,9 @@ export default function FontStore() {
         }).catch(err => {
             console.log('err', err)
         })
-    }, [])
+    }, [fontsStatus, dispatch])
 
-    // console.log('fonts', fonts)
+
        
   
     // const firstNItems = (n, numbers) =>{
@@ -50,6 +54,16 @@ export default function FontStore() {
     //     }
     //     return []
     // }
+
+    let content
+
+    if(fontsStatus === 'loading') {
+        content = <div className="loader">Loading...</div>
+    } else if(fontsStatus === 'succeeded') {
+        content = fonts.map((font, index) => <FontList index={index} key={index+font.font.family} font={font}/>)
+    } else if(fontsStatus === 'failed') {
+        content = <div>{error}</div>  
+    }
     
 
   return (
@@ -59,30 +73,7 @@ export default function FontStore() {
         onClick={() => setOpen(true)}>Add Font</button>
     </div>
     <div className="w-full p-[40px] bg-[#f8f3ff] min-h-[400px] max-h-auto grid grid-cols-5 gap-[50px]">
-        {fonts.map((font, index)=> {
-            return(
-                <Link to={`/fontstore/${index}`} state={font} key={index+font.font.family}>
-                <div className="h-[200px] w-[190px] p-[10px]" >
-                    <div className="h-full w-full bg-purple-200 flex flex-col rounded-[10px]">
-                        <div className="flex-[2] flex justify-end w-full">
-                            <div className="h-full w-[20%] bg-purple-900 rounded-tr-[10px] rounded-bl-[20px] flex justify-center items-center">
-                                <IconContext.Provider value={{ color: "white", className: "global-class-name" }}>
-                                    <HiHeart/>
-                                </IconContext.Provider>
-                            </div>
-                        </div>
-                        <div className="flex-[6] flex justify-center items-start text-[70px]">
-                            <h1 id={`text${index}`} className='text-[50px]' style={{fontFamily:`${font.font.family}`,}}>Aa</h1>
-                        </div>
-                        <div className="flex-[2] bg-purple-400 rounded-b-[10px] flex justify-center items-center">
-                            <h1 className='text-white text-[12px]'>{font.font.family}</h1>
-                        </div>
-                    </div>
-                </div>
-                </Link>
-                
-            )
-        })}
+       {content}
     </div>
 
 

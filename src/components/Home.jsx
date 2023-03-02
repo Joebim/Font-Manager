@@ -3,33 +3,23 @@ import axios from 'axios'
 import textureBackground from '../assets/images/textureBackground.png'
 import blowingRocket from '../assets/images/blowingRocket.png'
 import { Link } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import { allFonts, getFontStatus, fetchFonts } from '../features/fonts/fontSlice'
 
 export default function Home() {
 
-    const [fontsData, setFontsData] = useState([])
+    const dispatch = useDispatch()
+    const fontsData = useSelector(allFonts)
+    const fontsStatus = useSelector(getFontStatus)
 
-    const url = "http://localhost:8500"
 
-    // const projectsData = [
-    //     {"title": "Belotta"},
-    //     {"title": "Righteous"},
-    //     {"title": "Honey Cake"},
-    //     {"title": "Balsamiq"},
-    //     {"title": "Ubuntu"},
-    //     {"title": "Georgia"},
-    // ]
+    
 
     useEffect(() => {
-     axios({
-        method: "get",
-        url: `${url}/fonts`
-     }).then((res)=> {
-        console.log('res', res)
-        setFontsData(res.data)
-     }).catch(err =>{
-        console.log('err', err)
-     })
-    }, [])
+        if(fontsStatus === 'idle') {
+            dispatch(fetchFonts())
+        }
+    }, [fontsStatus, dispatch])
     
     // console.log('projectData', projectsData)
 

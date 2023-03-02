@@ -6,14 +6,14 @@ import Header from './global_components/Header';
 import Home from './components/Home';
 import Sidebar from './global_components/Sidebar';
 import Footer from './global_components/Footer';
-import FontAdd from './components/FontAdd';
+import FontAdd from './features/fonts/FontAdd';
 import FontStore from './components/FontStore';
 import FontTemplateStore from './components/FontTemplateStore';
 import FontLab from './components/FontLab';
 import AboutPage from './components/About';
-import ViewFont from './global_components/ViewFont';
-import ViewTemplate from './global_components/ViewTemplate';
-import FontLoad from './global_components/FontLoad';
+import ViewFont from './features/fonts/ViewFont';
+import ViewTemplate from './features/templates/ViewTemplate';
+import FontLoad from './features/fonts/FontLoad';
 
 function App() {
 

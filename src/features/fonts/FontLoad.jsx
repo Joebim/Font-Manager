@@ -1,20 +1,20 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import { useSelector, useDispatch } from 'react-redux'
+import { allFonts, getFontStatus, fetchFonts } from './fontSlice'
 
 export default function FontLoad() {
-    const [fonts, setFonts] = useState([])
 
-  const url = "http://localhost:8500"
+    const dispatch = useDispatch()
+    const fonts = useSelector(allFonts)
+    const fontsStatus = useSelector(getFontStatus)
 
   useEffect(() => {
-        axios.get(`${url}/fonts`)
-        .then((res)=> {
-            setFonts(res.data)
-        }).catch((err)=>{
-            console.log('err', err)
-        })
+    if(fontsStatus === 'idle') {
+        dispatch(fetchFonts())
+    }
 
-    }, [])
+    }, [fontsStatus, dispatch])
 
 
      useEffect(() => {

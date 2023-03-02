@@ -1,5 +1,5 @@
 import React from 'react'
-import { ReactComponent as AddIcon} from "../assets/images/Add-Icon.svg"
+import { ReactComponent as AddIcon} from "../../assets/images/Add-Icon.svg"
 
 export default function FontAdd() {
 

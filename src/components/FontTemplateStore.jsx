@@ -1,33 +1,35 @@
 import React, {useState, useEffect} from 'react'
 import { Viewbutton } from '../global_components/Viewbutton'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
-import TemplateModal from '../global_components/TemplateModel'
-import { HiHeart } from "react-icons/hi";
-import { IconContext } from "react-icons";
-import { CgCarousel } from "react-icons/cg";
 
+import TemplateModal from '../features/templates/TemplateModal'
+
+import { useSelector, useDispatch } from 'react-redux'
+import { allTemplates, getTemplateStatus, getTemplateError, fetchTemplates } from '../features/templates/templateSlice'
+import TemplateList from '../features/templates/TemplateList'
 
 
 
 export default function FontTemplateStore() {
 
+    const dispatch = useDispatch()
+    const templates = useSelector(allTemplates)
+    const templatesStatus = useSelector(getTemplateStatus)
+    const error = useSelector(getTemplateError)
+
     const [clicked, setClicked] = useState() 
     const [open, setOpen] = useState(false)
-    const [templates, setTemplates] = useState([])
+    // const [templates, setTemplates] = useState([])
   
     // const [allGoogleFonts, setAllGoogleFonts] = useState([])
 
 
-    const url = "http://localhost:8500"
+    
 
     useEffect(() => {
-        axios.get(`${url}/templates`)
-        .then((res)=> {
-            setTemplates(res.data)
-        }).catch((err)=>{
-            console.log('err', err)
-        })
+        if(templatesStatus === 'idle') {
+            dispatch(fetchTemplates())
+        }
 
 
         // axios.get(`${process.env.REACT_APP_GOOGLEAPI_URL}key=${process.env.REACT_APP_GOOGLEAPI_KEY}`, {
@@ -39,17 +41,27 @@ export default function FontTemplateStore() {
         // }).catch(err => {
         //     console.log('err', err)
         // })
-    }, [])
+    }, [templatesStatus, dispatch])
 
     // console.log('fonts', fonts)
 
     console.log('templates', templates)
 
-    const firstNItems = (n, numbers) =>{
-        if (n >= 0) {
-            return numbers.slice(0, n);
-        }
-        return []
+    // const firstNItems = (n, numbers) =>{
+    //     if (n >= 0) {
+    //         return numbers.slice(0, n);
+    //     }
+    //     return []
+    // }
+
+    let content
+
+    if(templatesStatus === 'loading') {
+        content = <div className="loader">Loading...</div>
+    } else if(templatesStatus === 'succeeded') {
+        content = templates.map((template, index) => <TemplateList index={index} key={template.template.name+index} template={template}/>)
+    } else if(templatesStatus === 'failed') {
+        content = <div>{error}</div>  
     }
 
   return (
@@ -60,34 +72,7 @@ export default function FontTemplateStore() {
     </div>
     <div className="w-full p-[40px] bg-[#f8f3ff] min-h-[400px] max-h-auto grid grid-cols-5 gap-[50px]">
         
-        {templates.map((template, index)=>{
-            return (
-                <Link to={`/fonttemplatestore/${index}`} key={template.template.name+index} state={template}>
-                    <div className="h-[300px] w-[200px] bg-[#e3c7ff] rounded-[18px] p-[15px] flex flex-col justify-between">
-                <div className="w-full flex justify-end">
-                <div className="h-[32px] w-[32px] bg-white rounded-[5px] flex justify-center items-center">
-                <IconContext.Provider value={{ color: "#500062", className: "global-class-name" }}>
-                    <HiHeart/>
-                </IconContext.Provider>
-                
-                </div>
-                </div>
-
-                <div className="h-[60px] w-full rounded-[10px] bg-white flex flex-row justify-between px-[15px] items-center">
-                    <div className="">
-                        <h1 className='text-purple-900 text-[11px] font-bold'>{template.template.name}</h1>
-                    </div>
-                    <div className="h-[28px] w-[28px] bg-purple-900 rounded-[5px] flex justify-center items-center">
-                    <IconContext.Provider value={{ color: "white", className: "global-class-name" }}>
-                        <CgCarousel/>
-                    </IconContext.Provider>
-                    </div>
-                </div>
-                </div>
-                </Link>
-                
-            )
-        })}
+        {content}
         
     </div>
 

@@ -5,6 +5,8 @@ import { Controlled as CodeMirror } from 'react-codemirror2';
 import Pusher from 'pusher-js';
 import pushid from 'pushid';
 import { useLocation } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { allFonts, fontsStatus, fetchFonts } from '../features/fonts/fontSlice';
 
 
 
@@ -20,9 +22,12 @@ import 'codemirror/mode/javascript/javascript';
 
 export default function FontLab() {
 
+  const dispatch = useDispatch()
 const location = useLocation();
 
-    const [fonts, setFonts] = useState([])
+    const fonts = useSelector(allFonts)
+    const fontsStatus = useSelector(fontsStatus)
+
     const [allGoogleFonts, setAllGoogleFonts] = useState([])
     const [template, setTemplate] = useState(location.state)
     const [id, setId] = useState('')
@@ -32,27 +37,31 @@ const location = useLocation();
     console.log('template', template)
   
 
-    const url = "http://localhost:8500"
+    
 
     useEffect(() => {
-        axios.get(`${url}/fonts`)
-        .then((res)=> {
-            setFonts(res.data)
-        }).catch((err)=>{
-            console.log('err', err)
-        })
+
+      if(fontsStatus === 'idle') {
+        dispatch(fetchFonts())
+    }
+        // axios.get(`${url}/fonts`)
+        // .then((res)=> {
+        //     setFonts(res.data)
+        // }).catch((err)=>{
+        //     console.log('err', err)
+        // })
 
 
-        axios.get(`${process.env.REACT_APP_GOOGLEAPI_URL}key=${process.env.REACT_APP_GOOGLEAPI_KEY}`, {
-            sort: 'alpha',
-        })
-        .then(res => {
-            // console.log('res', res)
-            setAllGoogleFonts(res.data.items)
-        }).catch(err => {
-            console.log('err', err)
-        })
-    }, [])
+        // axios.get(`${process.env.REACT_APP_GOOGLEAPI_URL}key=${process.env.REACT_APP_GOOGLEAPI_KEY}`, {
+        //     sort: 'alpha',
+        // })
+        // .then(res => {
+        //     // console.log('res', res)
+        //     setAllGoogleFonts(res.data.items)
+        // }).catch(err => {
+        //     console.log('err', err)
+        // })
+    }, [fontsStatus, dispatch])
 
 
 
