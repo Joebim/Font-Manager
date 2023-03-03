@@ -15,10 +15,10 @@ export default function GlassCard() {
                 >
                     <p className=' font-normal text-purple-600 text-[10px]' 
                     // style={{
-                    //     fontFamily: font.font.family
+                    //     fontFamily: font.family
                     // }}
                     >
-                        {/* {font.font.family} */}
+                        {/* {font.family} */}
                         </p>
                     <Viewbutton 
                     // setClicked={setClicked} clicked= {clicked} index={index}
@@ -27,16 +27,16 @@ export default function GlassCard() {
                 <div className={`back absolute h-[170px] w-full flex flex-col justify-between items-center p-[20px] ${clicked == index ? "flip" : ""}`}>
                     <div className="w-full flex flex-row justify-between items-center">
                         <p className=' font-normal text-purple-600 text-[10px]'>
-                            {/* {font.font.family} */}
+                            {/* {font.family} */}
                             </p>
                         <div className="px-[10px] py-[1px] text-white bg-purple-900 rounded-[20px] flex flex-row text-center text-[12px] justify-center items-center">
-                            {/* {font.font.category} */}
+                            {/* {font.category} */}
                         </div>
                     </div>
                     <div className="w-full">
                         <div className="w-full border-solid border-t-[1px] border-[#deadff] my-[5px]"></div>
                         <div className="">
-                            {/* {font.font.variants.map((weight , index)=> {
+                            {/* {font.variants.map((weight , index)=> {
                                 return(
                                     <button className="px-[10px] py-[1px] text-white bg-black rounded-[20px] mb-[5px] mx-[2px] text-center text-[10px]" key={index+weight}>{weight}</button>
                                 )

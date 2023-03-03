@@ -5,7 +5,7 @@ import { IconContext } from "react-icons";
 import { CgCarousel } from "react-icons/cg";
 
 export default function TemplateList(props) {
-
+console.log('props.template', props.template)
     return (
         <Link to={`/fonttemplatestore/${props.index}`} state={props.template}>
             <div className="h-[300px] w-[200px] bg-[#e3c7ff] rounded-[18px] p-[15px] flex flex-col justify-between">
@@ -20,7 +20,7 @@ export default function TemplateList(props) {
 
         <div className="h-[60px] w-full rounded-[10px] bg-white flex flex-row justify-between px-[15px] items-center">
             <div className="">
-                <h1 className='text-purple-900 text-[11px] font-bold'>{props.template.template.name}</h1>
+                <h1 className='text-purple-900 text-[11px] font-bold'>{props.template.name}</h1>
             </div>
             <div className="h-[28px] w-[28px] bg-purple-900 rounded-[5px] flex justify-center items-center">
             <IconContext.Provider value={{ color: "white", className: "global-class-name" }}>

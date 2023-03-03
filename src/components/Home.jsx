@@ -50,7 +50,7 @@ export default function Home() {
                     <div className="flex-[2]">
                         {fontsData.map((font, index) => {
                             return (
-                                <button className='py-[6px] md:py-[11px] px-[16px] mb-[10px] mx-[6px] font-medium text-[12px] border-black border-solid border-[1px] rounded-[40px] text-center duration-[0.5s] text-black hover:text-white hover:bg-black' key={index+font.font.family}>{font.font.family}</button>
+                                <button className='py-[6px] md:py-[11px] px-[16px] mb-[10px] mx-[6px] font-medium text-[12px] border-black border-solid border-[1px] rounded-[40px] text-center duration-[0.5s] text-black hover:text-white hover:bg-black' key={index+font.family}>{font.family}</button>
                             )
                         })
                         }

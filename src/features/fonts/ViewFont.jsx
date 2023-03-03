@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { deleteFontRequest} from './fontSlice'
 
 export default function ViewFont(props) {
 
@@ -10,38 +12,26 @@ export default function ViewFont(props) {
     const location = useLocation()
     // const [allFonts, setAllFonts] = useState([])
     const [fonts, setFonts] = useState(location.state)
+    // const fontStatus = useSelector(getFontStatus)
     // const [toggleDropdown, setToggleDropdown] = useState(false)
-
-    const navigate = useNavigate()
-    const url = "http://localhost:8500"
-    
   
 
-    // useEffect(()=>{
-      
-    //   axios.get(`${url}/fonts`)
-    //   .then((res)=> {
-    //       setAllFonts(res.data)
-    //   }).catch((err)=>{
-    //       console.log('err', err)
-    //   })
-    // },[])
-   
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
  
   console.log('fontData', fonts)
     
- const deleteFont = (id) => { 
-  navigate(-1)
-    axios.delete(`${url}/fonts/${id}`)
-    .then((res)=> {
-      console.log('res', res.data )
-        // setFonts(
-        //     allFonts.filter((font)=> font.id !== id)
-        // )
-       
-    }).catch((err)=>{
-        console.log('err', err)
-    })
+  const deleteFont = (id) => { 
+  try {
+    dispatch(deleteFontRequest(id))
+  } catch (error) {
+    console.log('error', error)
+  } finally {
+    navigate(-1)
+  }
+
+  
+
  }
 
 
@@ -71,7 +61,7 @@ export default function ViewFont(props) {
        <div className="w-full h-[400px] bg-purple-600 px-[70px] py-[70px] flex flex-row">
           <div className="flex-[1]">
             <div className="">
-              <h1 className='text-white text-[30px]'>{fonts?.font.family}</h1>
+              <h1 className='text-white text-[30px]'>{fonts?.family}</h1>
               <div className="w-full flex flex-row pt-[20px]">
                 <button className='bg-transparent mr-[10px] text-white'>Regular</button>
                 <button className='bg-transparent mr-[10px] text-white border-solid border-purple-100 border-l-[2px] pl-[10px]'>Medium</button>
@@ -85,8 +75,8 @@ export default function ViewFont(props) {
 
           <div className="flex-[1]">
             <div className="w-full h-full flex flex-col justify-center items-end pb-[40px]">
-              <h1 className='text-[150px] text-purple-300' style={{fontFamily:`${fonts.font.family}`,}}>Aa</h1>
-              <p className='text-[40px] text-purple-300' style={{fontFamily:`${fonts.font.family}`,}}>123456789</p>
+              <h1 className='text-[150px] text-purple-300' style={{fontFamily:`${fonts.family}`,}}>Aa</h1>
+              <p className='text-[40px] text-purple-300' style={{fontFamily:`${fonts.family}`,}}>123456789</p>
             </div>
           </div>
 
@@ -94,31 +84,31 @@ export default function ViewFont(props) {
         <div className="w-full p-[40px] bg-purple-200 border-solid border-purple-800 border-t-[4px] min-h-[400px] px-[70px] py-[70px]">
           <div className="w-full h-[100px] flex flex-row justify-between">
             <h1 className='text-[30px] font-bold text-purple-900'>Lorem 1</h1>
-            <h1 className='text-[30px] font-bold text-purple-900' style={{fontFamily:`${fonts.font.family}`,}}>The quick brown fox jumps over the lazy dog</h1>
+            <h1 className='text-[30px] font-bold text-purple-900' style={{fontFamily:`${fonts.family}`,}}>The quick brown fox jumps over the lazy dog</h1>
           </div>
           <div className="w-full h-[100px] flex flex-row justify-between">
             <h1 className='text-[30px] font-semibold text-purple-900'>Lorem 2</h1>
-            <h1 className='text-[30px] font-semibold text-purple-900' style={{fontFamily:`${fonts.font.family}`,}}>The quick brown fox jumps over the lazy dog</h1>
+            <h1 className='text-[30px] font-semibold text-purple-900' style={{fontFamily:`${fonts.family}`,}}>The quick brown fox jumps over the lazy dog</h1>
           </div>
           <div className="w-full h-[100px] flex flex-row justify-between">
             <h1 className='text-[30px] font-medium text-purple-900'>Lorem 3</h1>
-            <h1 className='text-[30px] font-medium text-purple-900' style={{fontFamily:`${fonts.font.family}`,}}>The quick brown fox jumps over the lazy dog</h1>
+            <h1 className='text-[30px] font-medium text-purple-900' style={{fontFamily:`${fonts.family}`,}}>The quick brown fox jumps over the lazy dog</h1>
           </div>
           <div className="w-full h-[100px] flex flex-row justify-between">
             <h1 className='text-[30px] font-normal text-purple-900'>Lorem 4</h1>
-            <h1 className='text-[30px] font-normal text-purple-900' style={{fontFamily:`${fonts.font.family}`,}}>The quick brown fox jumps over the lazy dog</h1>
+            <h1 className='text-[30px] font-normal text-purple-900' style={{fontFamily:`${fonts.family}`,}}>The quick brown fox jumps over the lazy dog</h1>
           </div>
           <div className="w-full h-[100px] flex flex-row justify-between">
             <h1 className='text-[30px] font-light text-purple-900'>Lorem 5</h1>
-            <h1 className='text-[30px] font-light text-purple-900' style={{fontFamily:`${fonts.font.family}`,}}>The quick brown fox jumps over the lazy dog</h1>
+            <h1 className='text-[30px] font-light text-purple-900' style={{fontFamily:`${fonts.family}`,}}>The quick brown fox jumps over the lazy dog</h1>
           </div>
           <div className="w-full h-[100px] flex flex-row justify-between">
             <h1 className='text-[30px] font-extralight text-purple-900'>Lorem 6</h1>
-            <h1 className='text-[30px] font-extralight text-purple-900' style={{fontFamily:`${fonts.font.family}`,}}>The quick brown fox jumps over the lazy dog</h1>
+            <h1 className='text-[30px] font-extralight text-purple-900' style={{fontFamily:`${fonts.family}`,}}>The quick brown fox jumps over the lazy dog</h1>
           </div>
           <div className="w-full h-[100px] flex flex-row justify-between">
             <h1 className='text-[30px] font-thin text-purple-900'>Lorem 7</h1>
-            <h1 className='text-[30px] font-thin text-purple-900' style={{fontFamily:`${fonts.font.family}`,}}>The quick brown fox jumps over the lazy dog</h1>
+            <h1 className='text-[30px] font-thin text-purple-900' style={{fontFamily:`${fonts.family}`,}}>The quick brown fox jumps over the lazy dog</h1>
           </div>
         </div>
       </div>

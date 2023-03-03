@@ -17,10 +17,10 @@ export default function FontList(props) {
                     </div>
                 </div>
                 <div className="flex-[6] flex justify-center items-start text-[70px]">
-                    <h1 id={`text${props.index}`} className='text-[50px]' style={{fontFamily:`${props.font.font.family}`,}}>Aa</h1>
+                    <h1 id={`text${props.index}`} className='text-[50px]' style={{fontFamily:`${props.font.family}`,}}>Aa</h1>
                 </div>
                 <div className="flex-[2] bg-purple-400 rounded-b-[10px] flex justify-center items-center">
-                    <h1 className='text-white text-[12px]'>{props.font.font.family}</h1>
+                    <h1 className='text-white text-[12px]'>{props.font.family}</h1>
                 </div>
             </div>
         </div>

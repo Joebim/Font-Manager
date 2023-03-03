@@ -2,30 +2,29 @@ import React,{useState, useEffect} from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { deleteTemplateRequest } from './templateSlice'
 import axios from 'axios'
 
 export default function ViewTemplate(props) {
 
+  const dispatch = useDispatch()
   const location = useLocation()
   const [templates, setTemplates] = useState(location.state)
 
     // const params = useParams()
 
     const navigate = useNavigate()
-    const url = "http://localhost:8500"
+    // const url = "http://localhost:8500"
 
     const deleteTemplate = (id) => {
-      navigate(-1)
-      axios.delete(`${url}/templates/${id}`)
-      .then((res)=> {
-        console.log('res', res.data )
-          // setFonts(
-          //     allFonts.filter((font)=> font.id !== id)
-          // )
-         
-      }).catch((err)=>{
-          console.log('err', err)
-      })
+      try {
+        dispatch(deleteTemplateRequest(id))
+      } catch (error) {
+        console.log('error', error)
+      } finally {
+        navigate(-1)
+      }
     }
 
   return (
@@ -57,13 +56,13 @@ export default function ViewTemplate(props) {
         </section>
         <div className="flex-[2] h-full w-full p-[50px]">
           <div className="">
-            <h1 className='text-[40px] font-bold'>{templates.template.name}</h1>
-            <p className='text-[14px]'>Author: <span className='text-purple-900 pl-[10px]'>{`${templates.template.Author}`}</span></p>
+            <h1 className='text-[40px] font-bold'>{templates.name}</h1>
+            <p className='text-[14px]'>Author: <span className='text-purple-900 pl-[10px]'>{`${templates.Author}`}</span></p>
             <div className="w-[70%] pt-[20px] pb-[40px]">
               <p className='text-[15px]'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt est qui quidem cum, possimus, minus eaque dolor, nostrum quaerat nulla in consequatur. Accusantium ut corrupti porro magni consequatur qui praesentium!</p>
             </div>
           </div>
-          <Link to={`/fontlab/${templates.template.id}`} state={templates.template}>
+          <Link to={`/fontlab/${templates.id}`} state={templates}>
             <button className='px-[15px] py-[9px] bg-purple-900 rounded-[40px] text-[14px] text-center duration-[0.5s] text-white'>Use Template</button>
           </Link>
           
@@ -75,7 +74,7 @@ export default function ViewTemplate(props) {
           <div className="">
           <div className="w-full py-[30px] px-[50px]">
             <h1 className='pb-[20px] font-bold text-[15px]'>Made With</h1>
-            {templates.template.madeWith.map((tool, index)=>{
+            {templates.madeWith.map((tool, index)=>{
               return (
                 <button className="px-[10px] py-[1px] text-purple-900 bg-white rounded-[20px] mb-[5px] mx-[2px] text-center text-[10px] border-black border-solid border-[1px] justify-between items-center" key={index}>{tool.name}</button>
               )
@@ -85,7 +84,7 @@ export default function ViewTemplate(props) {
 
           <div className="w-full pb-[30px] px-[50px]">
             <h1 className='pb-[20px] font-bold text-[15px]'>Compactible Browsers</h1>
-            {templates.template.compactiibleBrowsers.map((browser, index)=>{
+            {templates.compactiibleBrowsers.map((browser, index)=>{
               return (
                 <button className="px-[10px] py-[1px] text-purple-900 bg-white rounded-[20px] mb-[5px] mx-[2px] text-center text-[10px] border-black border-solid border-[1px] justify-between items-center" key={index}>{browser.name}</button>
               )

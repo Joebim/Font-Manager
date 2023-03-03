@@ -13,10 +13,16 @@ import { webTools } from '../../global_components/webTools';
 import { IoIosAdd } from "react-icons/io";
 import { GrFormSubtract } from "react-icons/gr";
 import { IconContext } from 'react-icons';
+import { useDispatch } from 'react-redux';
+import { addNewTemplate } from './templateSlice';
 
 
 
 export default function TemplateModal(props) {
+
+    const dispatch = useDispatch()
+ 
+
 
     const [name, setName] = useState()
     const [html, setHtml] = useState('')
@@ -28,6 +34,8 @@ export default function TemplateModal(props) {
     const [day, setDay] = useState(dayjs('2022-04-07'))
     const [selectedTools, setSelectedTools] = useState([])
     const [selectedBrowsers, setSelectedBrowsers] = useState([])
+    const [postRequestStatus, setPostRequestStatus] = useState("idle")
+
     // const [toolClicked, setToolClicked] = useState(false) 
     // const [browserClicked, setBrowserClicked] = useState(false) 
 
@@ -151,13 +159,23 @@ export default function TemplateModal(props) {
               },
             }
             console.log('data', template)
-        axios.post("http://localhost:8500/templates", {
-            template
-        }).then((res) => {
-            console.log('res', res)
-        }).catch((err) => {
-            console.log('err', err)
-        })
+
+            try {
+                setPostRequestStatus("pending")
+                dispatch(addNewTemplate(template))
+            }
+            catch (err) {
+                console.error('Failed to save the post: ', err)
+            } finally {
+                setPostRequestStatus("idle")
+            }
+        // axios.post("http://localhost:8500/templates", {
+        //     template
+        // }).then((res) => {
+        //     console.log('res', res)
+        // }).catch((err) => {
+        //     console.log('err', err)
+        // })
     }
 
 

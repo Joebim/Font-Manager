@@ -60,7 +60,7 @@ export default function FontStore() {
     if(fontsStatus === 'loading') {
         content = <div className="loader">Loading...</div>
     } else if(fontsStatus === 'succeeded') {
-        content = fonts.map((font, index) => <FontList index={index} key={index+font.font.family} font={font}/>)
+        content = fonts.map((font, index) => <FontList index={index} key={index+font.family} font={font}/>)
     } else if(fontsStatus === 'failed') {
         content = <div>{error}</div>  
     }
@@ -69,6 +69,8 @@ export default function FontStore() {
   return (
     <>
     <div className="w-full p-[30px] bg-[url('./assets/images/fontBgThree.png')] bg-cover">
+    {/* <div className="w-full p-[30px] bg-purple-200"> */}
+
         <button type="button" className="px-[20px] py-[5px] text-purple-900 bg-white rounded-[20px] flex flex-row text-center text-[12px] justify-center items-center" 
         onClick={() => setOpen(true)}>Add Font</button>
     </div>

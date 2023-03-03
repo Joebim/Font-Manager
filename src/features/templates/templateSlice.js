@@ -13,6 +13,28 @@ export const fetchTemplates = createAsyncThunk("templates/fetchTemplates", async
     }
 })
 
+export const addNewTemplate = createAsyncThunk("templates/addTemplate", async (template) => {
+    try{
+        const response = await axios.post(`${url}/templates`, template)
+        return response.data
+    } catch (error) {
+        console.log(error)
+    }
+    
+})
+
+export const deleteTemplateRequest = createAsyncThunk("templates/deleteTemplate", async (id) => {
+    try{
+        const response = await axios.delete(`${url}/templates/${id}`)
+        if(response.data){
+            return id
+        }
+
+    } catch (error) {
+        console.log(error)
+    }
+})
+
 const templatesReducer = createSlice({
     name: "templates",
     initialState: {
@@ -38,6 +60,13 @@ const templatesReducer = createSlice({
             .addCase(fetchTemplates.rejected, (state, action) => {
                 state.status = "failed";
                 state.error = action.error.message;
+            })
+            .addCase(addNewTemplate.fulfilled, (state, action) => {
+                console.log('action.payload', action.payload)
+                state.templates.push(action.payload)
+            })
+            .addCase(deleteTemplateRequest.fulfilled, (state, action) => {
+                state.templates = state.templates.filter((template) => template.id !== action.payload)
             })
     }
 })

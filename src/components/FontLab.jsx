@@ -6,8 +6,7 @@ import Pusher from 'pusher-js';
 import pushid from 'pushid';
 import { useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { allFonts, fontsStatus, fetchFonts } from '../features/fonts/fontSlice';
-
+import { allFonts, getFontStatus, fetchFonts } from '../features/fonts/fontSlice';
 
 
 
@@ -26,7 +25,7 @@ export default function FontLab() {
 const location = useLocation();
 
     const fonts = useSelector(allFonts)
-    const fontsStatus = useSelector(fontsStatus)
+    const fontsStatus = useSelector(getFontStatus)
 
     const [allGoogleFonts, setAllGoogleFonts] = useState([])
     const [template, setTemplate] = useState(location.state)
@@ -130,7 +129,7 @@ const location = useLocation();
                         <div className="h-full w-full overflow-y-scroll border-solid border-t-[0.1pt] border-[#e2e2e2] pt-[10px]">
                         {fonts.map((font, index)=>{
                             return (
-                                <button className="px-[10px] py-[1px] text-white bg-purple-900 rounded-[20px] mb-[5px] mx-[2px] text-center text-[10px]" key={index+font.font.family}>{font.font.family}</button>
+                                <button className="px-[10px] py-[1px] text-white bg-purple-900 rounded-[20px] mb-[5px] mx-[2px] text-center text-[10px]" key={index+font.family}>{font.family}</button>
                             )
                         })}                        
                         </div>
@@ -184,7 +183,7 @@ const location = useLocation();
 
 
 
-        <section className="playground  w-full flex flex-row">
+        <section className="playground  w-full hidden">
           <div className="code-editor html-code flex-[4] h-[300px] overflow-y-visible">
             <div className="editor-header">HTML</div>
             <CodeMirror

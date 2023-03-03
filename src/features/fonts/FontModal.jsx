@@ -7,17 +7,22 @@ import { FileUploader } from "react-drag-drop-files";
 import { useDropzone } from 'react-dropzone';
 import fileImg from '../../assets/images/fileImg.png'
 import axios from 'axios'
+import { useDispatch, useSelector } from 'react-redux'
+import { addNewFonts } from './fontSlice'
 
 
 
 // const fileTypes = ["ttf", "otf", "woff", "woff2"];
 
 export default function FontModal(props) {
+
+    const dispatch = useDispatch()
+
     // const [open, setOpen] = useState(true) 
     const [files, setFiles] = useState([]);
     const [tab, setTab] = useState(1)
     const [selectedFonts, setSelectedFonts] = useState([])
-    // const [postFontsData, setPostFontsData] = useState({})
+    const [postRequestStatus, setPostRequestStatus] = useState("idle")
 
     const onDrop = useCallback(acceptedFiles => {
 
@@ -43,21 +48,26 @@ export default function FontModal(props) {
     )
     ) 
 
+   const cansave = selectedFonts.length > 0 && postRequestStatus === "idle" 
+
     // console.log('postFontData', postFontsData)
 
     const addFontsToStore = (e) => {
         e.preventDefault()
 
-        selectedFonts.forEach(font =>{
-        console.log('font', font)
-            axios.post('http://localhost:8500/fonts', {
-                font
-            }).then((res) => {
-                console.log('res', res)
-            }).catch((err) => {
+        if(cansave) {
+            try{
+                setPostRequestStatus("pending")
+                selectedFonts.forEach(font => {
+                    dispatch(addNewFonts(font))
+                })
+            } catch(err) {
                 console.log('err', err)
-            })
-        })
+            } finally {
+                setPostRequestStatus("idle")
+            }
+        }
+
     }
         
 

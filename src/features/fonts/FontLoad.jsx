@@ -20,7 +20,7 @@ export default function FontLoad() {
      useEffect(() => {
      fonts.forEach((font, index) => {
 
-        var fontss = new FontFace(font.font.family, `url(${font.font.files.regular})`, {
+        var fontss = new FontFace(font.family, `url(${font.files.regular})`, {
             style: 'normal', weight: '400'
         });
 
@@ -32,7 +32,7 @@ export default function FontLoad() {
             // after the font has finished downloading 
           
             document.fonts.add(loaded_face);
-            document.body.style.fontFamily = `${font.font.family}, serif`;
+            document.body.style.fontFamily = `${font.family}, serif`;
 
             // console.log("document",document.body.style.fontFamily)
         
@@ -41,7 +41,7 @@ export default function FontLoad() {
 
             // var content = document.getElementById(`text${index}`);
             // content.style.visibility = "visible";
-            // content.style.fontFamily = `${font.font.family}`
+            // content.style.fontFamily = `${font.family}`
             
      
             // OR... apply your own render strategy here...

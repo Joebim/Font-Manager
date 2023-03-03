@@ -14,6 +14,29 @@ export const fetchFonts = createAsyncThunk("fonts/fetchFonts", async () => {
     
 })
 
+export const addNewFonts = createAsyncThunk("fonts/addFonts", async (font) => {
+    try{
+        const response = await axios.post(`${url}/fonts`, font)
+        return response.data
+    } catch (error) {
+        console.log(error)
+    }
+    
+})
+
+export const deleteFontRequest = createAsyncThunk("fonts/deleteFont", async (id) => {
+    try{
+        const response = await axios.delete(`${url}/fonts/${id}`)
+        if(response.data){
+            return id
+        }
+
+    } catch (error) {
+        console.log(error)
+    }
+    
+})
+
 const fontsReducer = createSlice({
     name: "fonts",
     initialState: {
@@ -39,6 +62,14 @@ const fontsReducer = createSlice({
                 state.status = "failed";
                 state.error = action.error.message;
             })
+            .addCase(addNewFonts.fulfilled, (state, action) => {
+                console.log('action.payload', action.payload)
+                state.fonts.push(action.payload)
+            })
+            .addCase(deleteFontRequest.fulfilled, (state, action) => {
+                    state.fonts = state.fonts.filter(font => font.id !== action.payload)
+            })
+            
     }
 })
 

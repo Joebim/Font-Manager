@@ -59,7 +59,7 @@ export default function FontTemplateStore() {
     if(templatesStatus === 'loading') {
         content = <div className="loader">Loading...</div>
     } else if(templatesStatus === 'succeeded') {
-        content = templates.map((template, index) => <TemplateList index={index} key={template.template.name+index} template={template}/>)
+        content = templates.map((template, index) => <TemplateList index={index} key={template.name+index} template={template}/>)
     } else if(templatesStatus === 'failed') {
         content = <div>{error}</div>  
     }
