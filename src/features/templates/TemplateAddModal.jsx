@@ -18,7 +18,7 @@ import { addNewTemplate } from './templateSlice';
 
 
 
-export default function TemplateModal(props) {
+export default function TemplateAddModal(props) {
 
     const dispatch = useDispatch()
  

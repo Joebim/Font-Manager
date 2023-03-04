@@ -4,7 +4,7 @@ import { allFonts, getFontStatus, getFontError, fetchFonts } from '../features/f
 import { Viewbutton } from '../global_components/Viewbutton'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import FontModal from '../features/fonts/FontModal'
+import FontAddModal from '../features/fonts/FontAddModal'
 
 import FontList from '../features/fonts/FontList'
 
@@ -79,7 +79,7 @@ export default function FontStore() {
     </div>
 
 
-<FontModal open={open} setOpen={setOpen} allGoogleFonts= {allGoogleFonts} fonts={fonts}/>
+<FontAddModal open={open} setOpen={setOpen} allGoogleFonts= {allGoogleFonts} fonts={fonts}/>
     </>
     
   )

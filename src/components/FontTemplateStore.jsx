@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { Viewbutton } from '../global_components/Viewbutton'
 import axios from 'axios'
 
-import TemplateModal from '../features/templates/TemplateModal'
+import TemplateAddModal from '../features/templates/TemplateAddModal'
 
 import { useSelector, useDispatch } from 'react-redux'
 import { allTemplates, getTemplateStatus, getTemplateError, fetchTemplates } from '../features/templates/templateSlice'
@@ -77,7 +77,7 @@ export default function FontTemplateStore() {
     </div>
 
 
-<TemplateModal open={open} setOpen={setOpen}/>
+<TemplateAddModal open={open} setOpen={setOpen}/>
     </>
     
   )

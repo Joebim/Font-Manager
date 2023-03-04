@@ -207,6 +207,154 @@
         "js": ""
       },
       "id": 1
+    },
+    {
+      "name": "GHOSTS AND GHOULS",
+      "Author": "Sicontis",
+      "date": "2022-10-20T23:00:00.000Z",
+      "compactiibleBrowsers": [
+        {
+          "name": "Chrome"
+        },
+        {
+          "name": "Edge"
+        },
+        {
+          "name": "Opera"
+        },
+        {
+          "name": "Safari"
+        },
+        {
+          "name": "Firefox"
+        }
+      ],
+      "madeWith": [
+        {
+          "name": "HTML"
+        },
+        {
+          "name": "CSS"
+        }
+      ],
+      "responsive": true,
+      "code": {
+        "html": "<div class=\"container\">\n\t<div class=\"title\">\n\t\t<h1>GHOST</h1>\n\t</div>\n\t<div class=\"ghost\">\n\t\t<div></div>\n\t\t<div></div>\n\t\t<div></div>\n\t\t<div></div>\n\t\t<div></div>\n\t</div>\n</div>",
+        "css": "@import url(\"https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap\");\n\n* {\n\tpadding: 0;\n\tmargin: 0;\n\tbox-sizing: border-box;\n}\n\nbody {\n\tmin-height: 100vh;\n\tdisplay: grid;\n\tplace-items: center;\n\n\t--bkg: #5eb3fd;\n\t--white: #e7e6e6;\n\n\tbackground-color: var(--white);\n\tbackground-image: url(\"https://www.transparenttextures.com/patterns/concrete-wall.png\");\n}\n\n.container {\n\twidth: 100%;\n\theight: 100%;\n\tdisplay: grid;\n\tplace-items: center;\n\toverflow: hidden;\n}\n\n.title {\n\tposition: absolute;\n\ttop: 50%;\n\tleft: 50%;\n\ttransform: translate(-50%, -50%);\n}\n.title h1 {\n\tfont-size: 25vmin;\n\tfont-weight: 900;\n\tfont-family: \"Montserrat\", sans-serif;\n\tcolor: black;\n}\n\n.ghost {\n\twidth: 8vmin;\n\theight: 12vmin;\n\tbackground-color: var(--white);\n\tbackground-image: url(\"https://www.transparenttextures.com/patterns/concrete-wall.png\");\n\tbackground-image: radial-gradient(ellipse at 35% 40%, #000 8%, transparent 0%),\n\t\tradial-gradient(ellipse at 65% 40%, #000 8%, transparent 0%),\n\t\tradial-gradient(ellipse at 50% 60%, #000 8%, transparent 0%);\n\tborder-radius: 100% / 70% 70% 0% 0%;\n\ttransform: translateX(100em) rotateZ(-90deg);\n\tposition: relative;\n\topacity: 0.9;\n\tmix-blend-mode: exclusion;\n\tanimation: ghostMove 4s ease-out infinite;\n}\n@keyframes ghostMove {\n\t0% {\n\t\ttransform: translateX(30em) rotateZ(-90deg);\n\t}\n\t100% {\n\t\ttransform: translateX(-35em) rotateZ(-90deg);\n\t}\n}\n.ghost div {\n\tposition: absolute;\n\twidth: 20%;\n\tbackground-color: var(--white);\n\tbackground-image: url(\"https://www.transparenttextures.com/patterns/concrete-wall.png\");\n}\n.ghost div:nth-of-type(1) {\n\theight: 7vmin;\n\tleft: 0;\n\tbottom: -6vmin;\n\tborder-radius: 100% / 0% 0% 50% 50%;\n}\n.ghost div:nth-of-type(2),\n.ghost div:nth-of-type(4) {\n\theight: 4vmin;\n\tleft: 20%;\n\tbottom: -3vmin;\n\tborder-radius: 100% / 50% 50% 0% 0%;\n\tbackground-color: transparent;\n}\n.ghost div:nth-of-type(3) {\n\theight: 4vmin;\n\tleft: 40%;\n\tbottom: -3.95vmin;\n\tborder-radius: 100% / 0% 0% 60% 60%;\n\tbackground-color: var(--white);\n}\n.ghost div:nth-of-type(4) {\n\tleft: 60%;\n}\n.ghost div:nth-of-type(5) {\n\theight: 3vmin;\n\tleft: 80%;\n\tbottom: -2.9vmin;\n\tborder-radius: 100% / 0% 0% 70% 70%;\n\tbackground-color: var(--white);\n}\n",
+        "js": ""
+      },
+      "id": 2
+    },
+    {
+      "name": "TEXT SLIDE",
+      "Author": "Carlos Córdova",
+      "date": "2022-01-02T23:00:00.000Z",
+      "compactiibleBrowsers": [
+        {
+          "name": "Chrome"
+        },
+        {
+          "name": "Edge"
+        },
+        {
+          "name": "Firefox"
+        },
+        {
+          "name": "Opera"
+        },
+        {
+          "name": "Samsung"
+        }
+      ],
+      "madeWith": [
+        {
+          "name": "HTML"
+        },
+        {
+          "name": "CSS"
+        }
+      ],
+      "responsive": true,
+      "code": {
+        "html": "<main class=\"container\">\n  <p>Hello 👋 I'm</p>\n  <section class=\"animation\">\n    <div class=\"first\"><div>Carlos Córdova</div></div>\n    <div class=\"second\"><div>Web Developer</div></div>\n    <div class=\"third\"><div>Systems Engineer</div></div>\n  </section>\n</main>",
+        "css": "@import url('https://fonts.googleapis.com/css?family=Roboto:700');\n\nbody {\n  font-family:'Roboto';\n  background-color: #131417;  \n}\np {\n  text-shadow: 0 0 7px rgba(255,255,255,.3), 0 0 3px rgba(255,255,255,.3);\n}\n.container {\n  color: #e5e5e5;\n  font-size: 2.26rem;\n  text-transform: uppercase;\n  height: 100vh;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.animation {\n  height:50px;\n  overflow:hidden;\n  margin-left: 1rem;\n}\n\n.animation > div > div {\n  padding: 0.25rem 0.75rem;\n  height:2.81rem;\n  margin-bottom: 2.81rem;\n  display:inline-block;\n}\n\n.animation div:first-child {\n  animation: text-animation 8s infinite;\n}\n\n.first div {\n  background-color:#20a7d8;\n}\n.second div {\n  background-color:#CD921E;\n}\n.third div {\n  background-color:#c10528;\n}\n\n@keyframes text-animation {\n  0% {margin-top: 0;}\n  10% {margin-top: 0;}\n  20% {margin-top: -5.62rem;}\n  30% {margin-top: -5.62rem;}\n  40% {margin-top: -11.24rem;}\n  60% {margin-top: -11.24rem;}\n  70% {margin-top: -5.62rem;}\n  80% {margin-top: -5.62rem;}\n  90% {margin-top: 0;}\n  100% {margin-top: 0;}\n}\n",
+        "js": ""
+      },
+      "id": 3
+    },
+    {
+      "name": "HELLO WORLD!",
+      "Author": "Ale",
+      "date": "2021-11-26T23:00:00.000Z",
+      "compactiibleBrowsers": [
+        {
+          "name": "Chrome"
+        },
+        {
+          "name": "Edge"
+        },
+        {
+          "name": "Firefox"
+        },
+        {
+          "name": "Opera"
+        },
+        {
+          "name": "Safari"
+        }
+      ],
+      "madeWith": [
+        {
+          "name": "HTML"
+        },
+        {
+          "name": "CSS"
+        }
+      ],
+      "responsive": true,
+      "code": {
+        "html": "<h1>System<span style=\"color:white;\">.<span style=\"color:#e06c75;\">out</span>.</span><span style=\"color:#61afef;\">println</span>(\"</h1>\n<div class=\"string\">\n  <h1 class=\"greeting en\">Hello World!</h1>\n  <h1 class=\"greeting es\">¡Hola Mundo!</h1>\n  <h1 class=\"greeting de\">Hallo Welt!</h1>\n  <h1 class=\"greeting it\">Ciao Mondo!</h1>  \n</div>\n<h1 class=\"closure\">\");</h1>",
+        "css": "@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;500&display=swap');\n\n* {\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  background: #282c34;\n  font-size: 2vmin;\n  font-family: JetBrains Mono, monospace;\n  height: 100vh;\n  width: 100vw;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  color: #e4bb68;\n}\n\n.string {\n  display: flex;\n  flex-direction: column;\n  text-align: center;\n  animation: move 4s infinite;\n}\n\n.greeting {\n  position: relative;\n  top: 8.6vmin;\n  animation: white-out 5s infinite;\n}\n\n.closure::after {\n  content: '';\n  position: absolute;\n  height: 25vmin;\n  width: 40vmin;\n  background: #282c34;\n  transform: translate(-45vmin, -24.5vmin);\n}\n\n.closure::before {\n  content: '';\n  position: absolute;\n  height: 25vmin;\n  width: 40vmin;\n  background: #282c34;\n  transform: translate(-40vmin, 5vmin);\n}\n\n.en {\n  color: #fa8231;\n}\n\n.es {\n  color: white;\n}\n\n.de {\n  color: #c678dd;\n}\n\n.it {\n  color: #a9b0bd;\n}\n\n@keyframes move {\n  25% {\n    transform: translatey(-5.8vmin);\n    opacity: 1;\n  }\n  50% {\n    transform: translatey(-11vmin);\n  }\n  75% {\n    transform: translatey(-16.5vmin);\n  }\n}",
+        "js": ""
+      },
+      "id": 4
+    },
+    {
+      "name": "CITY NIGHTS",
+      "Author": "Philip Zastrow",
+      "date": "2021-12-16T23:00:00.000Z",
+      "compactiibleBrowsers": [
+        {
+          "name": "Chrome"
+        },
+        {
+          "name": "Edge"
+        },
+        {
+          "name": "Opera"
+        },
+        {
+          "name": "Safari"
+        },
+        {
+          "name": "Firefox"
+        }
+      ],
+      "madeWith": [
+        {
+          "name": "HTML"
+        },
+        {
+          "name": "CSS"
+        }
+      ],
+      "responsive": true,
+      "code": {
+        "html": "<h2>City Nights Effect</h2>",
+        "css": "@keyframes lights {\n  0% {\n    color: hsl(230, 40%, 80%);\n    text-shadow:\n      0 0 1em hsla(320, 100%, 50%, 0.2),\n      0 0 0.125em hsla(320, 100%, 60%, 0.3),\n      -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),\n      1em 0.125em 0.5em hsla(200, 100%, 60%, 0);\n  }\n  \n  30% { \n    color: hsl(230, 80%, 90%);\n    text-shadow:\n      0 0 1em hsla(320, 100%, 50%, 0.5),\n      0 0 0.125em hsla(320, 100%, 60%, 0.5),\n      -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),\n      0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);\n  }\n  \n  40% { \n    color: hsl(230, 100%, 95%);\n    text-shadow:\n      0 0 1em hsla(320, 100%, 50%, 0.5),\n      0 0 0.125em hsla(320, 100%, 90%, 0.5),\n      -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),\n      0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);\n  }\n  \n  70% {\n    color: hsl(230, 80%, 90%);\n    text-shadow:\n      0 0 1em hsla(320, 100%, 50%, 0.5),\n      0 0 0.125em hsla(320, 100%, 60%, 0.5),\n      0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),\n      -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);\n  }\n  \n  100% {\n    color: hsl(230, 40%, 80%);\n    text-shadow:\n      0 0 1em hsla(320, 100%, 50%, 0.2),\n      0 0 0.125em hsla(320, 100%, 60%, 0.3),\n      1em -0.125em 0.5em hsla(40, 100%, 60%, 0),\n      -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);\n  }\n  \n}\n\nbody {\n  margin: 0;\n  font: 100% / 1.5 Raleway, sans-serif;\n  color: hsl(230, 100%, 95%);\n  background: linear-gradient(135deg, hsl(230, 40%, 12%), hsl(230, 20%, 7%));\n  height: 100vh;\n  display: flex;\n}\n\nh2 {\n  margin: auto;\n  font-size: 3.5rem;\n  font-weight: 300;\n  animation: lights 5s 750ms linear infinite;\n}",
+        "js": ""
+      },
+      "id": 5
     }
   ]
 }

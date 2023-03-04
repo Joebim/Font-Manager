@@ -14,7 +14,7 @@ import { addNewFonts } from './fontSlice'
 
 // const fileTypes = ["ttf", "otf", "woff", "woff2"];
 
-export default function FontModal(props) {
+export default function FontAddModal(props) {
 
     const dispatch = useDispatch()
 

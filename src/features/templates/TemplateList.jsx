@@ -5,7 +5,7 @@ import { IconContext } from "react-icons";
 import { CgCarousel } from "react-icons/cg";
 
 export default function TemplateList(props) {
-console.log('props.template', props.template)
+// console.log('props.template', props.template)
     return (
         <Link to={`/fonttemplatestore/${props.index}`} state={props.template}>
             <div className="h-[300px] w-[200px] bg-[#e3c7ff] rounded-[18px] p-[15px] flex flex-col justify-between">
