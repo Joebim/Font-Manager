@@ -30,13 +30,16 @@ export default function FontLab() {
   const dispatch = useDispatch()
 const location = useLocation();
 
+const fontsData = useSelector(allFonts)
+const templatesData = useSelector(allTemplates)
    
     const [fonts, setFonts] = useState([])
     const [templates, setTemplates] = useState([])
-    // const fontsStatus = useSelector(getFontStatus)
-    // const templatesStatus = useSelector(getTemplateStatus)
+    const fontsStatus = useSelector(getFontStatus)
+    const templatesStatus = useSelector(getTemplateStatus)
     const [allGoogleFonts, setAllGoogleFonts] = useState([])
     const [template, setTemplate] = useState(location.state)
+    const [templateId, setTemplateId] = useState(template.id)
     const [id, setId] = useState('')
     const [html, setHtml] = useState(template.code.html)
     const [css, setCss] = useState(template.code.css)
@@ -44,23 +47,27 @@ const location = useLocation();
     const [gridToggle, setGridToggle] = useState(false)
     const [openFontModal, setOpenFontModal] = useState(false)
     const [openTemplateModal, setOpenTemplateModal] = useState(false)
+    const [fontSelected, setFontSelected] = useState()
+    const [templateSelected, setTemplateSelected] = useState()
+    
+    
 
     // console.log('template', template)
   
 
-    
+    console.log('fonts', fonts)
 
-    // useEffect(() => {
+    useEffect(() => {
 
-    //   if(fontsStatus === 'idle') {
-    //     dispatch(fetchFonts())
-    // }
-    // if (templatesStatus === 'idle') {
-    //   dispatch(fetchTemplates())
+      if(fontsStatus === 'idle') {
+        dispatch(fetchFonts())
+    }
+    if (templatesStatus === 'idle') {
+      dispatch(fetchTemplates())
 
-    // }
+    }
       
-    // }, [fontsStatus, dispatch, templatesStatus])
+    }, [fontsStatus, dispatch, templatesStatus])
 
 
 
@@ -75,6 +82,14 @@ const location = useLocation();
       setId(pushid())
     }, [])
     
+
+    const selectTemplate = (template) => {
+      setTemplateSelected(template.id)
+      setHtml(template.code.html)
+      setCss(template.code.css)
+      setJs(template.code.js)
+      setTemplateId(null)
+    }
 
 
     const runCode = () => {
@@ -142,11 +157,11 @@ const location = useLocation();
                         </div>
                       </div>
                       <div className="flex-[80] py-[20px] flex justify-center overflow-y-scroll w-full h-full px-[20px]">
-                        <div className={`h-full w-full ${gridToggle ? "grid-cols-1" : "grid-cols-2"} grid  gap-4`}>
-                        {/* {fonts.map((font, index)=>{
+                        <div className={`h-full w-full `}>
+                        {fonts.map((font, index)=>{
                             return (
-                              // <div className="h-[120px] w-full rounded-[20px] border-solid border-[2pt] border-[#0a9147] p-[5px]">
-                              <div className="h-[120px] w-full rounded-[20px] drop-shadow-md border-solid border-[2pt] border-transparent p-[5px]">
+                              // <div className="h-[120px] w-full rounded-[20px] border-solid border-[2pt]  p-[5px]">
+                              <div className={`inline-block h-[120px] ${gridToggle ? "w-full" : "w-[50%]"}  rounded-[20px] drop-shadow-md border-solid border-[2pt] ${fontSelected == font.id ? "border-[#0a9147]" : "border-transparent"} p-[5px]`} key={index}>
 
                                 <button className=" text-black bg-white border-solid border-[2pt] border-transparent hover:border-[#0a9147] h-full w-full rounded-[15px]  text-center text-[10px]" key={index+font.family}>
                                 <h1 className='text-[50px]' style={{fontFamily: font.family}}>A</h1>
@@ -154,8 +169,8 @@ const location = useLocation();
                                 </button>
                               </div>
                             )
-                        })}  */}
-                        <div className="h-[120px] w-full rounded-[20px] border-solid border-[2pt] border-transparent p-[5px]">
+                        })} 
+                        <div className={`inline-block h-[120px] ${gridToggle ? "w-full" : "w-[50%]"} w-full rounded-[20px] border-solid border-[2pt] border-transparent p-[5px]`}>
                           <button className="flex bg-gray-200 border-solid border-[2pt] border-transparent h-full w-full rounded-[15px] justify-center items-center text-center text-[30px] text-[#0a9147]" 
                           onClick={()=>setOpenFontModal(true)}
                           >+</button>
@@ -197,17 +212,19 @@ const location = useLocation();
 
             <div className="flex-[25] flex justify-center w-full pt-[30px] pb-[10px] overflow-x-scroll">
                 <div className="h-full w-full flex flex-row grid-rows-1 gap-1">
-                  {/* {templates.map((template, index)=>{
+                  {templates.map((template, index)=>{
                     return (
                     // <div className=" h-full w-[140px] rounded-[20px] border-solid border-[3pt] border-[#1dc669] p-[5px] mr-[20px]" key={index}>
-                    <div className=" h-full min-w-[140px] rounded-[20px] border-solid border-[3pt] border-transparent p-[5px]" key={index}>
+                    <div className={` h-full max-w-[140px] rounded-[20px] border-solid border-[3pt]  ${templateSelected == template.id || templateId == template.id ? "border-[#0a9147]" : "border-transparent"} p-[5px]`} key={index}
+                    onClick={()=>{selectTemplate(template)}}
+                    >
 
                       <div className="h-full w-full rounded-[15px] bg-white drop-shadow-md border-solid border-[2pt] hover:border-[#0a9147] border-transparent cursor-pointer p-[10px] flex justify-center items-center text-center">
                         <h1 className='font-bold text-[15px] text-purple-600'>{template.name}</h1>
                       </div>
                     </div>
                     )
-                  })} */}
+                  })}
                   
 
                   <div className=" h-full min-w-[140px] w-[140px] rounded-[20px] border-solid border-[3pt] p-[5px] border-transparent">
@@ -267,8 +284,8 @@ const location = useLocation();
           </div>
         </section>
 
-        <FontSelectModal open={openFontModal} setOpen={setOpenFontModal}/>
-        <TemplateSelectModal open={openTemplateModal} setOpen={setOpenTemplateModal}/>
+        <FontSelectModal open={openFontModal} setOpen={setOpenFontModal} fonts={fontsData} fontTray={fonts} setFontTray={setFonts}/>
+        <TemplateSelectModal open={openTemplateModal} setOpen={setOpenTemplateModal} templates={templatesData} templateTray={templates} setTemplateTray={setTemplates}/>
     </>
     
     

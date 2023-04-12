@@ -173,9 +173,9 @@
   "templates": [
     {
       "name": "SCHITT'S CREEK",
-      "Author": "Rob",
+      "author": "Rob",
       "date": "2022-11-01T23:00:00.000Z",
-      "compactiibleBrowsers": [
+      "compactibleBrowsers": [
         {
           "name": "Chrome"
         },
@@ -210,9 +210,9 @@
     },
     {
       "name": "GHOSTS AND GHOULS",
-      "Author": "Sicontis",
+      "author": "Sicontis",
       "date": "2022-10-20T23:00:00.000Z",
-      "compactiibleBrowsers": [
+      "compactibleBrowsers": [
         {
           "name": "Chrome"
         },
@@ -247,9 +247,9 @@
     },
     {
       "name": "TEXT SLIDE",
-      "Author": "Carlos Córdova",
+      "author": "Carlos Córdova",
       "date": "2022-01-02T23:00:00.000Z",
-      "compactiibleBrowsers": [
+      "compactibleBrowsers": [
         {
           "name": "Chrome"
         },
@@ -283,47 +283,10 @@
       "id": 3
     },
     {
-      "name": "HELLO WORLD!",
-      "Author": "Ale",
-      "date": "2021-11-26T23:00:00.000Z",
-      "compactiibleBrowsers": [
-        {
-          "name": "Chrome"
-        },
-        {
-          "name": "Edge"
-        },
-        {
-          "name": "Firefox"
-        },
-        {
-          "name": "Opera"
-        },
-        {
-          "name": "Safari"
-        }
-      ],
-      "madeWith": [
-        {
-          "name": "HTML"
-        },
-        {
-          "name": "CSS"
-        }
-      ],
-      "responsive": true,
-      "code": {
-        "html": "<h1>System<span style=\"color:white;\">.<span style=\"color:#e06c75;\">out</span>.</span><span style=\"color:#61afef;\">println</span>(\"</h1>\n<div class=\"string\">\n  <h1 class=\"greeting en\">Hello World!</h1>\n  <h1 class=\"greeting es\">¡Hola Mundo!</h1>\n  <h1 class=\"greeting de\">Hallo Welt!</h1>\n  <h1 class=\"greeting it\">Ciao Mondo!</h1>  \n</div>\n<h1 class=\"closure\">\");</h1>",
-        "css": "@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;500&display=swap');\n\n* {\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  background: #282c34;\n  font-size: 2vmin;\n  font-family: JetBrains Mono, monospace;\n  height: 100vh;\n  width: 100vw;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  color: #e4bb68;\n}\n\n.string {\n  display: flex;\n  flex-direction: column;\n  text-align: center;\n  animation: move 4s infinite;\n}\n\n.greeting {\n  position: relative;\n  top: 8.6vmin;\n  animation: white-out 5s infinite;\n}\n\n.closure::after {\n  content: '';\n  position: absolute;\n  height: 25vmin;\n  width: 40vmin;\n  background: #282c34;\n  transform: translate(-45vmin, -24.5vmin);\n}\n\n.closure::before {\n  content: '';\n  position: absolute;\n  height: 25vmin;\n  width: 40vmin;\n  background: #282c34;\n  transform: translate(-40vmin, 5vmin);\n}\n\n.en {\n  color: #fa8231;\n}\n\n.es {\n  color: white;\n}\n\n.de {\n  color: #c678dd;\n}\n\n.it {\n  color: #a9b0bd;\n}\n\n@keyframes move {\n  25% {\n    transform: translatey(-5.8vmin);\n    opacity: 1;\n  }\n  50% {\n    transform: translatey(-11vmin);\n  }\n  75% {\n    transform: translatey(-16.5vmin);\n  }\n}",
-        "js": ""
-      },
-      "id": 4
-    },
-    {
       "name": "CITY NIGHTS",
-      "Author": "Philip Zastrow",
+      "author": "Philip Zastrow",
       "date": "2021-12-16T23:00:00.000Z",
-      "compactiibleBrowsers": [
+      "compactibleBrowsers": [
         {
           "name": "Chrome"
         },

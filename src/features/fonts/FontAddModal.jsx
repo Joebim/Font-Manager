@@ -115,7 +115,7 @@ export default function FontAddModal(props) {
   const disableCheck = (fonts) => {
     
         for(let i = 0; i < props.fonts.length; i++){ 
-            if (props.fonts[i].font.family == fonts.family) {
+            if (props.fonts[i].family == fonts.family) {
                 return true
             }
         }   

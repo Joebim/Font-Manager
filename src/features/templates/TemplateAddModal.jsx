@@ -145,9 +145,9 @@ export default function TemplateAddModal(props) {
         const template = {
             "id": index,
             "name": name,
-            "Author": author,
+            "author": author,
             "date": day.$d,
-            "compactiibleBrowsers": selectedBrowsers
+            "compactibleBrowsers": selectedBrowsers
             ,
             "madeWith":selectedTools,
             "responsive": responsive,
