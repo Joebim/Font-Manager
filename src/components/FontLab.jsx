@@ -1,4 +1,5 @@
 import React,{useState, useEffect, useRef} from 'react'
+import ReactDOM from 'react-dom';
 import DiscreteSliderMarks from '../global_components/Slider'
 import axios from 'axios'
 import { Controlled as CodeMirror } from 'react-codemirror2';
@@ -11,6 +12,8 @@ import { allTemplates, getTemplateStatus, fetchTemplates } from '../features/tem
 import { FaListUl } from "react-icons/fa";
 import { BsGridFill } from "react-icons/bs";
 import { IconContext } from 'react-icons';
+import FontAddModal from '../features/fonts/FontAddModal';
+import TemplateAddModal from '../features/templates/TemplateAddModal';
 import FontSelectModal from '../features/fonts/FontSelectModal';
 import TemplateSelectModal from '../features/templates/TemplateSelectModal';
 
@@ -32,9 +35,10 @@ const location = useLocation();
 
 const fontsData = useSelector(allFonts)
 const templatesData = useSelector(allTemplates)
-   
-    const [fonts, setFonts] = useState([])
-    const [templates, setTemplates] = useState([])
+
+    const [documentContent, setDocumentContent] = useState()
+    const [fonts, setFonts] = useState(fontsData)
+    const [templates, setTemplates] = useState(templatesData)
     const fontsStatus = useSelector(getFontStatus)
     const templatesStatus = useSelector(getTemplateStatus)
     const [allGoogleFonts, setAllGoogleFonts] = useState([])
@@ -51,11 +55,14 @@ const templatesData = useSelector(allTemplates)
     const [templateSelected, setTemplateSelected] = useState()
     
     
+   
+    const iframeRef = React.createRef();
+
 
     // console.log('template', template)
   
 
-    console.log('fonts', fonts)
+    // console.log('fonts', fonts)
 
     useEffect(() => {
 
@@ -70,12 +77,84 @@ const templatesData = useSelector(allTemplates)
     }, [fontsStatus, dispatch, templatesStatus])
 
 
-
-
-
     useEffect(() => {
-        runCode()
-      }, [html, css, js])
+      if(fontsStatus === 'idle') {
+          dispatch(fetchFonts())
+      }
+
+
+      axios.get(`${process.env.REACT_APP_GOOGLEAPI_URL}key=${process.env.REACT_APP_GOOGLEAPI_KEY}`, {
+          sort: 'alpha',
+      })
+      .then(res => {
+          // console.log('res', res)
+          setAllGoogleFonts(res.data.items)
+      }).catch(err => {
+          console.log('err', err)
+      })
+  }, [fontsStatus, dispatch])
+
+
+  const onLoad = () => {
+    const body = iframeRef.current?.contentDocument?.body;
+    if (body) {
+      // Your code to manipulate the body element goes here
+      console.log('body', body);
+  
+      // Get all elements on the page
+      const allElements = body.getElementsByTagName("*");
+  
+      // Filter only the elements that have non-empty text content
+      const textElements = Array.from(allElements).filter((el) => {
+        return el.innerText.trim().length > 0;
+      });
+  
+      // Create an array to hold the text input elements
+      const textInputs = {};
+  
+      // Loop through the filtered text elements and create a text input element for each one
+      textElements.forEach((el) => {
+        // Create a new text node with the element's text content
+        const textNode = document.createTextNode(el.innerText);
+  
+        if (textInputs[el.innerText]) {
+          // Use the existing text input element
+          const input = textInputs[el.innerText];
+        } else {
+          // Create a new text input element
+          const input = document.createElement("input");
+          input.type = "text";
+          input.value = el.innerText;
+          input.className = 'w-[80%]';
+  
+          // Add the input element to the object
+          textInputs[el.innerText] = input;
+          // Replace the text node with the input element
+          el.parentNode.replaceChild(input, el);
+        }
+      });
+  
+      // Append the text input elements to a specific part of the HTML
+      const targetElement = document.getElementById("input-div");
+      if (targetElement) {
+        Object.values(textInputs).forEach((input) => {
+          targetElement.appendChild(input);
+        });
+      } else {
+        console.error("Target element not found.");
+      }
+    }
+  };
+  
+  useEffect(() => {
+    runCode();
+  
+    const iframe = iframeRef.current;
+    console.log('iframe', iframe)
+    if (iframe) {
+      iframe.onload = onLoad;
+    }
+  }, [html, css, js]);
       
     
     useEffect(() => {
@@ -91,6 +170,7 @@ const templatesData = useSelector(allTemplates)
       setTemplateId(null)
     }
 
+   
 
     const runCode = () => {
         // const { html, css, js } = state;
@@ -118,9 +198,14 @@ const templatesData = useSelector(allTemplates)
           </body>
           </html>
         `;
+
+        setDocumentContent(documentContents)
     
         document.open();
-        document.write(documentContents);
+        if (documentContent == undefined) {
+          document.write(documentContents);
+        } 
+        document.write(documentContent);
         document.close();
       };
 
@@ -131,8 +216,19 @@ const templatesData = useSelector(allTemplates)
         lineWrapping: true,
       };
   
+console.log("iframe ref",iframeRef)
 
-    const iframeRef = React.createRef();
+      const node = document.getElementById('iframe');
+      // const iframe = node.contentWindow.document;
+      const find = ReactDOM.findDOMNode(node);
+
+      console.log('find', find)
+
+
+ 
+
+
+    
   return (
     <>
     <div className="w-full p-[30px] bg-[#f8f3ff] h-[700px] flex flex-col-reverse md:flex-row ">
@@ -194,7 +290,7 @@ const templatesData = useSelector(allTemplates)
             <div className="flex-[75] rounded-[20px] bg-white">
 
               <section className="result rounded-[20px] h-full">
-                <iframe title="result" className="iframe" ref={iframeRef} />
+                <iframe id='iframe' title="result" className="iframe" ref={iframeRef} />
               </section>
 
             </div>
@@ -203,10 +299,11 @@ const templatesData = useSelector(allTemplates)
                    <DiscreteSliderMarks/>
                 </div>
             </div>
+            
 
             <div className="w-full flex-[12] flex items-center justify-center">
-                <div className="h-[50px] w-full flex items-center justify-center rounded-full bg-white">
-                    <input type="text" className='w-[80%] outline-none' placeholder='Input Text' />
+                <div id='input-div' className="h-[50px] w-full flex flex-col items-center justify-center rounded-full bg-transparent">
+                   
                 </div>
             </div>
 
@@ -215,7 +312,7 @@ const templatesData = useSelector(allTemplates)
                   {templates.map((template, index)=>{
                     return (
                     // <div className=" h-full w-[140px] rounded-[20px] border-solid border-[3pt] border-[#1dc669] p-[5px] mr-[20px]" key={index}>
-                    <div className={` h-full max-w-[140px] rounded-[20px] border-solid border-[3pt]  ${templateSelected == template.id || templateId == template.id ? "border-[#0a9147]" : "border-transparent"} p-[5px]`} key={index}
+                    <div className={` h-full max-w-[140px] min-w-[140px] rounded-[20px] border-solid border-[3pt]  ${templateSelected == template.id || templateId == template.id ? "border-[#0a9147]" : "border-transparent"} p-[5px]`} key={index}
                     onClick={()=>{selectTemplate(template)}}
                     >
 
@@ -284,8 +381,10 @@ const templatesData = useSelector(allTemplates)
           </div>
         </section>
 
-        <FontSelectModal open={openFontModal} setOpen={setOpenFontModal} fonts={fontsData} fontTray={fonts} setFontTray={setFonts}/>
-        <TemplateSelectModal open={openTemplateModal} setOpen={setOpenTemplateModal} templates={templatesData} templateTray={templates} setTemplateTray={setTemplates}/>
+        {/* <FontSelectModal open={openFontModal} setOpen={setOpenFontModal} fonts={fontsData} fontTray={fonts} setFontTray={setFonts}/>
+        <TemplateSelectModal open={openTemplateModal} setOpen={setOpenTemplateModal} templates={templatesData} templateTray={templates} setTemplateTray={setTemplates}/> */}
+        <FontAddModal open={openFontModal} setOpen={setOpenFontModal} allGoogleFonts= {allGoogleFonts} fonts={fonts}/>
+        <TemplateAddModal open={openTemplateModal} setOpen={setOpenTemplateModal}/>
     </>
     
     
