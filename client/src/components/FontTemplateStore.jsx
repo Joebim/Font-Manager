@@ -24,7 +24,7 @@ export default function FontTemplateStore() {
     // const [allGoogleFonts, setAllGoogleFonts] = useState([])
 
 
-    
+    console.log('templates', templates)
 
     useEffect(() => {
         if(templatesStatus === 'idle') {

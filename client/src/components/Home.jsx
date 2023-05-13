@@ -21,7 +21,7 @@ export default function Home() {
         }
     }, [fontsStatus, dispatch])
     
-    // console.log('projectData', projectsData)
+    // console.log('fontData', fontsData)
 
   return (
     <>
