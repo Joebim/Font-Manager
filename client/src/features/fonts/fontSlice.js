@@ -1,12 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { constant } from "../../global_components/constant";
 
-
-const url = "http://localhost:8500"
 
 export const fetchFonts = createAsyncThunk("fonts/fetchFonts", async () => {
     try{
-        const response = await axios.get(`${url}/fonts`)
+        const response = await axios.get(`${constant.url}/fonts`)
         return response.data
     } catch (error) {
         console.log(error)
@@ -16,7 +15,7 @@ export const fetchFonts = createAsyncThunk("fonts/fetchFonts", async () => {
 
 export const addNewFonts = createAsyncThunk("fonts/addFonts", async (font) => {
     try{
-        const response = await axios.post(`${url}/fonts`, font)
+        const response = await axios.post(`${constant.url}/fonts`, font)
         return response.data
     } catch (error) {
         console.log(error)
@@ -26,7 +25,7 @@ export const addNewFonts = createAsyncThunk("fonts/addFonts", async (font) => {
 
 export const deleteFontRequest = createAsyncThunk("fonts/deleteFont", async (id) => {
     try{
-        const response = await axios.delete(`${url}/fonts/${id}`)
+        const response = await axios.delete(`${constant.url}/fonts/${id}`)
         if(response.data){
             return id
         }

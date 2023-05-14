@@ -1,12 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { constant } from "../../global_components/constant";
 
-
-const url = "http://localhost:8500"
 
 export const fetchTemplates = createAsyncThunk("templates/fetchTemplates", async () => {
     try{
-        const response = await axios.get(`${url}/templates`)
+        const response = await axios.get(`${constant.url}/templates`)
         return response.data
     } catch (error) {
         console.log(error)
@@ -15,7 +14,7 @@ export const fetchTemplates = createAsyncThunk("templates/fetchTemplates", async
 
 export const addNewTemplate = createAsyncThunk("templates/addTemplate", async (template) => {
     try{
-        const response = await axios.post(`${url}/templates`, template)
+        const response = await axios.post(`${constant.url}/templates`, template)
         return response.data
     } catch (error) {
         console.log(error)
@@ -25,7 +24,7 @@ export const addNewTemplate = createAsyncThunk("templates/addTemplate", async (t
 
 export const deleteTemplateRequest = createAsyncThunk("templates/deleteTemplate", async (id) => {
     try{
-        const response = await axios.delete(`${url}/templates/${id}`)
+        const response = await axios.delete(`${constant.url}/templates/${id}`)
         if(response.data){
             return id
         }
