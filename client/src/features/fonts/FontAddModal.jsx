@@ -101,7 +101,7 @@ export default function FontAddModal(props) {
 
     }
 
-    // console.log('selectedFonts', selectedFonts)
+    console.log('selectedFonts', selectedFonts)
 
 
     // console.log('fonts', fonts)

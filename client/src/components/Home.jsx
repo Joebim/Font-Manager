@@ -13,15 +13,14 @@ export default function Home() {
     const fontsStatus = useSelector(getFontStatus)
 
 
-    
-
     useEffect(() => {
         if(fontsStatus === 'idle') {
             dispatch(fetchFonts())
         }
     }, [fontsStatus, dispatch])
     
-    // console.log('fontData', fontsData)
+    console.log('fontData', fontsData)
+    console.log('fontsStatus', fontsStatus)
 
   return (
     <>

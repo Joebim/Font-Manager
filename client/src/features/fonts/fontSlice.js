@@ -6,16 +6,17 @@ import { constant } from "../../global_components/constant";
 export const fetchFonts = createAsyncThunk("fonts/fetchFonts", async () => {
     try{
         const response = await axios.get(`${constant.url}/fonts`)
-        return response.data
+        console.log('response.data', response.data)
+        return response.data || []
     } catch (error) {
         console.log(error)
     }
-    
 })
 
 export const addNewFonts = createAsyncThunk("fonts/addFonts", async (font) => {
     try{
         const response = await axios.post(`${constant.url}/fonts`, font)
+        console.log('response.data', response.data)
         return response.data
     } catch (error) {
         console.log(error)

@@ -6,7 +6,9 @@ import { constant } from "../../global_components/constant";
 export const fetchTemplates = createAsyncThunk("templates/fetchTemplates", async () => {
     try{
         const response = await axios.get(`${constant.url}/templates`)
+        console.log('response.data', response.data)
         return response.data
+        
     } catch (error) {
         console.log(error)
     }
