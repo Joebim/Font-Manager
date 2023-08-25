@@ -7,7 +7,7 @@ export default function FontList(props) {
    
     return(
         <Link to={`/fontstore/${props.index}`} state={props.font}>
-        <div className="h-[200px] w-[190px] p-[10px]" >
+        <div className="h-[160px] sm:h-[200px] w-[150px] sm:w-[190px] p-[10px]" >
             <div className="h-full w-full bg-purple-200 flex flex-col rounded-[10px]">
                 <div className="flex-[2] flex justify-end w-full">
                     <div className="h-full w-[20%] bg-purple-900 rounded-tr-[10px] rounded-bl-[20px] flex justify-center items-center">

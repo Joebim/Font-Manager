@@ -155,9 +155,9 @@ export default function FontAddModal(props) {
                             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                         >
-                            <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:ma min-h-[320px] max-h-[500px]">
+                            <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 w-full  min-h-[320px] max-h-[500px]">
                                 <div className="w-full flex justify-center items-center">
-                                    <div className="w-[40%] px-[20px] flex justify-between">
+                                    <div className="w-[60%] sm:w-[40%] px-[20px] flex justify-between">
                                         <div className={`w-full h-[35px] text-[12px] cursor-pointer ${tab == 1 ? "bg-purple-900 text-white" : "bg-white text-purple-900"} mt-[20px] flex justify-center items-center rounded-l-[50px] border-solid border-[0.1pt] border-[#e2e2e2]`}
                                         onClick={()=>{setTab(1)}}>Import</div>
                                         <div className={`w-full h-[35px] text-[12px] cursor-pointer ${tab == 2 ? "bg-purple-900 text-white" : "bg-white text-purple-900"} mt-[20px] flex justify-center items-center rounded-r-[50px] border-solid border-[0.1pt] border-[#e2e2e2]`}
@@ -172,9 +172,9 @@ export default function FontAddModal(props) {
                                             <div className="h-full w-full p-[20px] flex flex-col justify-center items-center" {...getRootProps()}>
                                                 {/* <FileUploader handleChange={handleChange} name="file" types={fileTypes} /> */}
                                                 <input {...getInputProps()} className=" h-[200px]" />
-                                                <AddIcon alt="" width="80" className='fill-transparent stroke-[#e2cdff] mb-[10px] z-10' />
+                                                <AddIcon alt="" width="80" className='fill-transparent stroke-[#e2cdff] mb-[20px] z-10' />
                                                 {isDragActive ? <h1 className='text-purple-900 text-[13px] font-bold'>Drop the files here ...</h1> :
-                                                <h1 className='text-purple-400 text-[13px] font-bold'>Click to <span className='text-purple-900'>Upload</span> or <span className='text-purple-900'>Drag and Drop</span></h1>
+                                                <h1 className='text-purple-400 text-[13px] text-center font-bold'>Click to <span className='text-purple-900'>Upload</span> or <span className='text-purple-900'>Drag and Drop</span></h1>
                                                 } 
                                             </div> 
                                         </div> : ""}

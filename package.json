@@ -6,7 +6,7 @@
   "scripts": {
     "build": "cd client && npm run build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "cd client && gh-pages -d build",
     "client": "cd client && npm start",
     "server": "cd server && npm start",
     "dev": "concurrently \"npm run client\" \"npm run server\""

@@ -28,7 +28,7 @@ export default function ViewTemplate(props) {
     }
 
   return (
-    <div className="w-full h-auto flex flex-row bg-[#f8f3ff] min-h-[400px]">
+    <div className="w-full h-auto flex flex-col sm:flex-row bg-[#f8f3ff] min-h-[400px]">
         <div className="w-full absolute px-[20px] py-[5px] ">
           <div className=" absolute top-5 right-5 hover:bg-purple-700 overflow-hidden hover:w-[150px] hover:h-[200px] hover:rounded-[10px] h-[50px] w-[50px] rounded-[10px] duration-150 ease-linear z-10"
           // onClick={()=>{setToggleDropdown(!toggleDropdown)}}
@@ -49,12 +49,14 @@ export default function ViewTemplate(props) {
 
           {/* <div className={`w-[150px] absolute bg-purple-900 duration-150 ease-linear right-7 top-24 rounded-[10px] ${toggleDropdown ? "h-[200px]" : "h-[0px]"}`}></div> */}
         </div>
-      <section className="result rounded-[20px] m-[5%] h-[350px] w-[45%] bg-black absolute right-[1%]">
+
+      <section className="result rounded-[20px] m-[10%] sm:m-[5%] h-[350px] w-[80%] sm:w-[45%] bg-black absolute top-[78%] sm:top-[12%] sm:right-[1%]">
           <iframe title="result" className="iframe" 
           // ref={iframeRef}
            />
         </section>
-        <div className="flex-[2] h-full w-full p-[50px]">
+
+        <div className="flex-[2] h-full w-full p-[30px] sm:p-[50px]">
           <div className="">
             <h1 className='text-[40px] font-bold'>{templates.name}</h1>
             <p className='text-[14px]'>Author: <span className='text-purple-900 pl-[10px]'>{`${templates.author}`}</span></p>
@@ -72,7 +74,7 @@ export default function ViewTemplate(props) {
         <div className="flex-[1.5] flex flex-col h-full bg-purple-200">
           <div className="p-[5%] w-full h-[400px]"></div>
           <div className="">
-          <div className="w-full py-[30px] px-[50px]">
+          <div className="w-full py-[30px] px-[30px] sm:px-[50px]">
             <h1 className='pb-[20px] font-bold text-[15px]'>Made With</h1>
             {templates.madeWith.map((tool, index)=>{
               return (
@@ -82,7 +84,7 @@ export default function ViewTemplate(props) {
 
           </div>
 
-          <div className="w-full pb-[30px] px-[50px]">
+          <div className="w-full pb-[30px] px-[30px] sm:px-[50px]">
             <h1 className='pb-[20px] font-bold text-[15px]'>Compactible Browsers</h1>
             {templates.compactibleBrowsers.map((browser, index)=>{
               return (

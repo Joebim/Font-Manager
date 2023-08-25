@@ -58,7 +58,7 @@ export default function ViewFont(props) {
 
           {/* <div className={`w-[150px] absolute bg-purple-900 duration-150 ease-linear right-7 top-24 rounded-[10px] ${toggleDropdown ? "h-[200px]" : "h-[0px]"}`}></div> */}
         </div>
-       <div className="w-full h-[400px] bg-purple-600 px-[70px] py-[70px] flex flex-row">
+       <div className="w-full h-full sm:h-[400px] bg-purple-600 px-[30px] sm:px-[70px] py-[30px] sm:py-[70px] flex flex-col sm:flex-row">
           <div className="flex-[1]">
             <div className="">
               <h1 className='text-white text-[30px]'>{fonts?.family}</h1>
@@ -74,41 +74,41 @@ export default function ViewFont(props) {
           </div>
 
           <div className="flex-[1]">
-            <div className="w-full h-full flex flex-col justify-center items-end pb-[40px]">
+            <div className="w-full h-full flex flex-col justify-center items-center sm:items-end pb-[40px]">
               <h1 className='text-[150px] text-purple-300' style={{fontFamily:`${fonts.family}`,}}>Aa</h1>
               <p className='text-[40px] text-purple-300' style={{fontFamily:`${fonts.family}`,}}>123456789</p>
             </div>
           </div>
 
         </div>
-        <div className="w-full p-[40px] bg-purple-200 border-solid border-purple-800 border-t-[4px] min-h-[400px] px-[70px] py-[70px]">
-          <div className="w-full h-[100px] flex flex-row justify-between">
-            <h1 className='text-[30px] font-bold text-purple-900'>Lorem 1</h1>
-            <h1 className='text-[30px] font-bold text-purple-900' style={{fontFamily:`${fonts.family}`,}}>The quick brown fox jumps over the lazy dog</h1>
+        <div className="w-full p-[40px] bg-purple-200 border-solid border-purple-800 border-t-[4px] min-h-[400px] px-[30px] sm:px-[70px] py-[30px] sm:py-[70px]">
+          <div className="w-full h-[70px] flex flex-row gap-[20px] sm:h-[100px] flex flex-row justify-between">
+            <h1 className='text-[15px] sm:text-[30px] font-bold text-purple-900'>Lorem 1</h1>
+            <h1 className='text-[15px] sm:text-[30px] font-bold text-purple-900' style={{fontFamily:`${fonts.family}`,}}>The quick brown fox jumps over the lazy dog</h1>
           </div>
-          <div className="w-full h-[100px] flex flex-row justify-between">
-            <h1 className='text-[30px] font-semibold text-purple-900'>Lorem 2</h1>
-            <h1 className='text-[30px] font-semibold text-purple-900' style={{fontFamily:`${fonts.family}`,}}>The quick brown fox jumps over the lazy dog</h1>
+          <div className="w-full h-[70px] flex flex-row gap-[20px] sm:h-[100px] flex flex-row justify-between">
+            <h1 className='text-[15px] sm:text-[30px] font-semibold text-purple-900'>Lorem 2</h1>
+            <h1 className='text-[15px] sm:text-[30px] font-semibold text-purple-900' style={{fontFamily:`${fonts.family}`,}}>The quick brown fox jumps over the lazy dog</h1>
           </div>
-          <div className="w-full h-[100px] flex flex-row justify-between">
-            <h1 className='text-[30px] font-medium text-purple-900'>Lorem 3</h1>
-            <h1 className='text-[30px] font-medium text-purple-900' style={{fontFamily:`${fonts.family}`,}}>The quick brown fox jumps over the lazy dog</h1>
+          <div className="w-full h-[70px] flex flex-row gap-[20px] sm:h-[100px] flex flex-row justify-between">
+            <h1 className='text-[15px] sm:text-[30px] font-medium text-purple-900'>Lorem 3</h1>
+            <h1 className='text-[15px] sm:text-[30px] font-medium text-purple-900' style={{fontFamily:`${fonts.family}`,}}>The quick brown fox jumps over the lazy dog</h1>
           </div>
-          <div className="w-full h-[100px] flex flex-row justify-between">
-            <h1 className='text-[30px] font-normal text-purple-900'>Lorem 4</h1>
-            <h1 className='text-[30px] font-normal text-purple-900' style={{fontFamily:`${fonts.family}`,}}>The quick brown fox jumps over the lazy dog</h1>
+          <div className="w-full h-[70px] flex flex-row gap-[20px] sm:h-[100px] flex flex-row justify-between">
+            <h1 className='text-[15px] sm:text-[30px] font-normal text-purple-900'>Lorem 4</h1>
+            <h1 className='text-[15px] sm:text-[30px] font-normal text-purple-900' style={{fontFamily:`${fonts.family}`,}}>The quick brown fox jumps over the lazy dog</h1>
           </div>
-          <div className="w-full h-[100px] flex flex-row justify-between">
-            <h1 className='text-[30px] font-light text-purple-900'>Lorem 5</h1>
-            <h1 className='text-[30px] font-light text-purple-900' style={{fontFamily:`${fonts.family}`,}}>The quick brown fox jumps over the lazy dog</h1>
+          <div className="w-full h-[70px] flex flex-row gap-[20px] sm:h-[100px] flex flex-row justify-between">
+            <h1 className='text-[15px] sm:text-[30px] font-light text-purple-900'>Lorem 5</h1>
+            <h1 className='text-[15px] sm:text-[30px] font-light text-purple-900' style={{fontFamily:`${fonts.family}`,}}>The quick brown fox jumps over the lazy dog</h1>
           </div>
-          <div className="w-full h-[100px] flex flex-row justify-between">
-            <h1 className='text-[30px] font-extralight text-purple-900'>Lorem 6</h1>
-            <h1 className='text-[30px] font-extralight text-purple-900' style={{fontFamily:`${fonts.family}`,}}>The quick brown fox jumps over the lazy dog</h1>
+          <div className="w-full h-[70px] flex flex-row gap-[20px] sm:h-[100px] flex flex-row justify-between">
+            <h1 className='text-[15px] sm:text-[30px] font-extralight text-purple-900'>Lorem 6</h1>
+            <h1 className='text-[15px] sm:text-[30px] font-extralight text-purple-900' style={{fontFamily:`${fonts.family}`,}}>The quick brown fox jumps over the lazy dog</h1>
           </div>
-          <div className="w-full h-[100px] flex flex-row justify-between">
-            <h1 className='text-[30px] font-thin text-purple-900'>Lorem 7</h1>
-            <h1 className='text-[30px] font-thin text-purple-900' style={{fontFamily:`${fonts.family}`,}}>The quick brown fox jumps over the lazy dog</h1>
+          <div className="w-full h-[70px] flex flex-row gap-[20px] sm:h-[100px] flex flex-row justify-between">
+            <h1 className='text-[15px] font-thin text-purple-900'>Lorem 7</h1>
+            <h1 className='text-[15px] font-thin text-purple-900' style={{fontFamily:`${fonts.family}`,}}>The quick brown fox jumps over the lazy dog</h1>
           </div>
         </div>
       </div>

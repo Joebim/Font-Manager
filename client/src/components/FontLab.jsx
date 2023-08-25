@@ -231,8 +231,8 @@ console.log("iframe ref",iframeRef)
     
   return (
     <>
-    <div className="w-full p-[30px] bg-[#f8f3ff] h-[700px] flex flex-col-reverse md:flex-row ">
-        <div className="flex flex-[40] max-w-[40%] p-[20px] flex-col pr-[50px]">
+    <div className="w-full p-[30px] bg-[#f8f3ff] h-full sm:h-[700px] flex flex-col-reverse sm:flex-row ">
+        <div className="flex flex-[40] max-w-[100%] sm:max-w-[40%] p-0 sm:p-[20px] flex-col pr-0 sm:pr-[50px]">
             <div className="w-full h-full">
                 <div className="w-full h-full bg-white drop-shadow-[0_35px_15px_#efefef] rounded-[20px] flex flex-col">
                     <div className="flex flex-col h-full">
@@ -286,11 +286,11 @@ console.log("iframe ref",iframeRef)
            
         </div>
 
-        <div className="flex flex-col flex-[60] max-w-[60%] p-[20px] pl-[50px] border-solid border-l-[0.1pt] border-[#e2e2e2">
+        <div className="flex flex-col sm:h-full flex-[60] max-w-[100%] mb-[40px] sm:mb-0 sm:max-w-[60%] p-0 sm:p-[20px] pl-0 sm:pl-[50px] border-solid border-l-[0.1pt] border-[#e2e2e2">
             <div className="flex-[75] rounded-[20px] bg-white">
 
               <section className="result rounded-[20px] h-full">
-                <iframe id='iframe' title="result" className="iframe" ref={iframeRef} />
+                <iframe id='iframe' title="result" className="iframe h-[300px] sm:h-full w-full" ref={iframeRef} />
               </section>
 
             </div>

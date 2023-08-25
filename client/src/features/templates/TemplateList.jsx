@@ -8,7 +8,7 @@ export default function TemplateList(props) {
 // console.log('props.template', props.template)
     return (
         <Link to={`/fonttemplatestore/${props.index}`} state={props.template}>
-            <div className="h-[300px] w-[200px] bg-[#e3c7ff] rounded-[18px] p-[15px] flex flex-col justify-between">
+            <div className="h-[260px] sm:h-[300px] w-[160px] sm:w-[200px] bg-[#e3c7ff] rounded-[18px] p-[15px] flex flex-col justify-between">
         <div className="w-full flex justify-end">
         <div className="h-[32px] w-[32px] bg-white rounded-[5px] flex justify-center items-center">
         <IconContext.Provider value={{ color: "#500062", className: "global-class-name" }}>

@@ -207,13 +207,13 @@ return (
                         leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                         leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                     >
-                        <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:ma min-h-[320px] max-h-[500px]">
+                        <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:ma min-h-[320px] max-h-[500px] pt-[30px] sm:pt-0">
                             <div className="h-[500px] w-full flex flex-col ">
                                 
                                 
                                 <div className="flex flex-col p-[20px] overflow-y-auto">
-                                    <div className="w-full flex-[1] pl-[10px] my-[20px] flex flex-row items-center">
-                                    <div className="mr-[20px] pt-[15px] flex-[1]">
+                                    <div className="w-full flex-[1] pl-[10px] my-[20px] flex flex-col sm:flex-row items-center">
+                                    <div className="sm:mr-[20px] mr-0 w-full pt-[15px] flex-[1]">
                                         <h1 className='my-[6px] text-[13px]'>Template Name</h1>
                                     
                                         <div className="w-full  px-[20px] h-[40px] border-solid border-[0.1pt] border-[#e2e2e2] rounded-[5px] flex justify-center items-center">
@@ -221,14 +221,14 @@ return (
                                         </div>
                                     </div>
 
-                                    <div className="mr-[20px] pt-[15px] flex-[1]">
+                                    <div className="sm:mr-[20px] mr-0 w-full pt-[15px] flex-[1]">
                                         <h1 className='my-[6px] text-[13px]'>Author Name</h1>
                                     
                                         <div className="w-full  px-[20px] h-[40px] border-solid border-[0.1pt] border-[#e2e2e2] rounded-[5px] flex justify-center items-center">
                                             <input type="text" onChange={onChangeAuthor} className='w-full outline-none' />
                                         </div>
                                     </div>
-                                    <div className="pt-[30px] flex-[1]">
+                                    <div className="pt-[30px] flex-[1] w-full">
                                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                                         <DatePicker
                                         views={['day']}
@@ -244,7 +244,7 @@ return (
                                     </div> 
                                 </div>
 
-                                <div className="w-full pl-[10px] my-[20px] flex flex-row items-start">
+                                <div className="w-full pl-[10px] my-[20px] flex flex-col gap-[20px] sm:flex-row items-start">
                                         <div className="flex-[1]">
                                             <h1 className='my-[6px] text-[13px]'>Responsive</h1>
                                             <div className="flex flex-row h-[40px] w-[130px]">
@@ -338,7 +338,7 @@ return (
                                         </div>
                                 </div>
 
-                                <div className="flex flex-row w-full flex-[5] border-t-[1pt] pt-[10px] mt-[10px] border-solid border-[#e1e1e1]">
+                                <div className="flex flex-col sm:flex-row w-full flex-[5] border-t-[1pt] pt-[10px] mt-[10px] border-solid border-[#e1e1e1]">
                                     <div className="flex-[1] flex flex-col p-[10px]">
                                         <h1>HTML</h1>
                                         <div className="bg-white h-full w-full">
