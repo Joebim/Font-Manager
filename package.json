@@ -8,7 +8,7 @@
     "predeploy": "npm run build",
     "deploy": "cd client && gh-pages -d build",
     "client": "cd client && npm start",
-    "server": "cd server && npm start",
+    "server": "cd client && json-server --watch data.json --port 8000",
     "dev": "concurrently \"npm run client\" \"npm run server\""
   },
   "devDependencies": {
