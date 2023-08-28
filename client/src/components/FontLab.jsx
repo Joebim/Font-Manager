@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, Fragment, useCallback } from 'react'
 import ReactDOM from 'react-dom';
 import DiscreteSliderMarks from '../global_components/Slider'
 import axios from 'axios'
@@ -16,6 +16,7 @@ import FontAddModal from '../features/fonts/FontAddModal';
 import TemplateAddModal from '../features/templates/TemplateAddModal';
 import FontSelectModal from '../features/fonts/FontSelectModal';
 import TemplateSelectModal from '../features/templates/TemplateSelectModal';
+import { Dialog, Transition } from '@headlessui/react'
 
 
 
@@ -59,7 +60,7 @@ export default function FontLab() {
 
   const iframeRef = React.createRef();
 
-
+  const cancelButtonRef = useRef(null)
   // console.log('template', template)
 
 
@@ -202,7 +203,7 @@ export default function FontLab() {
           </div>
           <div className="relative mt-[50px] w-[150px] px-[15px]">
             <button className="w-full flex justify-center py-[5px] bg-white hover:bg-purple-100 rounded-[5px] mb-[5px] mx-[2px] text-center text-red-700 text-[11px]"
-              onClick={() => { setViewEdit(!viewEdit) }}
+              onClick={() => { setViewEdit(true) }}
             >Edit Template</button>
           </div>
 
@@ -312,53 +313,85 @@ export default function FontLab() {
       </div>
 
 
+      <Transition.Root show={viewEdit} as={Fragment}>
+        <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setViewEdit}>
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 z-10 overflow-y-auto flex justify-center items-center">
+            <div className="flex min-h-full w-[600px] items-end justify-center p-4 text-center sm:items-center sm:p-0">
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                enterTo="opacity-100 translate-y-0 sm:scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+                leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              >
+                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 w-full  min-h-[320px] max-h-[500px] overflow-y-scroll ">
 
 
 
+                  <div className="w-full px-[30px] sm:px-[70px] py-[60px]">
+                    <section className={`playground rounded-[20px]  w-full ${viewEdit ? "block" : "hidden"}`}>
+                      <div className="code-editor html-code flex-[4] h-[300px] overflow-y-visible overflow-x-scroll max-w-[270px] sm:max-w-none">
+                        <div className="editor-header">HTML</div>
+                        <CodeMirror
+                          value={html}
+                          options={{
+                            mode: 'htmlmixed',
+                            ...codeMirrorOptions,
+                          }}
+                          onBeforeChange={(editor, data, value) => {
+                            setHtml(value);
+                          }}
+                        />
+                      </div>
+                      <div className="code-editor css-code flex-[3] h-[300px] overflow-y-visible overflow-x-scroll max-w-[270px] sm:max-w-none">
+                        <div className="editor-header">CSS</div>
+                        <CodeMirror
+                          value={css}
+                          options={{
+                            mode: 'css',
+                            ...codeMirrorOptions,
+                          }}
+                          onBeforeChange={(editor, data, value) => {
+                            setCss(value);
+                          }}
+                        />
+                      </div>
+                      <div className="code-editor js-code flex-[3] h-[300px] overflow-y-visible overflow-x-scroll max-w-[270px] sm:max-w-none">
+                        <div className="editor-header">JavaScript</div>
+                        <CodeMirror
+                          value={js}
+                          options={{
+                            mode: 'javascript',
+                            ...codeMirrorOptions,
+                          }}
+                          onBeforeChange={(editor, data, value) => {
+                            setJs(value);
+                          }}
+                        />
+                      </div>
+                    </section>
+                  </div>
 
-      <div className="w-full px-[30px] sm:px-[70px] py-[60px]">
-        <section className={`playground rounded-[20px]  w-full ${viewEdit ? "block" : "hidden"}`}>
-          <div className="code-editor html-code flex-[4] h-[300px] overflow-y-visible">
-            <div className="editor-header">HTML</div>
-            <CodeMirror
-              value={html}
-              options={{
-                mode: 'htmlmixed',
-                ...codeMirrorOptions,
-              }}
-              onBeforeChange={(editor, data, value) => {
-                setHtml(value);
-              }}
-            />
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
           </div>
-          <div className="code-editor css-code flex-[3] h-[300px] overflow-y-visible">
-            <div className="editor-header">CSS</div>
-            <CodeMirror
-              value={css}
-              options={{
-                mode: 'css',
-                ...codeMirrorOptions,
-              }}
-              onBeforeChange={(editor, data, value) => {
-                setCss(value);
-              }}
-            />
-          </div>
-          <div className="code-editor js-code flex-[3] h-[300px] overflow-y-visible">
-            <div className="editor-header">JavaScript</div>
-            <CodeMirror
-              value={js}
-              options={{
-                mode: 'javascript',
-                ...codeMirrorOptions,
-              }}
-              onBeforeChange={(editor, data, value) => {
-                setJs(value);
-              }}
-            />
-          </div>
-        </section>
-      </div>
+        </Dialog>
+      </Transition.Root>
 
       {/* <FontSelectModal open={openFontModal} setOpen={setOpenFontModal} fonts={fontsData} fontTray={fonts} setFontTray={setFonts}/>
         <TemplateSelectModal open={openTemplateModal} setOpen={setOpenTemplateModal} templates={templatesData} templateTray={templates} setTemplateTray={setTemplates}/> */}
