@@ -10,7 +10,7 @@ export default function footer() {
         <div className="w-[50%] md:w-[30%]">
             <div className="h-[40px] w-[80px] my-[12px] text-black bg-white rounded-[90px] font-bold justify-center flex items-center">Fontu</div>
 
-            <p className='text-white mt-[20px]'>The No .1 font-style manager, taking you into the immersive world of fonts</p>
+            <p className='text-white mt-[20px]'>The No .1 web animation manager, taking you into the immersive world of web transitions</p>
             <div className="w-[200px] flex justify-between flex-row mt-[50px] md:mt-[20px]">
                 <img src={twitter} width="40" alt="" />
                 <img src={facebook} width="40" alt="" />

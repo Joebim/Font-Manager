@@ -37,10 +37,10 @@ export default function Home() {
                     </div>
                     <div className="flex-[1]">
                         <div className="w-[85%] mt-[150px] md:mt-[60px]">
-                            <h1 className='text-[50px] leading-[55px]'>Free Beautiful text Animations From A Wide Range Of Templates</h1>
+                            <h1 className='text-[50px] leading-[55px]'>Free Beautiful Web Animations From A Wide Range Of Templates</h1>
                         </div>
                         <div className="w-full md:w-[50%] my-[30px]">
-                            <p className=''>Create stunning text animations with desired fonts, customize your style and feel the visuals</p>
+                            <p className=''>Create stunning web animations with desired fonts, customize your style and feel the visuals</p>
 
                         </div>
                         <div className="">
