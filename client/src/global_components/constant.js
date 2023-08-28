@@ -1,3 +1,3 @@
 export const constant =  {
-    url: "http://localhost:8000",
+    url: "https://my-json-server.typicode.com/Joebim/Json-server",
 }

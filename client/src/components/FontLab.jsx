@@ -97,54 +97,10 @@ export default function FontLab() {
 
 
   const onLoad = () => {
-    const body = iframeRef.current?.contentDocument?.body;
-    if (body) {
-      // Your code to manipulate the body element goes here
-      console.log('body', body);
+    const document = iframeRef.current?.contentDocument?.body;
 
-      // Get all elements on the page
-      const allElements = body.getElementsByTagName("*");
+    console.log('document', document)
 
-      // Filter only the elements that have non-empty text content
-      const textElements = Array.from(allElements).filter((el) => {
-        return el.innerText.trim().length > 0;
-      });
-
-      // Create an array to hold the text input elements
-      const textInputs = {};
-
-      // Loop through the filtered text elements and create a text input element for each one
-      textElements.forEach((el) => {
-        // Create a new text node with the element's text content
-        const textNode = document.createTextNode(el.innerText);
-
-        if (textInputs[el.innerText]) {
-          // Use the existing text input element
-          const input = textInputs[el.innerText];
-        } else {
-          // Create a new text input element
-          const input = document.createElement("input");
-          input.type = "text";
-          input.value = el.innerText;
-          input.className = 'w-[80%]';
-
-          // Add the input element to the object
-          textInputs[el.innerText] = input;
-          // Replace the text node with the input element
-          el.parentNode.replaceChild(input, el);
-        }
-      });
-
-      // Append the text input elements to a specific part of the HTML
-      const targetElement = document.getElementById("input-div");
-      if (targetElement) {
-        Object.values(textInputs).forEach((input) => {
-          targetElement.appendChild(input);
-        });
-      } else {
-        console.error("Target element not found.");
-      }
-    }
   };
 
   useEffect(() => {
@@ -168,7 +124,7 @@ export default function FontLab() {
     setHtml(template.code.html)
     setCss(template.code.css)
     setJs(template.code.js)
-    setTemplateId(null)
+    setTemplateId(template.id)
   }
 
 
@@ -222,8 +178,9 @@ export default function FontLab() {
   const node = document.getElementById('iframe');
   // const iframe = node.contentWindow.document;
   const find = ReactDOM.findDOMNode(node);
-
   console.log('find', find)
+  // find.contentWindow.document.querySelector("h1#firstHeading").style.color = "red";
+  // console.log('find', find.document.querySelector("h1#firstHeading"))
 
 
 
@@ -232,7 +189,7 @@ export default function FontLab() {
 
   return (
     <>
-      <div className="w-full p-[30px] bg-[#f8f3ff] h-full sm:h-[700px] flex flex-col-reverse sm:flex-row ">
+      <div className="w-full p-[30px] sm:pt-[30px] pt-[70px] bg-[#f8f3ff] h-full sm:h-[700px] flex flex-col-reverse sm:flex-row ">
         <div className=" absolute top-[17%] right-5 hover:bg-purple-700 overflow-hidden hover:w-[150px] hover:h-[200px] hover:rounded-[10px] h-[50px] w-[50px] rounded-[10px] duration-150 ease-linear z-10"
         // onClick={()=>{setToggleDropdown(!toggleDropdown)}}
         >
@@ -330,7 +287,7 @@ export default function FontLab() {
               {templates.map((template, index) => {
                 return (
                   // <div className=" h-full w-[140px] rounded-[20px] border-solid border-[3pt] border-[#1dc669] p-[5px] mr-[20px]" key={index}>
-                  <div className={` h-full max-w-[140px] min-w-[140px] rounded-[20px] border-solid border-[3pt]  ${templateSelected == template.id || templateId == template.id ? "border-[#0a9147]" : "border-transparent"} p-[5px]`} key={index}
+                  <div className={` h-full max-w-[140px] min-w-[140px] rounded-[20px] border-solid border-[3pt]  ${templateSelected === template.id || templateId === template.id ? "border-[#0a9147]" : "border-transparent"} p-[5px]`} key={index}
                     onClick={() => { selectTemplate(template) }}
                   >
 
@@ -359,7 +316,7 @@ export default function FontLab() {
 
 
 
-      <div className="w-full px-[70px] py-[60px]">
+      <div className="w-full px-[30px] sm:px-[70px] py-[60px]">
         <section className={`playground rounded-[20px]  w-full ${viewEdit ? "block" : "hidden"}`}>
           <div className="code-editor html-code flex-[4] h-[300px] overflow-y-visible">
             <div className="editor-header">HTML</div>
@@ -369,8 +326,8 @@ export default function FontLab() {
                 mode: 'htmlmixed',
                 ...codeMirrorOptions,
               }}
-              onBeforeChange={(editor, data, html) => {
-                setHtml(html);
+              onBeforeChange={(editor, data, value) => {
+                setHtml(value);
               }}
             />
           </div>
@@ -382,8 +339,8 @@ export default function FontLab() {
                 mode: 'css',
                 ...codeMirrorOptions,
               }}
-              onBeforeChange={(editor, data, css) => {
-                setCss(css);
+              onBeforeChange={(editor, data, value) => {
+                setCss(value);
               }}
             />
           </div>
@@ -395,8 +352,8 @@ export default function FontLab() {
                 mode: 'javascript',
                 ...codeMirrorOptions,
               }}
-              onBeforeChange={(editor, data, js) => {
-                setJs(js);
+              onBeforeChange={(editor, data, value) => {
+                setJs(value);
               }}
             />
           </div>

@@ -26,7 +26,7 @@ export default function ViewTemplate(props) {
 
     const iframe = iframeRef.current;
     console.log('iframe', iframe)
-  }, [runCode]);
+  }, []);
 
 
   const selectTemplate = (template) => {
