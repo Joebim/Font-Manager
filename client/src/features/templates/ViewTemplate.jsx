@@ -114,7 +114,7 @@ export default function ViewTemplate(props) {
         {/* <div className={`w-[150px] absolute bg-purple-900 duration-150 ease-linear right-7 top-24 rounded-[10px] ${toggleDropdown ? "h-[200px]" : "h-[0px]"}`}></div> */}
       </div>
 
-      <section className="result rounded-[20px] m-[10%] sm:m-[5%] h-[350px] w-[80%] sm:w-[45%] bg-black absolute top-[78%] sm:top-[12%] sm:right-[1%]">
+      <section className="result rounded-[20px] m-[10%] sm:m-[5%] h-[350px] w-[80%] sm:w-[45%] bg-black absolute sm:block hidden top-[78%] sm:top-[12%] sm:right-[1%]">
         <iframe id='iframe' title="result" className="iframe h-[300px] sm:h-full w-full" ref={iframeRef} />
       </section>
 
@@ -134,7 +134,11 @@ export default function ViewTemplate(props) {
 
       </div>
       <div className="flex-[1.5] flex flex-col h-full bg-purple-200">
-        <div className="p-[5%] w-full h-[400px]"></div>
+        <div className="p-[5%] w-full h-[400px]">
+        <section className="result rounded-[20px] h-[350px] w-full bg-black sm:hidden block">
+        <iframe id='iframe' title="result" className="iframe h-[300px] sm:h-full w-full" ref={iframeRef} />
+      </section>
+        </div>
         <div className="">
           <div className="w-full py-[30px] px-[30px] sm:px-[50px]">
             <h1 className='pb-[20px] font-bold text-[15px]'>Made With</h1>
