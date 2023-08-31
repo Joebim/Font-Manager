@@ -39,6 +39,7 @@ export default function FontLab() {
 
   const [documentContent, setDocumentContent] = useState()
   const [fonts, setFonts] = useState(fontsData)
+  const [font, setFont] = useState(fonts[0])
   const [templates, setTemplates] = useState(templatesData)
   const fontsStatus = useSelector(getFontStatus)
   const templatesStatus = useSelector(getTemplateStatus)
@@ -97,22 +98,19 @@ export default function FontLab() {
   }, [fontsStatus, dispatch])
 
 
-  const onLoad = () => {
-    const document = iframeRef.current?.contentDocument?.body;
+  // const onLoad = () => {
+  //   const document = iframeRef.current?.contentDocument?.body;
 
-    console.log('document', document)
+  //   console.log('document', document)
 
-  };
+  // };
 
   useEffect(() => {
     runCode();
 
     const iframe = iframeRef.current;
-    console.log('iframe', iframe)
-    if (iframe) {
-      iframe.onload = onLoad;
-    }
-  }, [html, css, js]);
+   
+  }, [html, css, js, font]);
 
 
   useEffect(() => {
@@ -133,6 +131,11 @@ export default function FontLab() {
   const runCode = () => {
     // const { html, css, js } = state;
 
+
+    const fontLink = `https://fonts.googleapis.com/css2?family=${font?.family?.replace(/ /g, '+')}&display=swap`;
+
+    console.log('fontLink', fontLink)
+
     const iframe = iframeRef.current;
     const document = iframe.contentDocument;
     const documentContents = `
@@ -143,27 +146,37 @@ export default function FontLab() {
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
             <title>Document</title>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link rel="stylesheet" href="${fontLink}" rel="stylesheet">
             <style>
+            
               ${css}
+              
             </style>
           </head>
           <body>
-            ${html}
+              ${html}
+
     
             <script type="text/javascript">
               ${js}
+
+              // Run this code after the iframe content is loaded
+        window.addEventListener('load', () => {
+          const allTextElements = document.querySelectorAll('*:not(script):not(style):not(link)');
+          allTextElements.forEach(element => {
+            element.style.fontFamily = "${font.family}, sans-serif";
+          });
+        });
             </script>
           </body>
           </html>
         `;
 
-    setDocumentContent(documentContents)
 
     document.open();
-    if (documentContent == undefined) {
-      document.write(documentContents);
-    }
-    document.write(documentContent);
+    document.write(documentContents);
     document.close();
   };
 
@@ -174,14 +187,7 @@ export default function FontLab() {
     lineWrapping: true,
   };
 
-  console.log("iframe ref", iframeRef)
 
-  const node = document.getElementById('iframe');
-  // const iframe = node.contentWindow.document;
-  const find = ReactDOM.findDOMNode(node);
-  console.log('find', find)
-  // find.contentWindow.document.querySelector("h1#firstHeading").style.color = "red";
-  // console.log('find', find.document.querySelector("h1#firstHeading"))
 
 
 
@@ -233,7 +239,12 @@ export default function FontLab() {
                     {fonts.map((font, index) => {
                       return (
                         // <div className="h-[120px] w-full rounded-[20px] border-solid border-[2pt]  p-[5px]">
-                        <div className={`inline-block h-[120px] ${gridToggle ? "w-full" : "w-[50%]"}  rounded-[20px] drop-shadow-md border-solid border-[2pt] ${fontSelected == font.id ? "border-[#0a9147]" : "border-transparent"} p-[5px]`} key={index}>
+                        <div className={`inline-block h-[120px] ${gridToggle ? "w-full" : "w-[50%]"}  rounded-[20px] drop-shadow-md border-solid border-[2pt] ${fontSelected == font.id ? "border-[#0a9147]" : "border-transparent"} p-[5px]`} key={index}
+                          onClick={() => {
+                            setFontSelected(font.id);
+                            setFont(font)
+                          }}
+                        >
 
                           <button className=" text-black bg-white border-solid border-[2pt] border-transparent hover:border-[#0a9147] h-full w-full rounded-[15px]  text-center text-[10px]" key={index + font.family}>
                             <h1 className='text-[50px]' style={{ fontFamily: font.family }}>A</h1>
@@ -270,11 +281,11 @@ export default function FontLab() {
             </section>
 
           </div>
-          <div className="w-full flex-[13] pt-[10px]">
+          {/* <div className="w-full flex-[13] pt-[10px]">
             <div className="w-full h-full flex items-center justify-center relative">
               <DiscreteSliderMarks />
             </div>
-          </div>
+          </div> */}
 
 
           <div className="w-full flex-[12] flex items-center justify-center">

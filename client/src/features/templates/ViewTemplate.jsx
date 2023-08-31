@@ -12,7 +12,6 @@ export default function ViewTemplate(props) {
   const dispatch = useDispatch()
   const location = useLocation()
 
-  const [documentContent, setDocumentContent] = useState()
   const [template, setTemplate] = useState(location.state)
   const [html, setHtml] = useState(template.code.html)
   const [css, setCss] = useState(template.code.css)
@@ -25,8 +24,7 @@ export default function ViewTemplate(props) {
     runCode();
 
     const iframe = iframeRef.current;
-    console.log('iframe', iframe)
-  }, []);
+  }, [html, css, js]);
 
 
   const selectTemplate = (template) => {
@@ -62,22 +60,13 @@ export default function ViewTemplate(props) {
           </html>
         `;
 
-    setDocumentContent(documentContents)
 
     document.open();
-    if (documentContent == undefined) {
-      document.write(documentContents);
-    }
-    document.write(documentContent);
+    document.write(documentContents);
     document.close();
   };
 
-  console.log("iframe ref", iframeRef)
-
-  const node = document.getElementById('iframe');
-  const find = ReactDOM.findDOMNode(node);
-
-  console.log('find', find)
+  
 
   const navigate = useNavigate()
 
