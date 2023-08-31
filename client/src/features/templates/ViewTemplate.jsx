@@ -19,11 +19,10 @@ export default function ViewTemplate(props) {
 
 
   const iframeRef = React.createRef();
+  const iframeRef2 = React.createRef();
 
   useEffect(() => {
     runCode();
-
-    const iframe = iframeRef.current;
   }, [html, css, js]);
 
 
@@ -37,7 +36,9 @@ export default function ViewTemplate(props) {
     // const { html, css, js } = state;
 
     const iframe = iframeRef.current;
+    const iframe2 = iframeRef2.current
     const document = iframe.contentDocument;
+    const document2 = iframe2.contentDocument;
     const documentContents = `
           <!DOCTYPE html>
           <html lang="en">
@@ -62,8 +63,11 @@ export default function ViewTemplate(props) {
 
 
     document.open();
+    document2.open();
     document.write(documentContents);
+    document2.write(documentContents);
     document.close();
+    document2.close();
   };
 
   
@@ -125,7 +129,7 @@ export default function ViewTemplate(props) {
       <div className="flex-[1.5] flex flex-col h-full bg-purple-200">
         <div className="p-[5%] w-full h-[400px]">
         <section className="result rounded-[20px] h-[350px] w-full bg-black sm:hidden block">
-        <iframe id='iframe' title="result" className="iframe h-[300px] sm:h-full w-full" ref={iframeRef} />
+        <iframe id='iframe2' title="result" className="iframe h-[300px] sm:h-full w-full" ref={iframeRef2} />
       </section>
         </div>
         <div className="">
