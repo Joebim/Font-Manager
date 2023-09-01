@@ -53,7 +53,7 @@ export default function FontLab() {
   const [gridToggle, setGridToggle] = useState(false)
   const [openFontModal, setOpenFontModal] = useState(false)
   const [openTemplateModal, setOpenTemplateModal] = useState(false)
-  const [fontSelected, setFontSelected] = useState()
+  const [fontSelected, setFontSelected] = useState(fonts[0].id)
   const [templateSelected, setTemplateSelected] = useState()
   const [viewEdit, setViewEdit] = useState(false)
 
