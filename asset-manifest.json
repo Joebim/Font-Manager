@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Font-Manager/static/css/main.cdf1762c.css",
-    "main.js": "/Font-Manager/static/js/main.d73eb84f.js",
+    "main.css": "/Font-Manager/static/css/main.ce7caf4b.css",
+    "main.js": "/Font-Manager/static/js/main.47216aea.js",
     "static/js/787.28e3f887.chunk.js": "/Font-Manager/static/js/787.28e3f887.chunk.js",
     "static/media/fontBgThree.png": "/Font-Manager/static/media/fontBgThree.627188be36cb156d506c.png",
     "static/media/blowingRocket.png": "/Font-Manager/static/media/blowingRocket.13342e580424a1d809d2.png",
@@ -12,14 +12,15 @@
     "index.html": "/Font-Manager/index.html",
     "static/media/twitter.svg": "/Font-Manager/static/media/twitter.0244a68e5683ce0128ad76d763becf00.svg",
     "static/media/dropbox.svg": "/Font-Manager/static/media/dropbox.39f98d67251aa9202b1e5e15955c5182.svg",
+    "static/media/fontasie.svg": "/Font-Manager/static/media/fontasie.9a54b3bd89ff5dba85a3f6d4e78aa4d7.svg",
     "static/media/facebook.svg": "/Font-Manager/static/media/facebook.6da82659394856e8282a4dff899b0842.svg",
     "static/media/Add-Icon.svg": "/Font-Manager/static/media/Add-Icon.09c488dcddbb124e6f027604aa5d7c72.svg",
-    "main.cdf1762c.css.map": "/Font-Manager/static/css/main.cdf1762c.css.map",
-    "main.d73eb84f.js.map": "/Font-Manager/static/js/main.d73eb84f.js.map",
+    "main.ce7caf4b.css.map": "/Font-Manager/static/css/main.ce7caf4b.css.map",
+    "main.47216aea.js.map": "/Font-Manager/static/js/main.47216aea.js.map",
     "787.28e3f887.chunk.js.map": "/Font-Manager/static/js/787.28e3f887.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cdf1762c.css",
-    "static/js/main.d73eb84f.js"
+    "static/css/main.ce7caf4b.css",
+    "static/js/main.47216aea.js"
   ]
 }
