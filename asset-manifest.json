@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Font-Manager/static/css/main.ce7caf4b.css",
-    "main.js": "/Font-Manager/static/js/main.47216aea.js",
+    "main.js": "/Font-Manager/static/js/main.c48f5b4e.js",
     "static/js/787.28e3f887.chunk.js": "/Font-Manager/static/js/787.28e3f887.chunk.js",
     "static/media/fontBgThree.png": "/Font-Manager/static/media/fontBgThree.627188be36cb156d506c.png",
     "static/media/blowingRocket.png": "/Font-Manager/static/media/blowingRocket.13342e580424a1d809d2.png",
@@ -16,11 +16,11 @@
     "static/media/facebook.svg": "/Font-Manager/static/media/facebook.6da82659394856e8282a4dff899b0842.svg",
     "static/media/Add-Icon.svg": "/Font-Manager/static/media/Add-Icon.09c488dcddbb124e6f027604aa5d7c72.svg",
     "main.ce7caf4b.css.map": "/Font-Manager/static/css/main.ce7caf4b.css.map",
-    "main.47216aea.js.map": "/Font-Manager/static/js/main.47216aea.js.map",
+    "main.c48f5b4e.js.map": "/Font-Manager/static/js/main.c48f5b4e.js.map",
     "787.28e3f887.chunk.js.map": "/Font-Manager/static/js/787.28e3f887.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ce7caf4b.css",
-    "static/js/main.47216aea.js"
+    "static/js/main.c48f5b4e.js"
   ]
 }
