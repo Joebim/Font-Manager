@@ -53,7 +53,7 @@ export default function FontLab() {
   const [gridToggle, setGridToggle] = useState(false)
   const [openFontModal, setOpenFontModal] = useState(false)
   const [openTemplateModal, setOpenTemplateModal] = useState(false)
-  const [fontSelected, setFontSelected] = useState(fonts[0].id)
+  const [fontSelected, setFontSelected] = useState(0)
   const [templateSelected, setTemplateSelected] = useState()
   const [viewEdit, setViewEdit] = useState(false)
 
@@ -239,14 +239,14 @@ export default function FontLab() {
                     {fonts.map((font, index) => {
                       return (
                         // <div className="h-[120px] w-full rounded-[20px] border-solid border-[2pt]  p-[5px]">
-                        <div className={`inline-block h-[120px] ${gridToggle ? "w-full" : "w-[50%]"}  rounded-[20px] drop-shadow-md border-solid border-[2pt] ${fontSelected == font.id ? "border-[#0a9147]" : "border-transparent"} p-[5px]`} key={index}
+                        <div className={`inline-block h-[120px] ${gridToggle ? "w-full" : "w-[50%]"}  rounded-[20px] drop-shadow-md border-solid border-[2pt] ${fontSelected === index ? "border-[#0a9147]" : "border-transparent"} p-[5px]`} key={index}
                           onClick={() => {
-                            setFontSelected(font.id);
+                            setFontSelected(index);
                             setFont(font)
                           }}
                         >
 
-                          <button className=" text-black bg-white border-solid border-[2pt] border-transparent hover:border-[#0a9147] h-full w-full rounded-[15px]  text-center text-[10px]" key={index + font.family}>
+                          <button className=" text-black bg-white border-solid border-[2pt] border-transparent h-full w-full rounded-[15px]  text-center text-[10px]" key={index + font.family}>
                             <h1 className='text-[50px]' style={{ fontFamily: font.family }}>A</h1>
                             <p className=' text-purple-900'>{font.family}</p>
                           </button>
