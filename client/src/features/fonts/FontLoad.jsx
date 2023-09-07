@@ -5,14 +5,12 @@ import { allFonts, getFontStatus, fetchFonts } from './fontSlice'
 
 export default function FontLoad() {
 
-    const dispatch = useDispatch()
     const fonts = useSelector(allFonts)
-    const fontsStatus = useSelector(getFontStatus)
 
     useEffect(() => {
         fonts.forEach((font, index) => {
           if (font.files && font.files.regular) { // check if font has regular file
-            var fontss = new FontFace(font.family, `url(${font.files.regular})`, {
+            var fontss = new FontFace(font.family, `url(${font.files.regular.replace("http://", "https://")})`, {
               style: 'normal',
               weight: '400'
             });
