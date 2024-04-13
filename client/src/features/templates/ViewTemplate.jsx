@@ -5,7 +5,8 @@ import { useLocation } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { deleteTemplateRequest } from './templateSlice'
-import axios from 'axios'
+import { IoIosArrowBack } from "react-icons/io";
+
 
 export default function ViewTemplate(props) {
 
@@ -107,11 +108,18 @@ export default function ViewTemplate(props) {
         {/* <div className={`w-[150px] absolute bg-purple-900 duration-150 ease-linear right-7 top-24 rounded-[10px] ${toggleDropdown ? "h-[200px]" : "h-[0px]"}`}></div> */}
       </div>
 
+      
+      <div className="absolute px-[8px] py-[8px] left-[5%] top-[18%] z-[10] rounded-full bg-transparent border-solid border-[1px] border-black cursor-pointer"
+        onClick={() => navigate(-1)}
+      >
+        <IoIosArrowBack className='text-[20px] text-purple-900' />
+      </div>
+
       <section className="result rounded-[20px] m-[10%] sm:m-[5%] h-[350px] w-[80%] sm:w-[45%] bg-black absolute sm:block hidden top-[78%] sm:top-[12%] sm:right-[1%]">
         <iframe id='iframe' title="result" className="iframe h-[300px] sm:h-full w-full" ref={iframeRef} />
       </section>
 
-      <div className="flex-[2] h-full w-full p-[30px] sm:p-[50px]">
+      <div className="flex-[2] h-full w-full sm:py-[50px] py-[60px] sm:px-[50px] px-[30px]">
         <div className="">
           <h1 className='text-[40px] font-bold'>{template.name}</h1>
           <p className='text-[14px]'>Author: <span className='text-purple-900 pl-[10px]'>{`${template.author}`}</span></p>
@@ -119,7 +127,7 @@ export default function ViewTemplate(props) {
             <p className='text-[15px]'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt est qui quidem cum, possimus, minus eaque dolor, nostrum quaerat nulla in consequatur. Accusantium ut corrupti porro magni consequatur qui praesentium!</p>
           </div>
         </div>
-        <Link to={`/fontlab/${template.id}`} state={template}>
+        <Link to={`/fontlab/${0}`} state={template}>
           <button className='px-[15px] py-[9px] bg-purple-900 rounded-[40px] text-[14px] text-center duration-[0.5s] text-white'>Use Template</button>
         </Link>
 

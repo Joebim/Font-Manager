@@ -5,7 +5,7 @@ import axios from 'axios'
 import { Controlled as CodeMirror } from 'react-codemirror2';
 import Pusher from 'pusher-js';
 import pushid from 'pushid';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { allFonts, getFontStatus, fetchFonts } from '../features/fonts/fontSlice';
 import { allTemplates, getTemplateStatus, fetchTemplates } from '../features/templates/templateSlice';
@@ -33,19 +33,20 @@ export default function FontLab() {
 
   const dispatch = useDispatch()
   const location = useLocation();
+  const params = useParams()
 
   const fontsData = useSelector(allFonts)
   const templatesData = useSelector(allTemplates)
 
   const [documentContent, setDocumentContent] = useState()
-  const [fonts, setFonts] = useState(fontsData)
-  const [font, setFont] = useState(fonts[0])
+  const [font, setFont] = useState(fontsData[params.id || 0])
   const [templates, setTemplates] = useState(templatesData)
   const fontsStatus = useSelector(getFontStatus)
   const templatesStatus = useSelector(getTemplateStatus)
   const [allGoogleFonts, setAllGoogleFonts] = useState([])
   const [template, setTemplate] = useState(location.state)
   const [templateId, setTemplateId] = useState(template.id)
+  const [fontId, setFontId] = useState(params.id)
   const [id, setId] = useState('')
   const [html, setHtml] = useState(template.code.html)
   const [css, setCss] = useState(template.code.css)
@@ -53,16 +54,17 @@ export default function FontLab() {
   const [gridToggle, setGridToggle] = useState(false)
   const [openFontModal, setOpenFontModal] = useState(false)
   const [openTemplateModal, setOpenTemplateModal] = useState(false)
-  const [fontSelected, setFontSelected] = useState(0)
+  const [fontSelected, setFontSelected] = useState(params.id || 0)
   const [templateSelected, setTemplateSelected] = useState()
   const [viewEdit, setViewEdit] = useState(false)
-
 
 
   const iframeRef = React.createRef();
 
   const cancelButtonRef = useRef(null)
-  // console.log('template', template)
+  console.log('params.id', params.id)
+
+
 
 
   // console.log('fonts', fonts)
@@ -81,9 +83,9 @@ export default function FontLab() {
 
 
   useEffect(() => {
-    if (fontsStatus === 'idle') {
-      dispatch(fetchFonts())
-    }
+    // if (fontsStatus === 'idle') {
+    //   dispatch(fetchFonts())
+    // }
 
 
     axios.get(`${process.env.REACT_APP_GOOGLEAPI_URL}key=${process.env.REACT_APP_GOOGLEAPI_KEY}`, {
@@ -236,11 +238,13 @@ export default function FontLab() {
                 </div>
                 <div className="flex-[80] py-[20px] flex justify-center overflow-y-scroll w-full h-full px-[20px]">
                   <div className={`h-full w-full `}>
-                    {fonts.map((font, index) => {
+                    {fontsData.map((font, index) => {
                       return (
                         // <div className="h-[120px] w-full rounded-[20px] border-solid border-[2pt]  p-[5px]">
                         <div className={`inline-block h-[120px] ${gridToggle ? "w-full" : "w-[50%]"}  rounded-[20px] drop-shadow-md border-solid border-[2pt] ${fontSelected === index ? "border-[#0a9147]" : "border-transparent"} p-[5px]`} key={index}
+                        
                           onClick={() => {
+
                             setFontSelected(index);
                             setFont(font)
                           }}
@@ -406,7 +410,7 @@ export default function FontLab() {
 
       {/* <FontSelectModal open={openFontModal} setOpen={setOpenFontModal} fonts={fontsData} fontTray={fonts} setFontTray={setFonts}/>
         <TemplateSelectModal open={openTemplateModal} setOpen={setOpenTemplateModal} templates={templatesData} templateTray={templates} setTemplateTray={setTemplates}/> */}
-      <FontAddModal open={openFontModal} setOpen={setOpenFontModal} allGoogleFonts={allGoogleFonts} fonts={fonts} />
+      <FontAddModal open={openFontModal} setOpen={setOpenFontModal} allGoogleFonts={allGoogleFonts} fonts={fontsData} />
       <TemplateAddModal open={openTemplateModal} setOpen={setOpenTemplateModal} />
     </>
 

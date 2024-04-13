@@ -23,6 +23,8 @@ export default function FontAddModal(props) {
     const [tab, setTab] = useState(1)
     const [selectedFonts, setSelectedFonts] = useState([])
     const [postRequestStatus, setPostRequestStatus] = useState("idle")
+    const [suggestions, setSuggestions] = useState([])
+    const [searchInput, setSearchInput] = useState([])
 
     const onDrop = useCallback(acceptedFiles => {
 
@@ -46,22 +48,30 @@ export default function FontAddModal(props) {
             <h1 className='z-[1] text-[10px] relative'>{file.name}</h1>
         </div>
     )
-    ) 
+    )
 
-   const cansave = selectedFonts.length > 0 && postRequestStatus === "idle" 
+    const handleSearch = (e) => {
+        e.preventDefault()
+        setSuggestions(props.allGoogleFonts.filter((item) => item.family.toLowerCase().includes(searchInput.toLowerCase())))
+    }
+
+    console.log('suggestions', suggestions)
+    console.log('searchInput', searchInput)
+
+    const cansave = selectedFonts.length > 0 && postRequestStatus === "idle"
 
     // console.log('postFontData', postFontsData)
 
     const addFontsToStore = (e) => {
         e.preventDefault()
 
-        if(cansave) {
-            try{
+        if (cansave) {
+            try {
                 setPostRequestStatus("pending")
                 selectedFonts.forEach(font => {
                     dispatch(addNewFonts(font))
                 })
-            } catch(err) {
+            } catch (err) {
                 console.log('err', err)
             } finally {
                 setPostRequestStatus("idle")
@@ -69,14 +79,14 @@ export default function FontAddModal(props) {
         }
 
     }
-        
 
 
 
-    const addFonts = (e,index,fonts) => {
+
+    const addFonts = (e, index, fonts) => {
         console.log('e.target.checked', e.target.checked)
         let selectFonts = selectedFonts
-    
+
         let fontIndex = selectFonts.indexOf(index)
 
 
@@ -111,22 +121,22 @@ export default function FontAddModal(props) {
     const cancelButtonRef = useRef(null)
 
     const visibility = "visible"
- 
-  const disableCheck = (fonts) => {
-    
-        for(let i = 0; i < props.fonts.length; i++){ 
+
+    const disableCheck = (fonts) => {
+
+        for (let i = 0; i < props.fonts.length; i++) {
             if (props.fonts[i].family == fonts.family) {
                 return true
             }
-        }   
-        
-  
+        }
+
+
         return false
-  }
+    }
 
-// console.log('allGoogleFonts', props.allGoogleFonts)
+    // console.log('allGoogleFonts', props.allGoogleFonts)
 
-    
+
 
 
     return (
@@ -159,11 +169,11 @@ export default function FontAddModal(props) {
                                 <div className="w-full flex justify-center items-center">
                                     <div className="w-[60%] sm:w-[40%] px-[20px] flex justify-between">
                                         <div className={`w-full h-[35px] text-[12px] cursor-pointer ${tab == 1 ? "bg-purple-900 text-white" : "bg-white text-purple-900"} mt-[20px] flex justify-center items-center rounded-l-[50px] border-solid border-[0.1pt] border-[#e2e2e2]`}
-                                        onClick={()=>{setTab(1)}}>Import</div>
+                                            onClick={() => { setTab(1) }}>Import</div>
                                         <div className={`w-full h-[35px] text-[12px] cursor-pointer ${tab == 2 ? "bg-purple-900 text-white" : "bg-white text-purple-900"} mt-[20px] flex justify-center items-center rounded-r-[50px] border-solid border-[0.1pt] border-[#e2e2e2]`}
-                                        onClick={()=>{setTab(2)}}>Search</div>
+                                            onClick={() => { setTab(2) }}>Search</div>
                                     </div>
-                                    
+
                                 </div>
 
                                 {tab == 1 ? <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-6 h-[370px] max-h-[500px] min-h-[auto]">
@@ -174,53 +184,58 @@ export default function FontAddModal(props) {
                                                 <input {...getInputProps()} className=" h-[200px]" />
                                                 <AddIcon alt="" width="80" className='fill-transparent stroke-[#e2cdff] mb-[20px] z-10' />
                                                 {isDragActive ? <h1 className='text-purple-900 text-[13px] font-bold'>Drop the files here ...</h1> :
-                                                <h1 className='text-purple-400 text-[13px] text-center font-bold'>Click to <span className='text-purple-900'>Upload</span> or <span className='text-purple-900'>Drag and Drop</span></h1>
-                                                } 
-                                            </div> 
+                                                    <h1 className='text-purple-400 text-[13px] text-center font-bold'>Click to <span className='text-purple-900'>Upload</span> or <span className='text-purple-900'>Drag and Drop</span></h1>
+                                                }
+                                            </div>
                                         </div> : ""}
                                         {fonts.length == 0 ? "" : <div className="w-[80%] h-[140px] p-[10px] overflow-y-scroll border-solid border-[1px] border-[#cfcfcf] mt-[40px] grid grid-cols-1 md:grid-cols-4 rounded-[20px]">{fonts}</div>}
 
                                     </div>
-                                  
+
                                 </div> : <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4 max-h-[500px] min-h-[auto]">
-                                        <div className="w-full flex justify-center items-center">
-                                            <div className="w-[60%] flex flex-row">
-                                                <div className="w-[85%] h-[40px] border-solid border-[0.1pt] border-[#e2e2e2] rounded-l-full flex justify-center items-center">
-                                                    <input type="text" className=' outline-none' />
-                                                </div>
-                                                <div className="w-[15%] h-[40px] border-solid border-[0.1pt] border-[#e2e2e2] rounded-r-full flex justify-center items-center cursor-pointer">
-                                                    <MagnifyingGlassIcon className='w-[15px]'/>
-                                                </div>
+                                    <div className="w-full flex justify-center items-center">
+                                        <div className="w-[60%] flex flex-row-reverse">
+                                            <div className="w-[85%] h-[40px] border-solid border-[0.1pt] border-[#e2e2e2] border-l-0 rounded-r-full flex justify-start items-center">
+                                                <input type="text" className='outline-none' placeholder='Search' value={searchInput} 
+                                                    onChange={(e) => {
+                                                        setSearchInput(e.target.value)
+                                                        handleSearch(e)
+                                                    }}
+                                                />
+                                            </div>
+                                            <div className="w-[15%] h-[40px] border-solid border-[0.1pt] border-[#e2e2e2] border-r-0 rounded-l-full flex justify-center items-center cursor-pointer">
+                                                <MagnifyingGlassIcon className='w-[15px]' />
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div className="w-full h-[270px] p-[20px] rounded-[20px] mt-[20px] flex flex-row">
-                                            <div className="flex-[5] overflow-y-scroll">
-                                                {props.allGoogleFonts.map((fonts, index)=>{
-                                                   
-                                                    return(
-                                                    <div className="flex flex-row items-center hover:bg-[#f7f7f77e] pl-[15px] border-[#eaeaea] border-t-[0.5pt] border-solid" key={index+fonts.family}>
+                                    <div className="w-full h-[270px] p-[20px] rounded-[20px] mt-[20px] flex flex-row">
+                                        <div className="flex-[5] overflow-y-scroll">
+                                            {suggestions.map((fonts, index) => {
+
+                                                return (
+                                                    <div className="flex flex-row items-center hover:bg-[#f7f7f77e] pl-[15px] border-[#eaeaea] border-t-[0.5pt] border-solid" key={index + fonts.family}>
                                                         {/* { console.log('Google fonts', fonts)} */}
-                                                    <input type="checkbox" name="" id="" onClick={(e)=>{addFonts(e, index, fonts)}} 
-                                                    disabled={disableCheck(fonts)}  />
-                                                    <div className="w-full h-[40px] ml-[10px] flex items-center justify-start text-[12px] text-[#5c5c5c]">{fonts.family}</div>
-                                                </div>
+                                                        <input type="checkbox" name="" id="" onClick={(e) => { addFonts(e, index, fonts) }}
+                                                            disabled={disableCheck(fonts)} />
+                                                        <div className="w-full h-[40px] ml-[10px] flex items-center justify-start text-[12px] text-[#5c5c5c]">{fonts.family}</div>
+                                                    </div>
                                                 )
-                                                })}
-                                                 
-                                                
-                                            </div>
-                                            <div className="flex-[2] border-solid border-l-[0.5pt] border-t-[0.5pt] border-[#eaeaea] p-[15px] ml-[20px] rounded-tl-[20px] overflow-y-scroll">
-                                                {selectedFonts.map((font, index)=>{
-                                                    return (
-                                                        <button className="px-[10px] py-[1px] text-white bg-purple-900 rounded-[20px] mb-[5px] mx-[2px] text-center text-[10px]" key={index+font.family}>{font.family}</button>
+                                            })}
 
-                                                    )
 
-                                                })}
-                                            </div>
                                         </div>
-                                    </div>}
+                                        <div className="flex-[2] border-solid border-l-[0.5pt] border-t-[0.5pt] border-[#eaeaea] p-[15px] ml-[20px] rounded-tl-[20px] overflow-y-scroll">
+                                            {selectedFonts.map((font, index) => {
+                                                return (
+                                                    <button className="px-[10px] py-[1px] text-white bg-purple-900 rounded-[20px] mb-[5px] mx-[2px] text-center text-[10px]" key={index + font.family}>{font.family}</button>
+
+                                                )
+
+                                            })}
+                                        </div>
+                                    </div>
+                                </div>}
 
                                 <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                                     {/* <button className='h-[30px] md:h-[50px] w-[90px] md:w-[140px] bg-purple-900 rounded-[40px] text-[14px] text-center duration-[0.5s] text-white mt-[20px]'>Add Fonts</button> */}

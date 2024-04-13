@@ -31,16 +31,6 @@ export default function FontTemplateStore() {
             dispatch(fetchTemplates())
         }
 
-
-        // axios.get(`${process.env.REACT_APP_GOOGLEAPI_URL}key=${process.env.REACT_APP_GOOGLEAPI_KEY}`, {
-        //     sort: 'alpha',
-        // })
-        // .then(res => {
-        //     // console.log('res', res)
-        //     setAllGoogleFonts(res.data.items)
-        // }).catch(err => {
-        //     console.log('err', err)
-        // })
     }, [templatesStatus, dispatch])
 
     // console.log('fonts', fonts)
