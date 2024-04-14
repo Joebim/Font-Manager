@@ -43,7 +43,7 @@ export default function ViewFont(props) {
         <div className=" absolute top-7 right-7 hover:bg-purple-100 overflow-hidden hover:w-[150px] hover:h-[200px] hover:rounded-[10px] h-[50px] w-[50px] rounded-[10px] duration-150 ease-linear"
         // onClick={()=>{setToggleDropdown(!toggleDropdown)}}
         >
-          <div className="absolute right-0 top-0 cursor-pointer h-[50px] w-[50px] flex items-center justify-center">
+          <div className="absolute right-0 top-[-30%] cursor-pointer h-[50px] w-[50px] flex items-center justify-center">
             <div className="">
               <div className="h-[4px] w-[4.8px] bg-purple-100 rounded-full my-[5px]"></div>
               <div className="h-[4px] w-[4.8px] bg-purple-100 rounded-full mb-[5px]"></div>
@@ -60,14 +60,14 @@ export default function ViewFont(props) {
         {/* <div className={`w-[150px] absolute bg-purple-900 duration-150 ease-linear right-7 top-24 rounded-[10px] ${toggleDropdown ? "h-[200px]" : "h-[0px]"}`}></div> */}
       </div>
 
-      <div className="absolute px-[8px] py-[8px] left-[7%] top-[17%] sm:top-[19%]  z-[10] rounded-full bg-transparent border-solid border-[1px] border-black cursor-pointer"
-        onClick={() => navigate(-1)}
-      >
-        <IoIosArrowBack className='text-[20px] text-white' />
-      </div>
 
-      <div className="w-full h-full sm:h-[400px] bg-purple-600 px-[30px] sm:px-[70px] py-[60px] sm:py-[70px] flex flex-col sm:flex-row">
-        <div className="flex-[1]">
+      <div className="w-full h-full sm:h-[400px] bg-purple-600 px-[30px] sm:px-[70px] sm:pb-[70px] sm:pt-[20px] pt-[20px] flex flex-col sm:flex-row">
+        <div className="flex-[1] flex flex-col gap-[10px]">
+          <div className="flex self-start px-[8px] py-[8px]  z-[10] rounded-full bg-transparent border-solid border-[1px] border-black cursor-pointer"
+            onClick={() => navigate(-1)}
+          >
+            <IoIosArrowBack className='text-[20px] text-white' />
+          </div>
           <div className="">
             <h1 className='text-white text-[30px]'>{fonts?.family}</h1>
             <div className="w-full flex flex-row pt-[20px]">

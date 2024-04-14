@@ -71,7 +71,7 @@ export default function ViewTemplate(props) {
     document2.close();
   };
 
-  
+
 
   const navigate = useNavigate()
 
@@ -87,39 +87,30 @@ export default function ViewTemplate(props) {
 
   return (
     <div className="w-full h-auto flex flex-col sm:flex-row bg-[#f8f3ff] min-h-[400px]">
-      <div className="w-full absolute px-[20px] py-[5px] ">
-        <div className=" absolute top-5 right-5 hover:bg-purple-700 overflow-hidden hover:w-[150px] hover:h-[200px] hover:rounded-[10px] h-[50px] w-[50px] rounded-[10px] duration-150 ease-linear z-10"
-        // onClick={()=>{setToggleDropdown(!toggleDropdown)}}
-        >
-          <div className="absolute right-0 top-0 cursor-pointer h-[50px] w-[50px] flex items-center justify-center">
-            <div className="">
-              <div className="h-[4px] w-[4.8px] bg-purple-700 rounded-full my-[5px]"></div>
-              <div className="h-[4px] w-[4.8px] bg-purple-700 rounded-full mb-[5px]"></div>
-              <div className="h-[4px] w-[4.8px] bg-purple-700 rounded-full mb-[5px]"></div>
-            </div>
-          </div>
-          <div className="relative mt-[50px] w-[150px] px-[15px]">
-            <button className="w-full flex justify-center py-[5px] bg-white hover:bg-purple-100 rounded-[5px] mb-[5px] mx-[2px] text-center text-red-700 text-[11px]"
-              onClick={() => { deleteTemplate(template.id) }}>Delete Template</button>
-          </div>
 
-        </div>
 
-        {/* <div className={`w-[150px] absolute bg-purple-900 duration-150 ease-linear right-7 top-24 rounded-[10px] ${toggleDropdown ? "h-[200px]" : "h-[0px]"}`}></div> */}
-      </div>
 
-      
-      <div className="absolute px-[8px] py-[8px] left-[5%] top-[18%] z-[10] rounded-full bg-transparent border-solid border-[1px] border-black cursor-pointer"
-        onClick={() => navigate(-1)}
-      >
-        <IoIosArrowBack className='text-[20px] text-purple-900' />
-      </div>
 
-      <section className="result rounded-[20px] m-[10%] sm:m-[5%] h-[350px] w-[80%] sm:w-[45%] bg-black absolute sm:block hidden top-[78%] sm:top-[12%] sm:right-[1%]">
+      <section className="result z-10 rounded-[20px] m-[10%] sm:m-[5%] h-[350px] w-[80%] sm:w-[45%] bg-black absolute sm:block hidden top-[78%] sm:top-[12%] sm:right-[1%]">
         <iframe id='iframe' title="result" className="iframe h-[300px] sm:h-full w-full" ref={iframeRef} />
       </section>
 
-      <div className="flex-[2] h-full w-full sm:py-[50px] py-[60px] sm:px-[50px] px-[30px]">
+      <div className=" relative flex-[2] flex flex-col h-full w-full sm:pb-[50px] pb-[60px] sm:pt-[20px] pt-[20px] sm:px-[50px] px-[30px]">
+        <div className="flex flex-row justify-between">
+          <div className="px-[8px] self-start py-[8px] left-[5%] top-[18%] z-[10] rounded-full bg-transparent border-solid border-[1px] border-black cursor-pointer"
+            onClick={() => navigate(-1)}
+          >
+            <IoIosArrowBack className='text-[20px] text-purple-900' />
+          </div>
+
+
+        </div>
+
+
+
+
+
+
         <div className="">
           <h1 className='text-[40px] font-bold'>{template.name}</h1>
           <p className='text-[14px]'>Author: <span className='text-purple-900 pl-[10px]'>{`${template.author}`}</span></p>
@@ -134,11 +125,27 @@ export default function ViewTemplate(props) {
 
 
       </div>
-      <div className="flex-[1.5] flex flex-col h-full bg-purple-200">
+      <div className="relative flex-[1.5] flex flex-col h-full bg-purple-200">
         <div className="p-[5%] w-full h-[400px]">
-        <section className="result rounded-[20px] h-[350px] w-full bg-black sm:hidden block">
-        <iframe id='iframe2' title="result" className="iframe h-[300px] sm:h-full w-full" ref={iframeRef2} />
-      </section>
+          <div className="absolute right-[7%] top-[5%] sm:top-[3%] sm:right-[2%] hover:bg-purple-700 overflow-hidden hover:w-[150px] hover:h-[200px] hover:rounded-[10px] h-[50px] w-[50px] rounded-[10px] duration-150 ease-linear z-10"
+          // onClick={()=>{setToggleDropdown(!toggleDropdown)}}
+          >
+            <div className="absolute right-0 top-0 cursor-pointer h-[50px] w-[50px] flex items-center justify-center">
+              <div className="">
+                <div className="h-[4px] w-[4.8px] bg-white sm:bg-purple-700 rounded-full my-[5px]"></div>
+                <div className="h-[4px] w-[4.8px] bg-white sm:bg-purple-700 rounded-full mb-[5px]"></div>
+                <div className="h-[4px] w-[4.8px] bg-white sm:bg-purple-700 rounded-full mb-[5px]"></div>
+              </div>
+            </div>
+            <div className="relative mt-[50px] w-[150px] px-[15px]">
+              <button className="w-full flex justify-center py-[5px] bg-white hover:bg-purple-100 rounded-[5px] mb-[5px] mx-[2px] text-center text-red-700 text-[11px]"
+                onClick={() => { deleteTemplate(template.id) }}>Delete Template</button>
+            </div>
+
+          </div>
+          <section className="result rounded-[20px] h-[350px] w-full bg-black sm:hidden block">
+            <iframe id='iframe2' title="result" className="iframe h-[300px] sm:h-full w-full" ref={iframeRef2} />
+          </section>
         </div>
         <div className="">
           <div className="w-full py-[30px] px-[30px] sm:px-[50px]">
