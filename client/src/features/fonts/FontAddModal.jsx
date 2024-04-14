@@ -24,7 +24,7 @@ export default function FontAddModal(props) {
     const [selectedFonts, setSelectedFonts] = useState([])
     const [postRequestStatus, setPostRequestStatus] = useState("idle")
     const [suggestions, setSuggestions] = useState([])
-    const [searchInput, setSearchInput] = useState([])
+    const [searchInput, setSearchInput] = useState("")
 
     const onDrop = useCallback(acceptedFiles => {
 
@@ -196,7 +196,7 @@ export default function FontAddModal(props) {
                                     <div className="w-full flex justify-center items-center">
                                         <div className="w-[60%] flex flex-row-reverse">
                                             <div className="w-[85%] h-[40px] border-solid border-[0.1pt] border-[#e2e2e2] border-l-0 rounded-r-full flex justify-start items-center">
-                                                <input type="text" className='outline-none' placeholder='Search' value={searchInput} 
+                                                <input type="text" className='outline-none' placeholder='Search' value={searchInput}
                                                     onChange={(e) => {
                                                         setSearchInput(e.target.value)
                                                         handleSearch(e)
@@ -211,17 +211,30 @@ export default function FontAddModal(props) {
 
                                     <div className="w-full h-[270px] p-[20px] rounded-[20px] mt-[20px] flex flex-row">
                                         <div className="flex-[5] overflow-y-scroll">
-                                            {suggestions.map((fonts, index) => {
+                                            {suggestions.length === 0 ?
+                                                props.allGoogleFonts.map((fonts, index) => {
 
-                                                return (
-                                                    <div className="flex flex-row items-center hover:bg-[#f7f7f77e] pl-[15px] border-[#eaeaea] border-t-[0.5pt] border-solid" key={index + fonts.family}>
-                                                        {/* { console.log('Google fonts', fonts)} */}
-                                                        <input type="checkbox" name="" id="" onClick={(e) => { addFonts(e, index, fonts) }}
-                                                            disabled={disableCheck(fonts)} />
-                                                        <div className="w-full h-[40px] ml-[10px] flex items-center justify-start text-[12px] text-[#5c5c5c]">{fonts.family}</div>
-                                                    </div>
-                                                )
-                                            })}
+                                                    return (
+                                                        <div className="flex flex-row items-center hover:bg-[#f7f7f77e] pl-[15px] border-[#eaeaea] border-t-[0.5pt] border-solid" key={index + fonts.family}>
+                                                            {/* { console.log('Google fonts', fonts)} */}
+                                                            <input type="checkbox" name="" id="" onClick={(e) => { addFonts(e, index, fonts) }}
+                                                                disabled={disableCheck(fonts)} />
+                                                            <div className="w-full h-[40px] ml-[10px] flex items-center justify-start text-[12px] text-[#5c5c5c]">{fonts.family}</div>
+                                                        </div>
+                                                    )
+                                                }) :
+                                                suggestions.map((fonts, index) => {
+
+                                                    return (
+                                                        <div className="flex flex-row items-center hover:bg-[#f7f7f77e] pl-[15px] border-[#eaeaea] border-t-[0.5pt] border-solid" key={index + fonts.family}>
+                                                            {/* { console.log('Google fonts', fonts)} */}
+                                                            <input type="checkbox" name="" id="" onClick={(e) => { addFonts(e, index, fonts) }}
+                                                                disabled={disableCheck(fonts)} />
+                                                            <div className="w-full h-[40px] ml-[10px] flex items-center justify-start text-[12px] text-[#5c5c5c]">{fonts.family}</div>
+                                                        </div>
+                                                    )
+                                                })
+                                            }
 
 
                                         </div>
